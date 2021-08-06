@@ -1,0 +1,130 @@
+What's your name?
+*input_text player_name
+
+*label you're_wrong
+Wrong!
+
+*label your_name_is_morgan
+Your name is Morgan Miller. You're 19 years old and about to start school at the University of the Midwest. You have one sibling, a half-brother named Alex. He is three years older than you and also attends the University of the Midwest.
+
+Right now you're riding in your Alex's car, only a few minutes away from arriving. When you get there, the first thing you'll need to do is go to the student center, where you'll check in and then get shown to your dorm room. After that, you'll join the New Student Scavenger Hunt.
+
+You got that?
+
+*choice
+  #Yes.
+    *goto alex_spits
+  #No.
+    Okay. Listen carefully, this time.
+
+    *goto your_name_is_morgan
+  #My name is ${player_name}.
+    *goto you're_wrong
+
+*label alex_spits
+Good. Let's go.
+*page_break
+Your half-brother leans out of the car window and spits. "Morgan," announces Alex, "this place is the worst goddamn university in the world. The most cursed place in all of America."
+
+*fake_choice
+  #Gremlin: "Fucking manners, Alex! Didn't Sarah ever teach you not to spit out of a car?"
+    "Sorry [i]mom[/i]."
+
+    "Alex, what are you, five?"
+
+    "Oh come on, I just wanted to show this place what I thought of it. You don't gotta jump down my threat about it." Alex sighs and rolls up the window.
+  #Considerate: "Please don't stick your head out the window while you're driving. Especially not with these roads, you'll get it split open when I hit a pothole."
+    "That's what the seatbelt is for. Besides, it's a shithole, Morgan. Spitting is more than it deserves." He chuckles and rolls up the window.
+  #Nonplussed: "America's a big place. Got a lot of curses flying around. This place doesn't even register."
+    "Shit, if there's anywhere more cursed, I ain't seen it." He snorts. "Then again I ain't seen much so who the hell knows?"
+    
+    "Uncle Eyore's house was at least twice as cursed as this place."
+    
+    "I said America. Uncle Eyore's house is in Canada." Alex chuckles and rolls up his window.
+"Anyways, how long until we get to the student center?"
+
+"Like, two minutes, according to Google." The gate to the campus passes overhead. "Uh, second right, and then third left."
+
+"Heh." Alex points to a 4-way stop in front of you. "That one?"
+
+You check your phone. "No," you say looking ahead to the intersection after that one. The road is wide enough, but it looks like it hasn't been maintained for years, and the stop sign is defaced. Somebody has come by and splashed black paint all over the S.
+
+*fake_choice
+  #Gremlin: Heh. TOP sign. Where's the BOTTOM sign, huh?
+    You chuckle. "Turn at the TOP sign."
+    
+    "The TOP si - oh. I see it." Alex chuckles. "That's not bad."
+    
+    "Yeah, keep your eyes open for the BOTTOM sign." The two of you snicker as he stops in front of it.
+  #Considerate: Street art is fine, but defacing road signs could confuse somebody. They should have found somewhere else to do it.
+    You sigh. "Turn at the intersection with the stop sign with the crossed out S."
+    
+    "The what? Oh. I see it." Alex chuckles. "That's not bad."
+    
+    You sigh. "They should fix it."
+    
+    "I told you," he says, stopping in front of the sign, "this place is cursed. And broke."
+  #Nonplussed: If they aren't replacing these stop signs, they've got to be running pretty low of funds. That's not a great sign.
+    You point at the intersection. "Turn at the one with that defaced stop sign."
+    
+    "The what? Oh. I see it." Alex chuckles. "That's not bad."
+    
+    "They're probably really low on funds if they can't even replace their traffic signs. Or maybe negative."
+
+    "I told you," he says, stopping in front of the sign, "this place is cursed. And broke."
+He makes the right onto a cramped side road with disintegrating pavement and no road lines. You watch through the window as the buildings pass by, their once beautiful facades now falling apart. Their lawns must have been green and trimmed once, but they're full of bushes and weeds. The sidewalks are cracked up and uneven.
+
+Finally you reach the third left, take the turn, and pull smoothly into the student center's parking lot. It's a small and depressing thing, sized for maybe ten cars, but they were either too cheap to paint in parking spaces or the paint has long since weathered away. Around it is a ring of overgrown trees that probably haven't been trimmed in years.
+
+There are no other cars.
+
+Alex awkwardly pulls up near the side and the two of you get out. You grab your backpack from the trunk and then push it closed.
+
+[i][b][ Items gained: backpack, paperwork, scavenger hunt sheet, scavenger hunt stickers ][/b][/i]
+*set inventory_has_backpack true
+*set inventory_has_paperwork true
+*set inventory_has_scavenger_hunt_sheet true
+*set inventory_has_scavenger_hunt_stickers true
+*line_break
+[i][ You can check your inventory at any time through the stats screen. ][/i]
+
+"Follow me," says Alex, trudging down a barely visible trail, kicking at shrubs as he goes. "Look," he says, "as bad as this all looks, most of the buildings are pretty nice on the inside."
+
+*fake_choice
+  #Gremlin: "Thank God, I was wondering if I should have brought a camping tent."
+    He snickers. "Morgan, you smell bad enough already, they'd toss you right out of class if you did that."
+
+    "So says Mr. I-only-shower-ever-other-day."
+    
+    "Look," he says, "I shower after I work out, and you know what? That's served me just fine. It's just an extra incentive to never skip."
+  #Considerate: "I'm glad to hear that. I'm surprised that you have anything positive to say about this place, given your usual invective."
+    He laughs. "Just because I say their interiors are nice doesn't mean I think that it's a good school. It's still a shithole."
+    
+    "Well, are the people nice? How are the teachers?"
+    
+    "Well, the students are nice enough. The professors are idiots, or maybe scammers. They don't know a single thing about their subjects."
+  #Nonplussed: "Well, that's good to know. Guess our parents were right about books and covers."
+    "Don't get me wrong," he says, "there's a lot to dislike. The people may be nice, but the professors are idiots who don't know a single thing about their subjects."
+
+The path ends at a mid-sized cylindrical building, three stories high, with a single gigantic window wrapped around the entire first floor. The window is heavily frosted, so you can't see any details, but it looks like there are maybe a couple dozen people wandering around inside. There's a gaggle maybe six students loitering on the path, which curves around the right side of the building. One of them waves to Alex, and Alex waves back.
+
+"Okay, I'll hang out here with my friends," he says, "but the door's over there on the other side. No I don't know why they put the door on the other side of the parking lot. You got your paperwork and the scavenger hunt stuff?"
+
+[i][ You can check your inventory at any time through the stats screen. ][/i]
+
+*fake_choice
+  #Yes.
+    "Cool," he says, going off to join his friends, "I'll be here if you need me."
+  #No.
+    "Wait. What? You don't have the stuff?" He pauses. "Did you check your pack?"
+    *fake_choice
+      #No, sorry, hold on. Yeah, they're in there.
+        "Cool," he says, going off to join his friends, "I'll be here if you need me."
+      #I checked it and they're not in there.
+        "Seriously? Shit. Can I see that," he says, holding out his arm.
+        
+        You give him the pack, and he ruffles through it. "No," he says, "they're here, you're just blind." He zips it up and hands it back to you. "I'll be here with my friends if you need me, or you can call me." Then he waves and leaves to join his friends.
+
+You follow the path around to the front of the student center, where there's a pair of glass double doors (frosted, like the rest). You take a deep breath and enter.
+
+*finish

@@ -1,0 +1,15 @@
+*title IFSJNo1
+*author MoyTW
+
+*scene_list
+  ch1_arrival
+  ch2_student_center
+
+*create player_name ""
+
+*create inventory_has_backpack false
+*create inventory_has_paperwork false
+*create inventory_has_scavenger_hunt_sheet false
+*create inventory_has_scavenger_hunt_stickers false
+
+*finish

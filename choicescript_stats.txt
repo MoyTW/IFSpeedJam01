@@ -1,0 +1,13 @@
+Inventory:
+*if inventory_has_backpack
+  *line_break
+  • Backpack: Your trusty backpack. You've had it since high school.
+*if inventory_has_paperwork
+  *line_break
+  • Paperwork: A bunch of printouts and stuff that you have to bring to the student center. Why they won't let you email it and e-sign you have no idea.
+*if inventory_has_backpack
+  *line_break
+  • Scavenger Hunt Sheet: A sheet with rules for the scavenger hunt, and a list of clues.
+*if inventory_has_backpack
+  *line_break
+  • Scavenger Hunt Stickers: A bunch of stickers to mark when you've found a clue.
