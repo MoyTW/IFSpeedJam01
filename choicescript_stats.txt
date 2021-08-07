@@ -1,7 +1,34 @@
-Inventory:
+[i][b][ Go to the bottom to see more inventory-related choies. ][/b][/i]
+
+*gosub inventory
+*label screen
+*choice
+  #View your inventory
+    *gosub inventory
+    *goto screen
+  *if (inventory_has_scavenger_hunt_sheet = true) #View scavenger hunt rules
+    *gosub scavenger_hunt_rules
+    *goto screen
+  *if (inventory_has_scavenger_hunt_sheet = true) #View scavenger hunt clues
+    *gosub scavenger_hunt_clues
+    *goto screen
+  *if (inventory_has_campus_map = true) #View campus map
+    TODO: P1 Campus Map
+    *goto screen
+
+*comment ########################################
+*comment # Inventory                            #
+*comment ########################################
+*label inventory
+[b]Inventory:[/b]
+*line_break
+• Phone: Your phone, which you're prone to dropping. After your cracked the corner you encased it in a thick rubber protector.
 *if inventory_has_backpack
   *line_break
   • Backpack: Your trusty backpack. You've had it since high school.
+*if inventory_has_book
+  *line_break
+  • The Witch: A History of Fear, from Ancient Times to the Present by Ronald Hutton: A dense and scholarly but really informative book on the history of the witch figure, briefly covering modern and non-European contexts, but focusing mainly on medieval Europe. You haven't finished it yet but it's been amazing so far! It's entirely non-narrative, but that doesn't bother you in the least. The subject matter is really interesting, and the other book of his that you've read, Triumph of the Moon, was [i]incredible[/i], so you - well, look, you could go on and on about this, but you've got things to do. Anyways, you're looking forward to finding some time to devour the rest of it.
 *if inventory_has_paperwork
   *line_break
   • Paperwork: A bunch of printouts and stuff that you have to bring to the student center. Why they won't let you email it and e-sign you have no idea.
@@ -11,3 +38,129 @@ Inventory:
 *if inventory_has_backpack
   *line_break
   • Scavenger Hunt Stickers: A bunch of stickers to mark when you've found a clue.
+*if inventory_has_campus_map
+  *line_break
+  • Campus Map: A color map of the campus, with buildings nicely labeled.
+*return
+
+*comment ########################################
+*comment # Scavenger Hunt Rules                 #
+*comment ########################################
+*label scavenger_hunt_rules
+[b]Welcome to the University of the Midwest incoming student scavenger hunt![/b]
+    
+This fun exercise is an opportunity for incoming students to familiarize themselves with the various campus buildings and also win fabulous prizes! Here's how it will work.
+
+Enclosed in the scavenger hunt pack this rules and hints sheet, a campus map, and a pack of proof stickers with your student number on them. Use the hints sheet and the campus map to find the hinted locations, and then simply place a proof sticker at the location. At the end of the day, our judges will come around and count the proof stickers, and the students with the highest scores will be entered into a raffle!
+
+The contest ends on August 15. Scoring will occur at 8:30pm and the raffle will take place in the student center at 9pm, so make sure to show up promptly!
+
+The top 3 prizes are as follows:
+*line_break
+1. A Cadillac El Dorado!
+*line_break
+2. A set of steak knives!
+*line_break
+3. You're fired!
+
+I'm sorry, let me apologize. Sales got ahold of the computer for a moment, and went a little wild.
+
+The real prizes are as follows:
+*line_break
+1. A signed copy of Dr. Mishima's book, [i]Teaching Without Regrets[/i], and a full credit for the university bookstore for all your course books for the year!
+*line_break
+2. A $150 dollars credit towards any university service you want!
+*line_break
+3. A $50 dollars credit towards the university shop!
+
+Good luck! We hope you have fun!
+*return
+
+*comment ########################################
+*comment # Scavenger Hunt Clues                 #
+*comment ########################################
+*label scavenger_hunt_clues
+[b]Instructions:[/b] Each target has a clue for its building, and a clue for its precise location. When you think you have found the target, place one of your stickers there. If there are already stickers there, do not disturb them. [b]You are encouraged to make heavy use of Google![/b]
+
+[b]Note:[/b] Neither the Student Center nor gym are involved with the scavenger hunt! Especially don't go messing with any of the gym equipment!
+
+[b]Target 1[/b]
+
+Building clue: Free clue - it's in the Admin Building.
+*if building_confirmed_1
+  *line_break
+  [b]Solved: Admin Building[/b]
+
+Target clue:
+*line_break
+• The target is freely accessible from the lobby - don't take this as license to go snooping around peoples' desks!
+*line_break
+• September 19, 2021
+*comment The target is the oversized communal calendar hanging in the lobby - specifically, the September 19 date.
+
+[b]Target 2[/b]
+
+Building clue: Of the three northernmost buildings, which has the least to do with bread?
+*if building_confirmed_2
+  *line_break
+  [b]Solved: Smith Center[/b]
+
+Target clue:
+*line_break
+• The target is in the kitchen.
+*line_break
+• Chg gur fgvpxre ba gur obneq oruvaq gur "QB ABG ERZBIR" naabhaprzrag pbapreavat gur pbssrr cbyvpl.
+*comment Put the sticker on the board behind the "DO NOT REMOVE" announcement concerning the coffee policy.
+
+[b]Target 3[/b]
+
+Building clue: Which dorm has the strongest association with Saul?
+*if building_confirmed_3
+  *line_break
+  [b]Solved: Hall The Apostle[/b]
+
+Target clue:
+*line_break
+• On the second floor, in the corridor starting with room 210, there are a series of paintings.
+*line_break
+• Put the sticker behind the painting most related to Saul's dramatic escape.
+*comment The painting in question is a fruit basket (Paul escaped from Damascus in a basket).
+
+[b]Target 4[/b]
+
+Building clue:
+*line_break
+• The target is in one of the three labs.
+*line_break
+• Adams, Douglas
+*line_break
+• Bowie, David
+*line_break
+• Darwin, Charles
+*if building_confirmed_4
+  *line_break
+  [b]Solved: Lab D[/b]
+
+Target clue:
+*line_break
+• In the lobby, there is a display case that is closely related to leaves.
+*line_break
+• Underneath that display case should be an unlocked cabinet.
+*line_break
+• Place the sticker on the back of the door to the cabinet.
+*comment There's a display of leafcutter ants, labeled Atta Cephalotes.
+
+[b]Target 5[/b]
+
+Building clue:
+*line_break
+• The target is in one of the centers named after notable Romans.
+*line_break
+• 106
+*line_break
+• 43
+*if building_confirmed_5
+  *line_break
+  [b]Solved: Cicero Center[/b]
+
+*return

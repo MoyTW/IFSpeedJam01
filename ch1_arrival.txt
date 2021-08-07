@@ -5,9 +5,9 @@ What's your name?
 Wrong!
 
 *label your_name_is_morgan
-Your name is Morgan Miller. You're 19 years old and about to start school at the University of the Midwest. You have one sibling, a half-brother named Alex. He is three years older than you and also attends the University of the Midwest.
+Your name is Morgan Faye, daughter of Arnold Faye and Brittany Faye. You're 19 years old and about to start school at the University of the Midwest. You have one sibling, a half-brother named Alex Diebold, who's three years older than you. He also attends the University of the Midwest, and he has a lot of things to say about it, few of them good.
 
-Right now you're riding in your Alex's car, only a few minutes away from arriving. When you get there, the first thing you'll need to do is go to the student center, where you'll check in and then get shown to your dorm room. After that, you'll join the New Student Scavenger Hunt.
+Right now you're riding in your Alex's car, only a few minutes away from arriving. When you get there, the first thing you'll need to do is go to the student center, where you'll check in and get the keys to your dorm. After that, you'll join the New Student Scavenger Hunt. You'll have one full day to complete it, and two days before classes start.
 
 You got that?
 
@@ -33,7 +33,7 @@ Your half-brother leans out of the car window and spits. "Morgan," announces Ale
     "Alex, what are you, five?"
 
     "Oh come on, I just wanted to show this place what I thought of it. You don't gotta jump down my threat about it." Alex sighs and rolls up the window.
-  #Considerate: "Please don't stick your head out the window while you're driving. Especially not with these roads, you'll get it split open when I hit a pothole."
+  #Considerate: "Please don't stick your head out the window while you're driving. Especially not with these roads."
     "That's what the seatbelt is for. Besides, it's a shithole, Morgan. Spitting is more than it deserves." He chuckles and rolls up the window.
   #Nonplussed: "America's a big place. Got a lot of curses flying around. This place doesn't even register."
     "Shit, if there's anywhere more cursed, I ain't seen it." He snorts. "Then again I ain't seen much so who the hell knows?"
@@ -43,9 +43,9 @@ Your half-brother leans out of the car window and spits. "Morgan," announces Ale
     "I said America. Uncle Eyore's house is in Canada." Alex chuckles and rolls up his window.
 "Anyways, how long until we get to the student center?"
 
-"Like, two minutes, according to Google." The gate to the campus passes overhead. "Uh, second right, and then third left."
+"Like, two minutes, according to Google." You stare up at the sunny sky, then look back to your phone. "Uh, second right, and then third left. Don't you drive here all the time?"
 
-"Heh." Alex points to a 4-way stop in front of you. "That one?"
+"To parking lot B, not the student center. And you know how bad I am with directions anyways." Alex points to a 4-way stop in front of you. "That one?"
 
 You check your phone. "No," you say looking ahead to the intersection after that one. The road is wide enough, but it looks like it hasn't been maintained for years, and the stop sign is defaced. Somebody has come by and splashed black paint all over the S.
 
@@ -78,17 +78,19 @@ Finally you reach the third left, take the turn, and pull smoothly into the stud
 
 There are no other cars.
 
-Alex awkwardly pulls up near the side and the two of you get out. You grab your backpack from the trunk and then push it closed.
+Alex awkwardly pulls up near the side pops the trunk. The two of you exit and pause to enjoy the warmth of the sun. Then you grab your backpack from the trunk and push it closed.
 
-[i][b][ Items gained: backpack, paperwork, scavenger hunt sheet, scavenger hunt stickers ][/b][/i]
+[i][b][ Items gained: backpack, The Witch: A History of Fear, from Ancient Times to the Present by Ronald Hutton, paperwork, scavenger hunt sheet, scavenger hunt stickers, campus map ][/b][/i]
 *set inventory_has_backpack true
+*set inventory_has_book true
 *set inventory_has_paperwork true
 *set inventory_has_scavenger_hunt_sheet true
 *set inventory_has_scavenger_hunt_stickers true
+*set inventory_has_campus_map true
 *line_break
 [i][ You can check your inventory at any time through the stats screen. ][/i]
 
-"Follow me," says Alex, trudging down a barely visible trail, kicking at shrubs as he goes. "Look," he says, "as bad as this all looks, most of the buildings are pretty nice on the inside."
+"Follow me," says Alex, trudging down a barely visible trail, kicking at shrubs as he goes. "At least your first day's a beautiful one. Look," he says, "as bad as this all looks, most of the buildings are pretty nice on the inside."
 
 *fake_choice
   #Gremlin: "Thank God, I was wondering if I should have brought a camping tent."
@@ -106,7 +108,7 @@ Alex awkwardly pulls up near the side and the two of you get out. You grab your 
   #Nonplussed: "Well, that's good to know. Guess our parents were right about books and covers."
     "Don't get me wrong," he says, "there's a lot to dislike. The people may be nice, but the professors are idiots who don't know a single thing about their subjects."
 
-The path ends at a mid-sized cylindrical building, three stories high, with a single gigantic window wrapped around the entire first floor. The window is heavily frosted, so you can't see any details, but it looks like there are maybe a couple dozen people wandering around inside. There's a gaggle maybe six students loitering on the path, which curves around the right side of the building. One of them waves to Alex, and Alex waves back.
+The path ends at a large cylindrical building, three stories high, with a single gigantic window wrapped around the entire first floor. The window is heavily frosted, so you can't see any details, but it looks like there are maybe a dozen people wandering around inside. There's a gaggle of five students loitering on the path, which curves around the right side of the building. One of them waves to Alex, and Alex waves back.
 
 "Okay, I'll hang out here with my friends," he says, "but the door's over there on the other side. No I don't know why they put the door on the other side of the parking lot. You got your paperwork and the scavenger hunt stuff?"
 
@@ -121,7 +123,7 @@ The path ends at a mid-sized cylindrical building, three stories high, with a si
       #No, sorry, hold on. Yeah, they're in there.
         "Cool," he says, going off to join his friends, "I'll be here if you need me."
       #I checked it and they're not in there.
-        "Seriously? Shit. Can I see that," he says, holding out his arm.
+        "Seriously? Shit. Can I see that?" he asks, holding out his arm.
         
         You give him the pack, and he ruffles through it. "No," he says, "they're here, you're just blind." He zips it up and hands it back to you. "I'll be here with my friends if you need me, or you can call me." Then he waves and leaves to join his friends.
 

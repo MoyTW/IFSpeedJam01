@@ -1,0 +1,37 @@
+The contrast between the clean and cheerful brightness of the student center and the crumbling, weed-ridden sidewalks seems impossibly stark. At least it's nice out. You sigh as you circle around the student center.
+
+"So," you say, "where'd you all park?"
+
+Carlo chuckles. "Got a good spot, right in front of Monty Hall. So my stuff's gonna be easy to move. You?"
+
+"My brother drove me," you say. "He said he'd find somewhere close to the door." You look over at Mouse. "Do you need help moving your stuff?"
+
+She's long in responding. "If it's no trouble," she says.
+
+Carlo shakes his head. "No trouble at all. We got you, right Morgan?"
+
+*fake_choice
+  #Gremlin: "Pfft. Carlo's got you. I'll help, but if there's anything heavy? All Carlo."
+    Carlo raises an eyebrow at you. "Now, I'll help you, Mouse," he says, "but her? She's getting no help from me."
+    
+    You hear a giggle from Mouse.
+    
+    "Oh!" you cry out, "how terrible! My neighbor has forsaken me! I am doomed to carry all my own clothes! If I had brought a minifridge, I would surely die!"
+    
+    Carlo shakes his head as Mouse's giggles escalate into laughter. Huh.
+  #Considerate: "Absolutely. It's no trouble at all."
+    "Thanks," says Mouse, but way too quietly. This is going to try you endlessly. Speak up, Mouse! You can do it!
+  #Nonplussed: "Well, it's a little trouble. But we've offered, Mouse, and we wouldn't offer if we didn't want to do it. So don't worry about it."
+    She's long in responding again. You wonder what she's thinking. Is she on the save wavelength as you, but too shy to express it, or does she think the offer something different from what it is? Impossible to tell for somebody you barely know.
+    
+    "Thank you," she says, again far too quietly. "I'll try and keep that in mind."
+
+The dorm room looks like it's practically falling apart on the outside, with a crumbling brick facade beginning to grow a concerning amount of green. The door is a tarnished gray with a card reader in the handle. You insert the card and the door unlocks with a sharp clunk. The three of you step inside.
+
+TODO: It's pretty fancy. You're near the elevator.
+
+TODO: You unpack Mouse's stuff, then yours, then Carlo's. You discuss the scavenger hunt.
+
+TODO: You get dinner at the Student Center. They remark on how cold it is on the way over.
+
+TODO: You go to bed.

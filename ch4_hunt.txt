@@ -1,0 +1,101 @@
+*set inventory_has_backpack true
+*set inventory_has_book true
+*set inventory_has_paperwork true
+*set inventory_has_scavenger_hunt_sheet true
+*set inventory_has_scavenger_hunt_stickers true
+*set inventory_has_campus_map true
+
+*temp time_remaining 9
+
+*label next_destination
+
+*gosub decrement_time
+
+[b]You have ${time_remaining} hours left.[/b]
+
+Where to next?
+*choice
+  *disable_reuse #Miller Center
+    *goto miller_center
+  *disable_reuse #Smith Center
+    *goto smith_center
+  *disable_reuse #Baker Center
+    *goto baker_center
+  *disable_reuse #Admin Building
+    *goto admin_building
+  *disable_reuse #Lab A
+    *goto lab_a
+  *disable_reuse #Lab B
+    *goto lab_b
+  *disable_reuse #Lab D
+    *goto lab_d
+  *disable_reuse #Caesar Center
+    *goto caesar_center
+  *disable_reuse #Cato Center
+    *goto cato_center
+  *disable_reuse #Cicero Center
+    *goto cicero_center
+  *disable_reuse #Imperator Nero Cladius Divi Claudius filius Caesar Augustus Germanicus Center
+    *goto nero_center
+  *disable_reuse #Monty Hall
+    *goto monty_hall
+  *disable_reuse #Hall of the Americas
+    *goto hall_of_the_americas
+  *disable_reuse #Basket Hall
+    *goto basket_hall
+  *disable_reuse #Hall the Apostle
+    *goto hall_the_apostle
+
+*label decrement_time
+*comment TODO P0: time can expire!
+*set time_remaining - 1
+*return
+
+*comment ########################################
+*comment # Miller Center                        #
+*comment ########################################
+*comment TODO P0: words
+*label miller_center
+The three of you enter the Miller Center and scrutinize the building map, only to realize that the Miller Center doesn't seem to have a kitchen. So it can't be one of the targets. Dejected, you exit the building to plan your next move.
+*goto next_destination
+
+*comment ########################################
+*comment # Smith Center                         #
+*comment ########################################
+*comment TODO P0: words
+*comment TODO P0: gameplay
+*label smith_center
+*goto next_destination
+
+*comment ########################################
+*comment # Baker Center                         #
+*comment ########################################
+*label baker_center
+*comment TODO P0: words
+The three of you enter the Baker Center and scrutinize the map, building only to realize that the Baker Center doesn't seem to have a kitchen. So it can't be one of the targets. Dejected, you exit the building to plan your next move.
+*goto next_destination
+
+*comment ########################################
+*comment # Admin Building                       #
+*comment ########################################
+*label admin_building
+*comment ########################################
+*comment # Lab A                                #
+*comment ########################################
+*label lab_a
+*comment ########################################
+*comment # Lab B                                #
+*comment ########################################
+*label lab_b
+*comment ########################################
+*comment # Lab C                                #
+*comment ########################################
+*label lab_c
+*label caesar_center
+*label cato_center
+*label cicero_center
+*label nero_center
+*label monty_hall
+*label hall_of_the_americas
+*label basket_hall
+*label haul_the_apostle

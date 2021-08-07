@@ -1,0 +1,155 @@
+*set inventory_has_backpack true
+*set inventory_has_book true
+*set inventory_has_paperwork true
+*set inventory_has_scavenger_hunt_sheet true
+*set inventory_has_scavenger_hunt_stickers true
+*set inventory_has_campus_map true
+
+*temp described_tall_guy false
+
+The student center is a lot busier than it looks from the outside. Also, Alex was right - it's actually quite nice. In the center is a huge open atrium, with a pair of curved stairways running up the left and right sides of the wall. The windows let in plentiful light, giving it an airy glow, and the floor has some very impressive wood paneling. On the atrium floor, there are what look like dining tables currently being repurposed for signups or paperwork or something, all swarming with eager students and anxious parents. There must be at least a couple hundred in here!
+
+Up near the door is a folding table with a big orange sign next to it, stating "New Students, Start Here!" Of course, there's a line, maybe twenty long already, fifty if you count the parents. You sigh and take your place. At least the line seems to be moving pretty fast.
+
+Ugh, no, of course it stops as soon as you get in line. You lean over and peek at the table. It looks like there's some sort of irregularity - one of the staff at the table is on the phone and as you watch, another one shakes his head and gets off, walking with urgency to who-knows-where.
+
+Wonderful.
+
+*label in_line
+*choice
+  *disable_reuse #Pull out my phone and starting playing a game to kill time.
+    You pull out your phone and start playing Stardew Valley. You don't normally play video games, but your brother suggested you try it out, and it's kind of been eating your life since. Which is honestly probably not great? But managing a virtual farm is just so addictive. Yeah, you know, honestly you'd probably be better off taking this off your phone, wouldn't you?
+    
+    Gah. You grit your teeth. On a frustrated impulse, you lock the screen and shove your phone back into your pocket. Come on, line! We haven't even moved an inch!
+    *goto in_line
+  *disable_reuse #Ask the person in front of me to hold my spot and explore for a little while.
+    *set described_tall_guy true
+    "Hi," you say. The guy in front of you doesn't respond. Wow, but he's tall. Like, pro basketball player tall. What the hell, how did you not notice how tall he was when he got here? "Excuse me," you say, "you in the purple beanie and trenchcoat." And he has a scarf on, too. What even is this outfit?
+
+    "Uh, me?" he says, turning around and pocking his phone. He points to himself and raises his eyebrows.
+
+    "Can you hold my spot?" you ask.
+
+    "Sure." He points over to a door near the bottom of the right stairwell. "Bathroom's over there, I think?"
+
+    "Thanks a ton. I won't be long!"
+
+    "Sure, no problem," he says, fishing out his phone again.
+
+    You do a quick circuit around the first floor. It looks like the student center also doubles as a cafeteria, with the various food stations all around its edges. You walk up to the second floor, which actually has rooms, albeit with glass walls. It looks like these are mostly different types of social spaces or relaxation areas or just places to bring your food and eat. There's a third floor, but you go back to the first in case the line's started moving.
+
+    No. It hasn't. You sigh, go back to the line anyways. You catch Tall Guy's eye and he nods. "Hey," he says, letting you back in line.
+    *goto in_line
+  #Get the book from my pack and read while I wait.
+    *goto read_book_in_line
+*label read_book_in_line
+You pull The Witch from your backpack and flip forward to where you've folded down the page corner. The chapter you left on was discussing the historiography of the "wild hunt" concept, and how the "wild hunt" concept was in fact invented by a single author, Jacob Grimm. You read about his bad assumptions, and how in his quest to "unearth" a unified, pre-Christian belief system he instead simply synthesized one out of various disparate scraps and stories that went on to be both very influential and very, very wrong.
+
+"Excuse me," someone behind you says, almost a whisper. You start, then turn around to see a girl, maybe a little taller as you, in a bright yellow raincoat, which is definitely…well, it's gotta be some sort of fashion statement. Or anti-fashion statement. Like, really? What the heck. "Do you know what's going on with the line?" she asks.
+
+*choice
+  #Gremlin: "Sorry, that's my fault. I stole a ruby ring from a mummy and now I'm cursed to wait forever in line. You'd best run before it gets you too!"
+    She stares. "Uh." Then she breaks out into a chuckle, which soon escalates into a laugh. Well, of course, it was funny, but it wasn't that funny, was it? Maybe she has social anxiety. You wait for her to stop, which she eventually does. "Sorry," she says.
+
+    Yeah. Definitely something like that. "No worries," you say, sticking out your hand. "I'm Morgan. Nice to meet you."
+    *goto mouse_introduction
+  #Considerate: "No, sorry, I don't, but I'm sure that they'll have it sorted out soon. They're just as eager as we are to have this go smoothly I think."
+    *gosub mouse_apologizes_for_asking
+    *goto mouse_introduction
+  #Nonplussed: "I saw one of the staff at that table left a little while ago, but I don't know anything else."
+    *gosub mouse_apologizes_for_asking
+    *goto mouse_introduction
+*label mouse_apologizes_for_asking
+"Oh," she says, and seems to shrink inwards. It's hard to watch. Kid (okay she's probably the same age as you), be more confident! Straighten that back! Nobody's going to take you seriously hunched over like that, especially in a giant yellow raincoat! You hide from the world, the world'll hide from you!
+    
+"Okay," she practically whispers, "sorry to bother you."
+    
+"Not at all," you say. You smile and hold out your hand. "I'm Morgan. Nice to meet you."
+*return
+
+*label mouse_introduction
+She takes your hand and shakes it with a surprisingly normal shake. "I'm Mouse," she says, her voice still infuriatingly hesitant.
+
+You want to ask her if that's really her name, but you don't, obviously. Instead you nod. "Nice to meet you Mouse," you say. Did she come here with her parents? You cast a quick glance around and no, it seems she's alone. "So, what dorm were you assigned?"
+
+"I'm in Monty Hall."
+
+"What a coincidence," you say. "I'm in Monty Hall too, second floor."
+
+"Second floor? What room?"
+
+"225. And you?"
+
+"227." Well that's a surprise, you're neighbors, huh? She smiles. "It's nice to meet you."
+
+"Likewise," you say. "Guess we'll be seeing a lot of each other."
+
+Somebody taps you on the shoulder. You turn around
+*if (described_tall_guy = false)
+  to see oh holy shit this dude's tall, what the hell? Like, pro basketball player tall. What the hell, how did you not notice how tall he was when he got here? Was he really in front of you the whole time? And what is going on with his outfit, he has a trenchcoat and a beanie and scarf, isn't he going to burn to a crisp? He gestures towards the front of the line.
+  *goto line_moving_continue
+*else
+  to see Tall Guy gesturing to the table.
+  *goto line_moving_continue
+*label line_moving_continue
+
+"Line's moving," says Tall Guy.
+
+"Ah, thanks," you say, following him forward.
+
+"Also couldn't help but overhear," he says over his shoulder. "I'm Monty Hall, too. Second floor, room 226. So we're all neighbors, it looks like."
+
+*fake_choice
+  #That's one hell of a coincidence.
+    You laugh. "Funny how things work out, huh?"
+    
+    "Yeah, that's sure something," he replies.
+
+  #Lucky to meet one's neighbors so soon! Fortune is smiling on me.
+    You smile.
+  #Oh, shit, that can't be a coincidence. Is it fate, or is somebody messing with me?
+    Not that you'd be able to tell. Still that's ridiculously unlikely! Well. If he really is your roommate, may as well introduce yourself.
+"I'm Morgan," you say, "and as soon as we stop, I'll shake your hand."
+
+"It looks like they're flying through it," he says, "because we're basically at the end already." As he finishes talking, the student in front of him leaves the table, tailed by their parents, and Tall Guy leans over to address the staff. He's done in mere seconds, and you step up.
+
+It turns out all the table was for was to point you to the next table, based on your dorm and floor. You suppress the urge to ask what the hell was going on and just follow Tall Guy to one of the dining tables, where they sit you down and check all your paperwork. Mercifully, this is brief, and at the end of the process the staff give you a student ID card. They instruct you that you can swipe into buildings and make purchases in the student center using it, and that if you lose it you'll have to pay a $5 fine to get it replaced. Then they smile and let you go.
+
+*fake_choice
+  #Freedom! I'm outta here. Gotta get my stuff moved before I go on this hunt.
+    You grab your pack up off the ground and start off towards the exit, dodging hooded students and parents in heavy coats. Motion by the right of the door catches your eye, and you see Tall Guy waving at you. Well, it'd be kind of mean to pretend you didn't see him. You step out of the flow and put on a grin.
+  #I should wait for Mouse. She seems pretty anxious and could probably use a hand moving in.
+    You grab your pack and lean over to Mouse. When she looks back up at you, you smile. "Hey," you say, "I'll be hanging around near the stairs to the right of the door. We can go to the dorms together."
+    
+    Her eyes light up, but she doesn't say anything. Instead she nods.
+    
+    "Whenever you're ready," you say, stepping off. You dodge hooded students and parents in heavy coats as you head to the base of the stairs.
+    
+    "Hey," says someone. You turn to see Tall Guy.
+
+  #I never did get Tall Guy's name. Wonder if he's still around? Maybe I can ask him to help move my stuff.
+    You grab your pack up off the ground and stand up, scanning the crowd. Ah, there he is, loitering near the stairs. You reach him with only a little difficulty, having to dodge a steady stream of hooded students and parents in heavy coats.
+"Didn't catch your name," you say, holding out your hand.
+
+He takes it and shakes it firmly. "I'm Carlo. You local, Morgan?"
+
+You laugh. "You've heard me talk, do you need to ask?"
+
+"Ha! Nope. You aren't." He grins. "Well you've heard me talk. Am I local?"
+
+You pause. He talks like a newscaster, basically with a General American accent, which doesn't give a good location, but it could mean some other things.
+
+*fake_choice
+  #Gremlin: "I can't tell if you're local or not, but I bet your parents were either well-off or highly educated. Is that right?"
+    "Shit," he says, "my dad was a professor and my mom a journalist, so you got that right. Weren't well-off, but highly educated, yeah. How can you tell that from an accent?"
+    
+    "It's not just the accent." you say, "You seemed pretty practiced with the paperwork, too, from what I saw. So I guessed."
+    
+    "Well, you guessed good. I'm from San Francisco."
+  #Considerate: "I don't think it matters whether you, or anybody else, is local. That said, you talk like a newscaster, so I would guess no."
+    He laughs. "That, uh, no, you're right. It shouldn't matter. And I'm from San Francisco."
+  #Nonplussed: "No, but you've got a General American accent, so it's hard to narrow it down much more than that."
+    "Well, that's fair enough," he says. "I'm from San Francisco, so definitely not local either."
+He blinks. "Ah, there's Mouse." He waves his incredibly long arm around his head. You turn around to see Mouse awkwardly dodge around a short man sporting a blue waterproof shell. She scurries behind a taller lady with a windbreaker, vanishing into the crowd, only to suddenly reappear right in front of you. Well, she's certainly living up to her name. She waits, expectantly.
+
+"Hey Mouse," you say. "All right, since we're all here, let's go check out the dorms."

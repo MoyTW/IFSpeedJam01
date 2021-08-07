@@ -1,15 +1,25 @@
 *title IFSJNo1
 *author MoyTW
 
+*comment ch1_arrival
+*comment ch2_student_center
+*comment ch3_dorms
 *scene_list
-  ch1_arrival
-  ch2_student_center
+  ch4_hunt
 
 *create player_name ""
 
 *create inventory_has_backpack false
+*create inventory_has_book false
 *create inventory_has_paperwork false
 *create inventory_has_scavenger_hunt_sheet false
 *create inventory_has_scavenger_hunt_stickers false
+*create inventory_has_campus_map false
+
+*create building_confirmed_1 false
+*create building_confirmed_2 false
+*create building_confirmed_3 false
+*create building_confirmed_4 false
+*create building_confirmed_5 false
 
 *finish
