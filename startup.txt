@@ -5,6 +5,7 @@
 *comment ch2_student_center
 *comment ch3_dorms
 *scene_list
+  ch3_dorms
   ch4_hunt
 
 *create player_name ""

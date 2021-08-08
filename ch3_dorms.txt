@@ -18,7 +18,7 @@ Carlo shakes his head. "No trouble at all. We got you, right Morgan?"
     
     "Oh!" you cry out, "how terrible! My neighbor has forsaken me! I am doomed to carry all my own clothes! If I had brought a minifridge, I would surely die!"
     
-    Carlo shakes his head as Mouse's giggles escalate into laughter. Huh.
+    Carlo shakes his head as Mouse's giggles escalate into laughter. Well, at least it's easy to make your new neighbor laugh.
   #Considerate: "Absolutely. It's no trouble at all."
     "Thanks," says Mouse, but way too quietly. This is going to try you endlessly. Speak up, Mouse! You can do it!
   #Nonplussed: "Well, it's a little trouble. But we've offered, Mouse, and we wouldn't offer if we didn't want to do it. So don't worry about it."
@@ -26,12 +26,175 @@ Carlo shakes his head. "No trouble at all. We got you, right Morgan?"
     
     "Thank you," she says, again far too quietly. "I'll try and keep that in mind."
 
-The dorm room looks like it's practically falling apart on the outside, with a crumbling brick facade beginning to grow a concerning amount of green. The door is a tarnished gray with a card reader in the handle. You insert the card and the door unlocks with a sharp clunk. The three of you step inside.
+The dorm room looks like it's practically falling apart, with a crumbling brick facade covered in a concerning amount of greenery. At least the door seems sturdy. It's a heavy-looking thing in tarnished gray with a card reader in the handle. When you insert the card the door unlocks with a sharp clunk.
 
-TODO: It's pretty fancy. You're near the elevator.
+The three of you step inside.
 
-TODO: You unpack Mouse's stuff, then yours, then Carlo's. You discuss the scavenger hunt.
+*page_break
 
-TODO: You get dinner at the Student Center. They remark on how cold it is on the way over.
+Like the student center, it's more well-kept on the inside. The door enters right into a hallway floored with a nice neutral carpet, which looks freshly cleaned. The walls are decorated with some fancy-looking wainscoting that reaches to about hip height, and the tops of the walls are painted a very light gray. They catch the sunlight coming through the windows really well, complementing the lights, which are perfectly calibrated, neither harsh nor too bright. About halfway down the hallway there's a stairwell, and opposite it a notice board with various welcome pamphlets posted.
 
-TODO: You go to bed.
+*fake_choice
+    #Hey, a notice board. I wonder what's posted there?
+        "Wow," you say, wandering down the hallway to take a look at the board, "this place is pretty nice." The only thing posted is just a generic welcome to the new students and some dorm rules. Boring.
+
+        Carlo peeks through the intersections as he follows. "I think I saw a lobby back there," he says, "which looked like it came through double doors. That must be the main entrance. I bet the elevators are there."
+
+        "Right," you say, pulling out your phone. "Let's take it up and find our rooms then." As you walk, you text Alex to bring the car to the main doors.
+    #Where are the elevators? We'll need them to move our stuff up.
+        "If anybody sees the elevators," you say, wandering down the hallway and peering through the intersections, "shout it out. Oh. I just saw the lobby." You point down towards a lobby with double doors. "That must be the main entrance, I bet the elevators are there."
+        
+        "Right," Carlo says, marching ahead, "let's go take a look." You pull out your phone as you follow and text Alex to bring the car to the main doors.
+    #We should check out our rooms, so let's go upstairs.
+        You start heading for the stairs. Carlo peeks through the intersections as he follows. "I think I saw a lobby back there," he says, "which looked like it came through double doors. That must be the main entrance. I bet the elevators are there. Let's - hey Morgan, where are you going?"
+        
+        "Upstairs," you say. You look back at him.
+        
+        "Nah," he says, "let's take the elevators up, so we know how to get to our room from the elevators."
+        
+        He has a point. You nod and pull out your phone. "I'll follow you," you say, texting Alex to bring the car to the main doors.
+
+The staff conveniently left a bunch of dollies near the elevators, and when you step in the elevator you find it covered in blue padding. If they're going to go so far to be helpful and make a good impression, would it kill them to fix up the outsides a bit?
+
+The three of you wander down the second-floor hallway until you reach your rooms, all neighbors. Feels kinda like you should give a speech or something, but that'd be tacky. You stop in front of…
+
+*choice
+    #...your room.
+        You slide the card into the lock and the three of you step into your room.
+        *gosub room_description "Your" "You slide"
+        *goto moving_stuff
+    #...Mouse's room.
+        Mouse pauses, then slides her card into the lock and opens the door, wordlessly holding it open in greeting. You enter, followed by Carlo, and Mouse closes the door behind you as you take it in.
+
+        *gosub room_description "Mouse's" "Mouse slides"
+        *goto moving_stuff
+    #...Carlo's room.
+        Carlo slides his card into the lock and enters the room. "Come in," he says as he wanders about, inspecting his new domain. You and Mouse follow.
+
+        *gosub room_description "Carlo's" "Carlo slides"
+        *goto moving_stuff
+*label room_description
+*params owner owner_slides
+${owner} room is small, enough to comfortably fit a two beds and two desks, but while it looks like it was designed for two people all the dorms are singles. There's a window to let in light on the opposite wall, though it's frosted. On the right side of the room is a bed, pushed up against the wall, with a desk next to it. On the other side is a sliding door with a dresser next to it. ${owner_slides} it open to reveal a pretty wide closet, with ample space for hanging clothes. It's not huge, but not having to share will go a long way, and everything's really clean.
+
+Well, you know, it's clean [i]now[/i]. You've no illusions about what the majority of these rooms will look halfway through the year.
+
+"Okay, seen the rooms," you say.
+
+Carlo jumps in. "[i]One[/i] room."
+
+"Come on, the rest of the rooms are gonna be the same. Maybe flipped, but otherwise the same."
+
+"Okay," he says, "we can get started. So where'd you park, Mouse?"
+*return
+
+*label moving_stuff
+*page_break
+It turns out that Mouse has a lot of stuff.
+
+You stare into the back of her minivan. She has only a few clothes. No, it's not the clothes that are going to be problematic. The problematic items are a minifridge, which looks very heavy, an impossibly large black brick of a computer which looks like it might be heavier than the minifridge, and two ginormous computer monitors, each of which could probably qualify as a small television all on its own. Mouse, how did you even get all this stuff into this car? Are you actually a bodybuilder under that yellow raincoat? Did your parents help you? Why aren't your parents here to help you unpack? Surely they wouldn't miss the chance to say goodbye to their daughter, right? With how shy she seems, it's practically neglect not to send anybody with her! What's your deal, Mouse's parents?
+
+Morgan, you shouldn't speculate on her family circumstances. You're helping her move, so pick something.
+
+*choice
+    #The minifridge.
+        *gosub use_dolly "fridge"
+        *goto carlo_stuff
+    #The impossibly large black brick of a computer.
+        *gosub use_dolly "computer"
+        *goto carlo_stuff
+    #The two monitors.
+        *gosub use_dolly "monitors"
+        *goto carlo_stuff
+*label use_dolly
+*params itemname
+"I'll get the ${itemname}," you say. Then you stare at it, wondering how exactly you're going to get it moved. Oh, right, they left dollies back at the elevator. You go grab one and position it right under the back, and then muscle the ${itemname} onto the dolly before wheeling it into the building and onto the elevators.
+
+Thanks, staff! That's super helpful! Carlo follows your example and very soon you've got all of Mouse's stuff sorted. You make sure everybody returns the dollies afterwards.
+*return
+*label carlo_stuff
+
+Carlo himself is easier, since he brought mostly clothes, a smattering of books, and a few pieces of disassembled IKEA furniture. You've the lightest load of all, just clothes, your diary and school supplies, and various necessities, so unpacking is fast and easy.
+
+By the time you're all done, it's nearly dinner time, though the days are long and the sun still hangs in the sky. The three of you decide to head back to the student center to eat. You pass through the fancy double doors out onto the decrepit concrete paths, chatting idly as you head towards the Student Center. Well, you and Carlo chat, mostly.
+
+"Morgan," says Mouse.
+
+You blink, then look over. "Yeah?"
+
+"Are you cold?"
+
+I could ask you the opposite, Mouse! You're bundled up like it's snowing when the sun's been shining bright all day and it can't be less than, oh, 75 out. Are you from Hawaii or something? And you, Carlo, you're not as bad as her but still, aren't you warm under that trenchcoat and scarf? I know San Francisco is supposed to have mild weather but this is just silly!
+
+Of course, you don't say that. What you say is:
+*fake_choice
+    #Gremlin: "Nope! It's because when I was very young I saw my parents shivering, so I decided to train myself to never be cold. I promised never to wear a jacket, and from that day on I became invulnerable to cold."
+        Mouse stares. "Seriously?"
+        
+        "Kinda," you laugh, "I did do that. I stopped doing that three weeks later. I get cold like everybody else, it's just that this doesn't feel cold to me right now."
+        
+        "Well," interjects Carlo, "if this doesn't feel cold to you I'd hate to see what does."
+    #Considerate: "No, I'm fine. The temperature doesn't bother me at all. Thank you for asking, though."
+        Mouse stares. "Are you sure?" she says.
+        
+        Seriously, it's not that cold! You smile. "I've been out in much colder."
+        
+        "Eh," interjects Carlo, "I'd say that it's pretty cold out."
+    #Nonplussed: "No, it doesn't feel that cold for me. How are the two of you doing? I've noticed that you both seem dressed pretty heavy."
+        Mouse stares. "But it is pretty cold out, isn't it?"
+        
+        Seriously? It's not! Your mouth opens, but you close it. You look over to Carlo. Back me up here, you beg with your eyes. He laughs and says, "Well I'd say that it's pretty cold out, but if she says it doesn't bother her, then it doesn't."
+
+You too, Carlo!? "I guess I'm just tough," you say, as Mouse gazes at you with what you think is admiration. You shake your head and ask Mouse what kind of television shows she likes to watch.
+
+She tells you that she doesn't own a TV and doesn't really elaborate further. Carlo, however, is more than happy to start talking about the classical movies he's watched lately, like Brokeback Mountain and No Country for Old Men. You've heard of maybe a quarter of the movies he mentions, but you're happy he's got a passion for them. You aren't much a movie person yourself.
+
+The dinner is fine. The cafeteria has a pretty okay selection, with a salad bar and three or so main dish selections. You get a burger with fries and it's actually pretty tasty, which is good, because you're going to be eating a lot of this over the next few years. Carlo asks you about your plans for tomorrow, and you mention the scavenger hunt.
+
+"I haven't heard about any scavenger hunt," he says, spearing his salad. "I mean, I didn't go searching for it or anything, but if it's something they sent to everybody I must have missed it." He lifts his fork to his mouth and starts eating the salad like he likes it. You try not to stare.
+
+*fake_choice
+    #There is no way he actually likes salad. He looks like he likes salad, but nobody likes salad. Literally everybody I've met has hated salad and only eaten it when they're failing to lose weight.
+    #Just because I've never met anybody who likes salad doesn't mean that they don't exist. He's from San Francisco, right? They have a lot of vegans, right? Maybe he's a vegan? No, there's cheese in the salad. A vegetarian?
+    #Never thought I'd see the day when I met somebody who genuinely likes salad. What a strange bunch of roommates we three make.
+
+"Uh," says Carlo, grinning awkwardly, "do I have something in my teeth?"
+
+"No, sorry." You laugh. "I zoned out for a moment. What were we - oh, yes, the scavenger hunt. I don't know what to tell you. I have the sheet in my pack back in my room." You twist over to address Mouse, who's sitting beside you with a plate full of bread and pasta. "Did you get a scavenger hunt package, Mouse?"
+
+She pauses. "I don't think so," she says, "but I might have missed it."
+
+You shrug. "I'll show you guys when we get back, then."
+
+Mouse leans forward. "Can I join you?"
+
+Yes! Mouse! Opting in to social activity unprompted! I'm so proud of you! "Of course," you say. "Carlo too, if he wants."
+
+Carlo laughs. "I don't have anything better to do, so sure."
+
+The three of you finish up your dinner and walk back. The sun still hasn't set by the time you arrive. You all convene in your room, where you show the others your scavenger hunt package. You all spend a few minutes looking over the rules and clues.
+
+"Yeah," says Carlo, "this looks fun. I'm in, but tomorrow. I'm a little tired from all that moving, so I'm gonna go back to my room. How's breakfast at 9:30 sound? Meet at the Student Center, same table?"
+
+You look at Mouse. She shurgs.
+
+*fake_choice
+    #"That sounds great. I'll see you then."
+        "Right. Cya guys tomorrow."
+    #"9:30's a little early for me. I tend to be an evening person. How's 10:30 sound?"
+        He nods. "10:30 works for me. Mouse?" He waits for her nod. "Okay, then, cya guys tomorrow, 10:30."
+    #"I'm more of a morning person. Would you mind 8:30? It'd also give us more time to do the scavenger hunt."
+        "Whoa now," he says, pitching back. "That's a little early for me."
+
+        You laugh. "No problem, we can do 9:30."
+
+        "9:30 it is," he says, grinning. "Cya guys tomorrow."
+He stands up and the two of you trade fist bumps. When he turns to Mouse, she pauses, unsure of how to proceed, before hesitantly tapping her fist against his. "Hey Mouse," he says, "it was nice to meet you."
+
+"Yeah," she says. He nods and walks out the door. Mouse turns to you. "Thanks," she says. "For helping me out."
+
+"No problem," you say. You put on your best smile. "I'll see you tomorrow."
+
+She nods, and leaves.
+
+You spend the rest of the night organizing your clothes, making the bed, and putting up some posters. Sleep comes easy.
