@@ -1,0 +1,88 @@
+*label clue_sheet
+[b]Instructions:[/b] Each target has a clue for its building, and a clue for its precise location. When you think you have found the target, place one of your stickers there. If there are already stickers there, do not disturb them. [b]You are encouraged to make heavy use of Google![/b]
+
+[b]Note:[/b] Neither the Student Center nor gym are involved with the scavenger hunt! Especially don't go messing with any of the gym equipment!
+
+*gosub clues_sheet
+*return
+
+*label clues_only
+[b]Target 1[/b]
+
+Building clue: Free clue - it's in the Admin Building.
+*if building_confirmed_1
+  *line_break
+  [i]SOLVED: Admin Building, says right there.[/i]
+
+Target clue:
+*line_break
+• The target is freely accessible from the lobby - don't take this as license to go snooping around peoples' desks!
+*line_break
+• September 19, 2021
+*comment The target is the oversized communal calendar hanging in the lobby - specifically, the September 19 date.
+
+[b]Target 2[/b]
+
+Building clue: Of the three northernmost buildings, which has the least to do with bread?
+*if building_confirmed_2
+  *line_break
+  [b]Solved: Smith Center[/b]
+
+Target clue:
+*line_break
+• The target is in the kitchen.
+*line_break
+• Chg gur fgvpxre ba gur obneq oruvaq gur "QB ABG ERZBIR" naabhaprzrag pbapreavat gur pbssrr cbyvpl.
+*comment Put the sticker on the board behind the "DO NOT REMOVE" announcement concerning the coffee policy.
+
+[b]Target 3[/b]
+
+Building clue: Which dorm has the strongest association with Saul?
+*if building_confirmed_3
+  *line_break
+  [b]Solved: Hall The Apostle[/b]
+
+Target clue:
+*line_break
+• On the second floor, in the corridor starting with room 210, there are a series of paintings.
+*line_break
+• Put the sticker behind the painting most related to Saul's dramatic escape.
+*comment The painting in question is a fruit basket (Paul escaped from Damascus in a basket).
+
+[b]Target 4[/b]
+
+Building clue:
+*line_break
+• The target is in one of the three labs.
+*line_break
+• Adams, Douglas
+*line_break
+• Bowie, David
+*line_break
+• Darwin, Charles
+*if building_confirmed_4
+  *line_break
+  [b]Solved: Lab D[/b]
+
+Target clue:
+*line_break
+• In the lobby, there is a display case that is closely related to leaves.
+*line_break
+• Underneath that display case should be an unlocked cabinet.
+*line_break
+• Place the sticker on the back of the door to the cabinet.
+*comment There's a display of leafcutter ants, labeled Atta Cephalotes.
+
+[b]Target 5[/b]
+
+Building clue:
+*line_break
+• The target is in one of the centers named after notable Romans.
+*line_break
+• 106
+*line_break
+• 43
+*if building_confirmed_5
+  *line_break
+  [b]Solved: Cicero Center[/b]
+*return

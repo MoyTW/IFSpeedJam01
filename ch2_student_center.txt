@@ -115,6 +115,12 @@ Somebody taps you on the shoulder. You turn around
 
 It turns out all the table was for was to point you to the next table, based on your dorm and floor. You suppress the urge to ask what the hell was going on and just follow Tall Guy to one of the dining tables, where they sit you down and check all your paperwork. Mercifully, this is brief, and at the end of the process the staff give you a student ID card. They instruct you that you can swipe into buildings and make purchases in the student center using it, and that if you lose it you'll have to pay a $5 fine to get it replaced. Then they smile and let you go.
 
+*set inventory_has_paperwork false
+*set inventory_has_student_id true
+[i][b][ Items lost: paperwork ][/b][/i]
+*line_break
+[i][b][ Items gained: student ID ][/b][/i]
+
 *fake_choice
   #Freedom! I'm outta here. Gotta get my stuff moved before I go on this hunt.
     You grab your pack up off the ground and start off towards the exit, dodging hooded students and parents in heavy coats. Motion by the right of the door catches your eye, and you see Tall Guy waving at you. Well, it'd be kind of mean to pretend you didn't see him. You step out of the flow and put on a grin.

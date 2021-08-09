@@ -1,9 +1,94 @@
 *set inventory_has_backpack true
 *set inventory_has_book true
-*set inventory_has_paperwork true
+*set inventory_has_paperwork false
 *set inventory_has_scavenger_hunt_sheet true
 *set inventory_has_scavenger_hunt_stickers true
 *set inventory_has_campus_map true
+*set inventory_has_student_id true
+
+TODO: Time skip to breakfast, mid-conversation. You all look over the clues. You plan the time - you'll come back for lunch at 1pm, have dinner at 6pm, and finish at 8pm, which gives you a total of 8 hours.
+
+TODO: If you took a late breakfast you lose an hour and only get 7 hours lol.
+
+TODO: You start the hunt!
+
+*page_break
+*label work_on_a_clue
+*gosub_scene clue_sheet clues_only
+*choice
+  *selectable_if (building_confirmed_1 = false) #Discuss the building clue for target 1.
+    *bug "This should never be selectable!"
+    *goto work_on_a_clue
+  #Pick a building to search for target 1.
+    *goto pick_building_1
+  *selectable_if (building_confirmed_2 = false) #Discuss the building clue for target 2.
+    *goto discuss_building_2
+  #Pick a building to search for target 2.
+    *goto pick_building_2
+  *selectable_if (building_confirmed_3 = false) #Discuss the building clue for target 3.
+    *goto discuss_building_3
+  #Pick a building to search for target 3.
+    *goto pick_building_3
+  *selectable_if (building_confirmed_4 = false) #Discuss the building clue for target 4.
+    *goto discuss_building_4
+  #Pick a building to search for target 4.
+    *goto pick_building_4
+  *selectable_if (building_confirmed_5 = false) #Discuss the building clue for target 5.
+    *goto discuss_building_5
+  #Pick a building to search for target 5.
+    *goto pick_building_5
+
+*comment ########################################
+*comment # Target 1                 #
+*comment ########################################
+*label pick_building_1
+TODO: YOU GO TO THE ADMIN BUILDING
+*goto work_on_a_clue
+
+*comment ########################################
+*comment # Target 2                 #
+*comment ########################################
+*label discuss_building_2
+
+*goto work_on_a_clue
+
+*label pick_building_2
+TODO: SEARCH
+*goto work_on_a_clue
+
+*comment ########################################
+*comment # Target 3                 #
+*comment ########################################
+*label discuss_building_3
+TODO: DISCUSS
+*goto work_on_a_clue
+
+*label pick_building_3
+TODO: SEARCH
+*goto work_on_a_clue
+
+*comment ########################################
+*comment # Target 4                 #
+*comment ########################################
+*label discuss_building_4
+TODO: DISCUSS
+*goto work_on_a_clue
+
+*label pick_building_4
+TODO: SEARCH
+*goto work_on_a_clue
+
+*comment ########################################
+*comment # Target 5                 #
+*comment ########################################
+*label discuss_building_5
+TODO: DISCUSS
+*goto work_on_a_clue
+
+*label pick_building_5
+TODO: SEARCH
+*goto work_on_a_clue
+
 
 *temp time_remaining 9
 
@@ -15,87 +100,38 @@
 
 Where to next?
 *choice
-  *disable_reuse #Miller Center
+  *disable_reuse #Go to the Miller Center
     *goto miller_center
-  *disable_reuse #Smith Center
+  *disable_reuse #Go to the Smith Center
     *goto smith_center
-  *disable_reuse #Baker Center
+  *disable_reuse #Go to the Baker Center
     *goto baker_center
-  *disable_reuse #Admin Building
+  *disable_reuse #Go to the Admin Building
     *goto admin_building
-  *disable_reuse #Lab A
+  *disable_reuse #Go to Lab A
     *goto lab_a
-  *disable_reuse #Lab B
+  *disable_reuse #Go to Lab B
     *goto lab_b
-  *disable_reuse #Lab D
+  *disable_reuse #Go to Lab D
     *goto lab_d
-  *disable_reuse #Caesar Center
+  *disable_reuse #Go to the Caesar Center
     *goto caesar_center
-  *disable_reuse #Cato Center
+  *disable_reuse #Go to the Cato Center
     *goto cato_center
-  *disable_reuse #Cicero Center
+  *disable_reuse #Go to the Cicero Center
     *goto cicero_center
-  *disable_reuse #Imperator Nero Cladius Divi Claudius filius Caesar Augustus Germanicus Center
+  *disable_reuse #Go to the Imperator Nero Cladius Divi Claudius filius Caesar Augustus Germanicus Center
     *goto nero_center
-  *disable_reuse #Monty Hall
+  *disable_reuse #Go to Monty Hall
     *goto monty_hall
-  *disable_reuse #Hall of the Americas
+  *disable_reuse #Go to Hall of the Americas
     *goto hall_of_the_americas
-  *disable_reuse #Basket Hall
+  *disable_reuse #Go to Basket Hall
     *goto basket_hall
-  *disable_reuse #Hall the Apostle
+  *disable_reuse #Go to Hall the Apostle
     *goto hall_the_apostle
 
 *label decrement_time
 *comment TODO P0: time can expire!
 *set time_remaining - 1
 *return
-
-*comment ########################################
-*comment # Miller Center                        #
-*comment ########################################
-*comment TODO P0: words
-*label miller_center
-The three of you enter the Miller Center and scrutinize the building map, only to realize that the Miller Center doesn't seem to have a kitchen. So it can't be one of the targets. Dejected, you exit the building to plan your next move.
-*goto next_destination
-
-*comment ########################################
-*comment # Smith Center                         #
-*comment ########################################
-*comment TODO P0: words
-*comment TODO P0: gameplay
-*label smith_center
-*goto next_destination
-
-*comment ########################################
-*comment # Baker Center                         #
-*comment ########################################
-*label baker_center
-*comment TODO P0: words
-The three of you enter the Baker Center and scrutinize the map, building only to realize that the Baker Center doesn't seem to have a kitchen. So it can't be one of the targets. Dejected, you exit the building to plan your next move.
-*goto next_destination
-
-*comment ########################################
-*comment # Admin Building                       #
-*comment ########################################
-*label admin_building
-*comment ########################################
-*comment # Lab A                                #
-*comment ########################################
-*label lab_a
-*comment ########################################
-*comment # Lab B                                #
-*comment ########################################
-*label lab_b
-*comment ########################################
-*comment # Lab C                                #
-*comment ########################################
-*label lab_c
-*label caesar_center
-*label cato_center
-*label cicero_center
-*label nero_center
-*label monty_hall
-*label hall_of_the_americas
-*label basket_hall
-*label haul_the_apostle
