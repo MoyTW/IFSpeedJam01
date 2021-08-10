@@ -1,0 +1,149 @@
+*label work_on_target_1
+*temp target_1_items_checked 0
+*temp target_1_checked_calendar false
+*temp target_1_checked_paintings false
+*temp target_1_checked_magazines false
+
+You look at the clues sheet. "Well, it just straight-up says it's in the admin building. So, let's get moving."
+
+The three of you traipse over the admin building, a gigantic two-story building with overgrown walls, and enter the main lobby.
+
+*gosub target_1_room_description
+
+You all sit around one of the empty coffee tables to discuss the clue.
+
+"So, it says it's in the lobby," you say, "but the only other clue is September 19, 2021. And today's August 15, 2021."
+
+Mouse blinks. "I know it," she says.
+
+"Really?" asks Carlo. "Well, don't tell me yet." He looks about for a few seconds, leafs through a couple of magazine covers, then nods. "I have a guess," he says.
+*if puzzle_share_immediately
+  "I bet we're expected to flip the calendar to September and put it on the 19th."
+  
+  Mouse nods. "Yes," she says.
+  
+  *choice
+    #"Okay, let's do that."
+      *gosub target_1_place_sticker_calendar
+      *return
+    #"I'm not so sure."
+      Mouse blinks, and Carlo tilts his head. "Really?" he asks. "Okay. What've you got in mind?"
+      *goto discuss_target_1
+*else
+  "Morgan?"
+  *goto discuss_target_1
+
+*label discuss_target_1
+*choice
+  #Take stock of the room again.
+    *gosub target_1_room_description
+    *goto discuss_target_1
+  *selectable_if (target_1_items_checked > 0) #Mentally review everything you've checked.
+    • Today is August 15, 2021.
+
+    *if target_1_checked_calendar
+      [b]Calendar:[/b]
+      *line_break
+      • September 19th is International Talk Like a Pirate Day, and marked as such on the calendar.
+    
+    *if target_1_checked_paintings
+      [b]paintings:[/b]
+      *line_break
+      • There's a painting of a tractor and wheat.
+      *line_break
+      • There's a painting of some lakes.
+      *line_break
+      • There's a painting of the Mayflower.
+      *line_break
+      • There's a painting of Gettysburg.
+      *line_break
+      • All the paintings date to 2018.
+    
+    *if target_1_checked_magazines
+      [b]Magazines:[/b]
+      *line_break
+      • As far as you can tell, there's nothing suspicious about the magazines.
+    *goto discuss_target_1
+  *disable_reuse #"I want to check the calendar. Maybe there's a further hint on the September 19, 2021 square."
+    *set target_1_items_checked + 1
+    *set target_1_checked_calendar true
+    You go over to the calendar and flip forward a couple of months. Apparently, September 19 is International Talk Like a Pirate Day, which you haven't really heard of. You quickly look it up on your phone and apparently that's a real thing.
+    
+    Well, okay then.
+    *goto discuss_target_1
+  *disable_reuse #"I want to check the paintings. Maybe one of them displays something related to September 19, 2021."
+    *set target_1_items_checked + 1
+    *set target_1_checked_paintings true
+    The three of you make a tour of the paintings. There's a painting of a tractor and wheat, a painting of some very nice-looking lakes, a painting of a big 1600s sailing ship identified by the plaque as the Mayflower, a painting of a Civil War soldiers at, apparently, Gettysburg…nothing that screams September 19th, and definitely nothing that screams 2021.
+    
+    Well, maybe the tractor one could be set in 2021, or the lakes one, but they're dated 2016 and 2016, respectively. Actually, all the paintings are 2016. Did they get a new building in 2016 or something? Not that that matters.
+    *goto discuss_target_1
+  *disable_reuse #"I want to check the magazines. Maybe one of the magazines has a September 19, 2021 issue date."
+    *set target_1_items_checked + 1
+    *set target_1_checked_magazines true
+    "Right," says Carlo, "but that's impossible. It's in the future."
+
+    "No," says Mouse.
+
+    You look at mouse. "Did you mean, no, it's not possible, or no, it's not impossible?"
+
+    "It's a scavenger hunt," she says. You strain to hear her. "They might make a fake magazine."
+
+    Carlo opens his mouth like he wants to say something, shuts it, and then chuckles. "Well, you have a point. Okay," he says, pawing through the magazines again, "let's check them all?"
+    
+    It turns out that, no, none of the magazines have a future release date, or show any signs of either fabrication or time travel. It was a good idea though, right?
+    *goto discuss_target_1
+  #"I know where I want to put the stamp."
+    *if puzzle_share_immediately and puzzle_discuss_final_answer
+      "Remember," says Carlo, "both Mouse and I think you should put in on the September 19, 2021 square of the calendar. So, what's your call?"
+      *goto target_1_place_sticker
+    *elseif puzzle_discuss_final_answer
+      "Okay," says Carlo, "here's my guess. You put it on the September 19, 2021 square of the wall calendar. Mouse?"
+      
+      Mouse nods in agreement.
+      
+      "Okay, so, what you've you got Morgan?"
+      *goto target_1_place_sticker
+    *else
+      Carlo and Mouse both look at you expectantly. "Okay," says Carlo, "what've you got?"
+      *goto target_1_place_sticker
+
+*label target_1_place_sticker
+*choice
+  #"The calendar."
+    *gosub target_1_place_sticker_calendar
+    *return
+  #"The painting of a tractor and wheat."
+    *gosub target_1_place_sticker_painting "tractor and wheat"
+    *return
+  #"The painting of some lakes."
+    *gosub target_1_place_sticker_painting "some lakes"
+    *return
+  #"The painting of the Mayflower."
+    *gosub target_1_place_sticker_painting "the Mayflower"
+    *return
+  #"The painting of Gettysburg."
+    *gosub target_1_place_sticker_painting "Gettysburg"
+    *return
+
+*label target_1_place_sticker_calendar
+*set sticker_used_1 true
+*set sticker_placed_correctly_1 true
+You go over to the calendar and flip it to September, peeling off a sticker and placing it on the square for the 19th.
+
+TODO: Write the reaction!
+
+*return
+
+*label target_1_place_sticker_painting
+*set sticker_used_1 true
+*set sticker_placed_correctly_1 false
+*params subject
+You go over to the painting of ${subject} and peel off a sticker, placing it neatly on the side of the plaque so it won't cover up the title or year.
+
+Okay, now on to the next one.
+*return
+
+*label target_1_room_description
+The lobby feels a little like a doctor's office waiting room, with neat white walls and a plethora of waiting chairs, about a quarter of which are filled with parents and, more rarely, students. In the center is a large glass coffee table with magazines scattered all about, and a high desk with a receptionist currently attending to an anxious pair of middle-aged men. Around the walls they've put little tables with flower pots, and on the walls are various paintings of idealized midwestern farmers. Near the door is hung a gigantic wall calendar with school events marked out in neat sharpie.
+*return

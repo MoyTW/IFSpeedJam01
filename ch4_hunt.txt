@@ -10,51 +10,44 @@ TODO: Time skip to breakfast, mid-conversation. You all look over the clues. You
 
 TODO: If you took a late breakfast you lose an hour and only get 7 hours lol.
 
+TODO: You talk about how you want to do the hunt.
+
+"So, how do you want to do this, Morgan?"
+
+TODO: this
+*fake_choice
+  #"If you have an idea, say it right then and there. I'm not particularly bothered about puzzle spoilers."
+    *set puzzle_share_immediately true
+    *set puzzle_discuss_final_answer true
+  #"I want to give them a try, so don't spoil me if you think you know, but we should all discuss before I actually place a sticker."
+    *set puzzle_discuss_final_answer true
+  #"I want to try and solve them all on my own. Don't tell me anything until I've placed the sticker, even if you think I'm making a mistake."
+
 TODO: You start the hunt!
 
 *page_break
 *label work_on_a_clue
 *gosub_scene clue_sheet clues_only
 *choice
-  *selectable_if (building_confirmed_1 = false) #Discuss the building clue for target 1.
-    *bug "This should never be selectable!"
+  #Actually, I want to change how we're handling the discussions.
+    TODO: text & code for changing discussion handling
     *goto work_on_a_clue
-  #Pick a building to search for target 1.
-    *goto pick_building_1
-  *selectable_if (building_confirmed_2 = false) #Discuss the building clue for target 2.
-    *goto discuss_building_2
-  #Pick a building to search for target 2.
-    *goto pick_building_2
-  *selectable_if (building_confirmed_3 = false) #Discuss the building clue for target 3.
-    *goto discuss_building_3
-  #Pick a building to search for target 3.
-    *goto pick_building_3
-  *selectable_if (building_confirmed_4 = false) #Discuss the building clue for target 4.
-    *goto discuss_building_4
-  #Pick a building to search for target 4.
-    *goto pick_building_4
-  *selectable_if (building_confirmed_5 = false) #Discuss the building clue for target 5.
-    *goto discuss_building_5
-  #Pick a building to search for target 5.
-    *goto pick_building_5
-
-*comment ########################################
-*comment # Target 1                 #
-*comment ########################################
-*label pick_building_1
-TODO: YOU GO TO THE ADMIN BUILDING
-*goto work_on_a_clue
-
-*comment ########################################
-*comment # Target 2                 #
-*comment ########################################
-*label discuss_building_2
-
-*goto work_on_a_clue
-
-*label pick_building_2
-TODO: SEARCH
-*goto work_on_a_clue
+  *selectable_if (sticker_used_1 = false) #Work on the first target.
+    *gosub_scene target_1 work_on_target_1
+    *page_break
+    *goto work_on_a_clue
+  *selectable_if (sticker_used_2 = false) #Work on the second target.
+    *gosub_scene target_2 work_on_target_2
+    *page_break
+    *goto work_on_a_clue
+  *selectable_if (sticker_used_3 = false) #Work on the third target.
+    *gosub_scene target_3 work_on_target_3
+    *page_break
+    *goto work_on_a_clue
+  *selectable_if (sticker_used_4 = false) #Work on the fourth target.
+    *goto work_on_target_4
+  *selectable_if (sticker_used_5 = false) #Work on the fifth target.
+    *goto work_on_target_5
 
 *comment ########################################
 *comment # Target 3                 #

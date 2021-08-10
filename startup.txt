@@ -17,15 +17,20 @@
 *create inventory_has_campus_map false
 *create inventory_has_student_id false
 
-*create building_confirmed_1 true
+*create hours_remaining 9
+
+*create puzzle_share_immediately false
+*create puzzle_discuss_final_answer false
+
 *create sticker_used_1 false
-*create building_confirmed_2 false
+*create sticker_placed_correctly_1 false
 *create sticker_used_2 false
-*create building_confirmed_3 false
+*create sticker_placed_correctly_2 false
 *create sticker_used_3 false
-*create building_confirmed_4 false
+*create sticker_placed_correctly_3 false
 *create sticker_used_4 false
-*create building_confirmed_5 false
+*create sticker_placed_correctly_4 false
 *create sticker_used_5 false
+*create sticker_placed_correctly_5 false
 
 *finish

@@ -1,0 +1,315 @@
+*comment ########################################
+*comment # WORK ON TARGET 2                     #
+*comment ########################################
+*label work_on_target_2
+*gosub sub_discuss_building_2
+*gosub sub_searching_smith_center
+*return
+
+*comment ########################################
+*comment # DISCUSSING THE BUILDING              #
+*comment ########################################
+*label sub_discuss_building_2
+*temp target_center ""
+*temp searched_wrong_center false
+You look at the paper. "Let's look at the clues for number two."
+
+Carlo nods. "Can you read it for the class?"
+
+"Of the three northernmost buildings, which has the least to do with bread?" You grin. "Well, we've got a one in three chance."
+
+Mouse unfolds her map and gives it a cursory glance. @{puzzle_share_immediately "Smith Center," she says. | "I know," she says. }
+
+Carlo nods. "Yeah," he says, "this one's easy."
+
+*label destination_choice
+*choice
+  *disable_reuse *selectable_if (puzzle_share_immediately = false) #"Let's go to the the Miller Center."
+    *set target_center "Miller Center"
+    *goto propose_wrong_center
+  #"@{puzzle_share_immediately Okay, let's | Let's } go to the the Smith Center."
+    *goto propose_smith_center
+  *disable_reuse *selectable_if (puzzle_share_immediately = false) #"Let's go to the Baker Center."
+    *set target_center "Baker Center"
+    *goto propose_wrong_center
+
+*label propose_wrong_center
+*if (searched_wrong_center = false)
+  *goto propose_wrong_center_first_time
+*else
+  *goto propose_wrong_center_second_time
+
+*comment ########## Propose Wrong First Time ##########
+*label propose_wrong_center_first_time
+*if puzzle_discuss_final_answer
+  "The ${target_center}?" Carlo frowns. "You sure? I think it's the Smith Center." He looks over to Mouse.
+
+  Mouse nods. "Yeah." Her voice is quiet, as usual. "The miller mills the grain, and the baker bakes. So it must be the Smith center."
+  *choice
+    #"Good point, we'll try the Smith Center first."
+      *goto propose_smith_center
+    #"Let's check out the ${target_center} anyways. I have a feeling."
+      *goto search_wrong_center_first_time
+*else
+  Carlo opens his mouth, then shrugs. "All right, you got it," he says. "${target_center} it is." You look over to Mouse, who mimics Carlo's shrug.
+
+  No spoilers, indeed. Well, you're committed. You can't back down now! If you're wrong, you're wrong!
+  *goto search_wrong_center_first_time
+
+*label search_wrong_center_first_time
+*set hours_remaining - 0.5
+*set searched_wrong_center true
+The three of you walk over to the ${target_center}, a two-story rectangular building of crumbling concrete. You swipe yourselves in and set to searching for the kitchen, but it soon becomes apparent that there isn't one. There's a break roof with a refrigerator and a coffee machine, but there's not even a microwave or hot plate.
+
+Unless they clue sheet has an extremely generous definition of kitchen, you're in the wrong building. You check your phone. You've lost about half an hour.
+*goto destination_choice
+
+*comment ########## Propose Wrong Second Time ##########
+*label propose_wrong_center_second_time
+*if puzzle_discuss_final_answer
+  "Hey Morgan," says Carlo, "I really think it's the Smith Center. We can check out the ${target_center} too if you want, but we don't have unlimited time."
+  *choice
+    #"All right, we'll try the Smith Center first."
+      *goto propose_smith_center
+    #"Look, last time I was wrong, but I'm pretty sure it's the ${target_center}. If I'm wrong, well, the most we'll have lost is half an hour, right?"
+      *goto search_wrong_center_second_time
+*else
+  Carlo and Mouse share a disapproving look.
+  
+  Look, I said I want to try figuring this out on my own, that kind of look is as good as words! I'll just pretend I didn't see that. Hopefully this one is right.
+  *goto search_wrong_center_second_time
+
+*label search_wrong_center_second_time
+*set hours_remaining - 0.5
+*set searched_wrong_center true
+The ${target_center} did not have a kitchen.
+
+You're down another half-hour, but at least now you know which building it is!
+*goto destination_choice
+
+*comment ########## Propose Smith Center ##########
+*label propose_smith_center
+*return
+
+*comment ########################################
+*comment # SEARCHING SMITH CENTER               #
+*comment ########################################
+*label sub_searching_smith_center
+The Smith Center is much like the others, a crumbling concrete edifice studded with grimy windows, but it's significantly taller at four stories. The three of you pass through the main entrance to find yourself in a large, well-lit lobby. Half of the lobby which seems sectioned off into a dining area, and the other half has benches between giant plant pots.
+
+"Ah," says Carlo, pointing towards the dining area, "there's the kitchen." Sure enough, there's a door with a window in it with a sign above it, proclaiming it the kitchen. The three of you pile in.
+
+*page_break
+
+The kitchen is a rectangular room, wide enough to comfortably fit four people side by side and quite long. Near the door they've put all the lightweight stuff, toasters, coffee machines, a couple of microwaves, and a large notice board up on the wall. Further back there's a big refrigerator with an oversized freezer, a couple of sinks, a four-burner oven stove under a fume hood, and plenty of counter space.
+
+Plenty is an understatement, actually. There's a huge amount of counter space, and a towel rack stocked with clean towels, and a really excessive amount of spatulas in this drawer, and holy shit, there's like three different brands of food processor in this cabinet, what? But why different brands? And this next one has a pair of stand mixers. Is this for students, or do the keep a cook on hanging around? It can't be, can it, everything's so clean! Or maybe the students who use it bring their own stuff and just leave it here? But if that were true wouldn't it be full of random junk? And that stove doesn't look like a commercial model, either. But everything's so nice!
+
+*fake_choice
+  #Holy shit, this kitchen is so nice, do they let us use this? I would use this. I would use the hell out of this. Do you need to reserve it, or can you just walk in?
+    "Damm," you say, "this is way nicer than the kitchen at home. Do they let the students use this? I would use this. Absolutely, one hundred percent, I would use this."
+
+    Carlo studies the postings on the notice board. "It looks like they do let the students use it, but they ask that you clean up after yourself."
+
+    "Nice, I'm going to use the hell out of this," you say, ruffling through the drawers and pulling inspecting their impressive array of knives. "Guys, I might seem too excited, but honestly? I think I'm not excited enough!"
+
+    Mouse clears her throat, and you pause. "The dorms have a kitchen."
+
+    You grin at her. "You'll have to show me when we're done, then."
+
+    "Yeah," laughs Carlos, "after we do the hunt."
+
+    "Right. The hunt. Uh." You set the clue sheet on one of the counters. "Okay, so, this one's some kind of code."
+  #Who cleans this? That's a lot of cleaning. Is there a dishwasher, or - oh, there's a dishwasher under the sink. Do they have the janitors clean it out or is that only for utensils and such?
+    "Who do you think cleans this?" you ask, checking the contents of various cabinets. There's big pots, small pots, pans of all different sizes, this cabinet is apparently woks, whoa, didn't expect that.
+    
+    "Students, I think," says Carlo, studying the notice board. "No, there's a janitor, too. It asks you to clean up after yourself but it also says that the janitor will run the washing machine every night."
+    
+    "So students can use this?" you ask. Hey, they've got sous vide bags in here. They must have a vacuum sealer you haven't found. "Do you need to sign up? Or can you just walk in?"
+    
+    "Not sure," he says. "Not to rain on your parade, Morgan, but we should probably take a look at the clues."
+    
+    "Right. The hunt. Uh." You close the cabinet you were inspecting and set the clue sheet on one of the counters. "But it's real cool that they let students use it."
+    
+    Carlos gazes at you with a slight expression of amusement, and you sigh. "Fine," you say. "Clearly neither of you are very excited by this kitchen. Anyways, this one's some kind of code."
+  #This is super impressive, and I'll have to check it out later, but I should really get back to the scavenger hunt.
+    Focus, Morgan! The kitchen will exist tomorrow! The world still turns! Today, you've a scavenger hunt to do.
+    
+    Right!
+    
+    You pull out the clue sheet and lay it out next to one of the toasters. "So," you say, "this one's some sort of code."
+
+You stare at the letters, contemplating how best to solve it.
+
+[b]Chg gur fgvpxre ba gur obneq oruvaq gur "QB ABG ERZBIR" naabhaprzrag pbapreavat gur pbssrr cbyvpl.[/b]
+
+Mouse pulls out her phone and fiddles with it. Carlos bends over and looks at it for a few seconds, then says "Hey, Morgan, do you have spare paper in your pack?"
+
+"Sure," you say, pulling out your welcome packet. You find a page that's clean on one side and rip it out. "Give it back," you say, proferring a pencil alongside it.
+
+"Right. It's a cipher of some sort,"  he says, copying the clue. "I bet I can get it pretty quick."
+
+Mouse puts down her phone. "I got it," she says.
+
+Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over, you've already solved it? Mouse, you're a little scary! But I'll get it, too.
+
+*label solving_cipher
+*choice
+  #"I got it!"
+    "Hold on," says Carlos, scribbling furiously, "give me another few minutes. I'll get it."
+
+    *if ((puzzle_share_immediately = false) and (puzzle_discuss_final_answer = false))
+      *goto where_place_sticker_no_discussion
+    *else
+      *gosub i_can_wait_snippet
+      *choice
+        #"Yeah, that matches what I got, too."
+          *set sticker_used_2 true
+          *set sticker_placed_correctly_2 true
+          You peel off a sticker, lift up the coffee announcement, and slap it onto the board. "Okay, target number two, done and dusted! Let's go."
+          
+          TODO: write in nausea
+          *return
+        #"I got something else."
+          *goto where_place_sticker_discussion
+  *disable_reuse #"Can you give me a hint, Mouse?"
+    Mouse nods. "It's a Caesar cipher. The first word is 'put'."
+    
+    "Thanks." You go back to staring at the cipher.
+    
+    [b]Chg gur fgvpxre ba gur obneq oruvaq gur "QB ABG ERZBIR" naabhaprzrag pbapreavat gur pbssrr cbyvpl.[/b]
+    *goto solving_cipher
+  #"Okay, Mouse, what's the answer?"
+    *set sticker_used_2 true
+    *set sticker_placed_correctly_2 true
+    "Hold on," says Carlos, scribbling furiously, "don't tell her Mouse, I want to try solving this. Give me another few minutes. I'll get it. Or if you tell her, whisper."
+    
+    *gosub i_can_wait_snippet
+    
+    "All right," you say "on the notice board, behind the coffee policy announcement. Got it." The announcement is easy to find, and you sticker the board behind it in short order. "Okay, number two dusted. I'll miss this kitchen, but let's get moving."
+    *return
+
+*label where_place_sticker_no_discussion
+"I'll just stick the sticker on now and we can talk about it after then."
+      
+"Sounds good."
+
+Where do you put the sticker?
+
+*temp sticker_placement
+*fake_choice
+  #On the left side of the leftmost microwave.
+    *set sticker_used_2 true
+    *set sticker_placed_correctly_2 false
+    *set sticker_placement "the left side of the leftmost microwave"
+    You peel off a sticker and walk over to the leftmost microwave, slapping it on the left side. "Okay," you say, "what did you guys get?"
+  #Behind the towels on the towel rack.
+    *set sticker_used_2 true
+    *set sticker_placed_correctly_2 false
+    *set sticker_placement "behind the towels on the towel rack"
+    You peel off a sticker in your right hand, walk over to the towel rack, and hold the towels out of the way with your left while you sticker the wall behind them. "Okay," you say, letting them fall back into place, "what did you guys get?"
+  #Behind the coffee policy announcement.
+    *set sticker_used_2 true
+    *set sticker_placed_correctly_2 true
+    You go up to the announcement board, sticker in hand, and hold up the coffee announcement, pressing it into the board behind it. "Okay," you say, dropping it back down, "what did you guys get?"
+    
+    TODO: write in nausea
+  #On top of the fume hood.
+    *set sticker_used_2 true
+    *set sticker_placed_correctly_2 false
+    *set sticker_placement "on top of the fume hood"
+    You look around, and see a short kitchen ladder propped up against the wall. You set it up and climb up to the fume hood, where you sticker the top. "Okay," you say, replacing the ladder, "what did you guys get?"
+
+"Almost done," says Carlos.
+
+*gosub i_can_wait_snippet
+
+*if (sticker_placed_correctly_2 = false)
+  "Well," you say, "shit, I guess I missed that one. I got ${sticker_placement}."
+  
+  *gosub mouse_is_trying_snippet
+  "Okay," you say, grinning, "let's move on."
+  *return
+*else
+  Nice! Got it! "Okay," you say, "that was what I got too. Let's move on."
+  *return
+
+*label where_place_sticker_discussion
+Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" he asks. "What'd you get?"
+
+*choice
+  #"The left side of the leftmost microwave."
+    *gosub mouse_is_trying_snippet
+    *choice
+      #"All right, I'll just slap this on the microwave and we can move on."
+        *set sticker_used_2 true
+        *set sticker_placed_correctly_2 false
+        "Well, okay," says Carlo. You glance over at Mouse, who nods. Thanks, Mouse!
+
+        You peel a sticker off and slap it on the microwave. "Okay," you say, "let's get moving, that's number two sorted."
+        *return
+      #"All right, I trust you guys. We'll put it behind the coffee flier."
+        *goto i_trust_you_guys_snippet
+  #"Behind the towels on the towel rack."
+    *gosub mouse_is_trying_snippet
+    *choice
+      #"All right, I'll just slap this behind the towel rack and we can move on."
+        *set sticker_used_2 true
+        *set sticker_placed_correctly_2 false
+        "Your choice," he says as you hold the towels out of the way. You glance over at Mouse, who nods. Thanks, Mouse!
+
+        You sticker the wall behind the towel rack, then put the sheet back into your pack. "Okay," you say, "that's clue set number two done."
+        *return
+      #"All right, I trust you guys. We'll put it behind the coffee flier."
+        *goto i_trust_you_guys_snippet
+  #"On top of the fume hood."
+    *gosub mouse_is_trying_snippet
+    
+    "Well," says Carlos, "I can get it up there, if you want me to."
+    *choice
+      #"Please do, Carlos."
+        *set sticker_used_2 true
+        *set sticker_placed_correctly_2 false
+        "No problem," he says, taking the sticker sheet. He takes a sticker and just straight-up slaps it on the top of the fume hood. Gah! He's so tall! How is it even possible to be so tall?
+        
+        "All right," he says, returning the sticker sheet, "where to next?"
+        *return
+      #"All right, I trust you guys. We'll put it behind the coffee flier."
+        *goto i_trust_you_guys_snippet
+  #"Well, I actually didn't finish, I gave up, but I didn't get anything related to coffee."
+    *set sticker_used_2 true
+    *set sticker_placed_correctly_2 true
+    "Ah," says Carlos, "that's fair. You want to just slap it on the board and move on then?"
+    
+    "Sure," you say, scanning the board for the announcement he mentioned. Ah, there we go. "CONCERNING THE USAGE OF THE COFFEE MACHINE." You hold the sheet up and sticker the board behind it. "All right," you say, releasing the sheet, "that's number two done."
+    *return
+
+*label i_trust_you_guys_snippet
+*set sticker_used_2 true
+*set sticker_placed_correctly_2 true
+Carlos chuckles. "Is it really a matter of trust?"
+
+"Yes," says Mouse. The two of you throw glances at her. She dodges your eyes, and doesn't elaborate.
+
+"Well, all right," says Carlos. "Morgan, you got it yet?"
+
+"Yeah," you say, releasing the flier, "on the board, behind the coffee announcement, as you said. That's number two done."
+*return
+
+*label mouse_is_trying_snippet
+Carlos frowns. "Wait. How?"
+  
+"Well," you say, but Mouse grabs your sleeve.
+
+"It doesn't matter," she says. "Let's go to the next one."
+
+Are you…are you trying to save me embarrassment, Mouse? Aww! That's so sweet! I appreciate the thought, I really do, but it'll take a lot more than being wrong on a random scavenger hunt puzzle to bother me!
+*return
+
+*label i_can_wait_snippet
+"I can wait," you say, sauntering back down to the stove. "Gives me more time to explore."
+    
+"No, no," he says, "I got it. It's actually pretty simple. It says to put it on the notice board, behind the coffee policy announcement."
+
+You look over to Mouse. "Yeah." She pauses. "It's ROT13," she explains, then stays silent.
+*return

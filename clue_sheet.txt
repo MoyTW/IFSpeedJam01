@@ -10,9 +10,6 @@
 [b]Target 1[/b]
 
 Building clue: Free clue - it's in the Admin Building.
-*if building_confirmed_1
-  *line_break
-  [i]SOLVED: Admin Building, says right there.[/i]
 
 Target clue:
 *line_break
@@ -24,9 +21,6 @@ Target clue:
 [b]Target 2[/b]
 
 Building clue: Of the three northernmost buildings, which has the least to do with bread?
-*if building_confirmed_2
-  *line_break
-  [b]Solved: Smith Center[/b]
 
 Target clue:
 *line_break
@@ -38,13 +32,10 @@ Target clue:
 [b]Target 3[/b]
 
 Building clue: Which dorm has the strongest association with Saul?
-*if building_confirmed_3
-  *line_break
-  [b]Solved: Hall The Apostle[/b]
 
 Target clue:
 *line_break
-• On the second floor, in the corridor starting with room 210, there are a series of paintings.
+• On the second floor, in the corridor starting with room 310, there are a series of paintings.
 *line_break
 • Put the sticker behind the painting most related to Saul's dramatic escape.
 *comment The painting in question is a fruit basket (Paul escaped from Damascus in a basket).
@@ -60,9 +51,6 @@ Building clue:
 • Bowie, David
 *line_break
 • Darwin, Charles
-*if building_confirmed_4
-  *line_break
-  [b]Solved: Lab D[/b]
 
 Target clue:
 *line_break
@@ -82,7 +70,5 @@ Building clue:
 • 106
 *line_break
 • 43
-*if building_confirmed_5
-  *line_break
-  [b]Solved: Cicero Center[/b]
+
 *return
