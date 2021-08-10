@@ -1,25 +1,38 @@
 *comment ########################################
-*comment # WORK ON TARGET 3                     #
+*comment # WORK ON TARGET 4                     #
 *comment ########################################
-*label work_on_target_3
-*gosub sub_discuss_building_3
+*label work_on_target_4
+*gosub sub_discuss_building_4
 *gosub sub_searching_hall_the_apostle
 *return
 
 *comment ########################################
 *comment # DISCUSSING THE BUILDING              #
 *comment ########################################
-*label sub_discuss_building_3
+*label sub_discuss_building_4
 *temp target_hall ""
 *temp times_proposed_wrong 0
 
-You read the clue out loud. "Which dorm has the strongest association with Saul?"
+"This one's one of the three labs," you say. You check your map. "The labs are labeled A, B, and C, and the clue is just three names. Adams, Douglas, Bowie, David, and Darwin, Charles."
 
-"Saul?" asks Carlos. "Like, Bob Odenkirk?"
+"Wait," says Carlos, "so the clues are Douglas Adams, David Bowie, and Charles Darwin?"
 
-"Sorry, who?"
+"Yeah, but they're written last name first on the sheet. I think this one's a logic puzzle, except that I don't know who Douglas Adams is."
 
-"The actor who pays Saul Goodman in Breaking Bad and Better Call Saul." Carlos grins. "Good shows, by the way. You ever seen them?"
+"He's a British comedy writer. He wrote The Hitchiker's Guide to the Galaxy, the Dirk Gently series, and also wrote some Doctor Who."
+
+TODO P0 this
+*fake_choice
+  #"Gremlin: Carlos, is Dirk Gently some sort of old-timey English euphemism?"
+    He opens his mouth, then closes it, then opens it, then closes it. "Uh." He frowns. "I don't…I don't think so, but don't quote me on that."
+
+Mouse leans over to you. "Can I see the sheet?" she whispers. You hand it to her, she looks at it for a few moments, then gives it back to you.
+
+You put on an encouraging smile. "Do you have a guess?" you ask. She nods. How do you do it, Mouse? Tell me your secrets! Educate me, wise but silent master! "I'm not sure though," she says.
+
+You stare at the sheet in silence as Carlos pulls out his phone. Is that…tapping you hear? It's quiet, but that's definitely some sort of tapping. You glance over to see Mouse's foot bouncing up and down, her eyes distant.
+
+*comment ############## TODO P0 REST
 
 *choice
   #Gremlin: "Isn't Breaking Bad really old? Do you only watch old shows and movies, Carlos, or have you watched anything made in the last ten years?"

@@ -45,31 +45,11 @@ TODO: You start the hunt!
     *page_break
     *goto work_on_a_clue
   *selectable_if (sticker_used_4 = false) #Work on the fourth target.
-    *goto work_on_target_4
+    *gosub_scene target_4 work_on_target_4
+    *page_break
+    *goto work_on_a_clue
   *selectable_if (sticker_used_5 = false) #Work on the fifth target.
     *goto work_on_target_5
-
-*comment ########################################
-*comment # Target 3                 #
-*comment ########################################
-*label discuss_building_3
-TODO: DISCUSS
-*goto work_on_a_clue
-
-*label pick_building_3
-TODO: SEARCH
-*goto work_on_a_clue
-
-*comment ########################################
-*comment # Target 4                 #
-*comment ########################################
-*label discuss_building_4
-TODO: DISCUSS
-*goto work_on_a_clue
-
-*label pick_building_4
-TODO: SEARCH
-*goto work_on_a_clue
 
 *comment ########################################
 *comment # Target 5                 #
