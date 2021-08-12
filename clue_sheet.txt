@@ -13,7 +13,7 @@ Building clue: Free clue - it's in the Admin Building.
 
 Target clue:
 *line_break
-• The target is freely accessible from the lobby - don't take this as license to go snooping around peoples' desks!
+• The target is freely accessible from the lobby. Do not take this as license to go snooping around peoples' desks!
 *line_break
 • September 19, 2021
 *comment The target is the oversized communal calendar hanging in the lobby - specifically, the September 19 date.
@@ -70,5 +70,22 @@ Building clue:
 • 106
 *line_break
 • 43
+
+Target clue:
+*line_break
+• On the second floor, in the hall between the Pine Room and the Aspen Room, there's a series of storage lockers.
+*line_break
+• Locker 19 has a three-digit combination lock on it. The password is the last digit of the three following math problems, in order.
+*line_break
+• Put the sticker on the inside of door of Locker 19.
+*line_break
+1) A truck and a sedan leave from their origin at the same time, heading on the same road. The sedan travels at exactly 64 miles per hour. The truck travels at exactly 58 miles per hour. After 1:30, how many miles apart are they?
+*comment 96 - 87 = 9
+*line_break
+2) If the shadow cast by a tree is 4 meters away from the tree, and the height of the tree is 3 meters, what is the distance from the tip of the shadow to the tip of the tree, in meters?
+*comment sqrt(4*4 + 3*3) = sqrt(25) = 5
+*line_break
+3) Alex takes out a loan from Mary for $2500 at a 8% flat interest rate, then pays back $1442. How much more does he owe Mary?
+*comment x = 2500 + (2500 * .08) - 1442 = 1258
 
 *return

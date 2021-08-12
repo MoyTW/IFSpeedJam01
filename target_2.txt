@@ -179,7 +179,7 @@ Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over,
     
     [b]Chg gur fgvpxre ba gur obneq oruvaq gur "QB ABG ERZBIR" naabhaprzrag pbapreavat gur pbssrr cbyvpl.[/b]
     *goto solving_cipher
-  #"Okay, Mouse, what's the answer?"
+  #"All right, Mouse, what's the answer?"
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 true
     "Hold on," says Carlos, scribbling furiously, "don't tell her Mouse, I want to try solving this. Give me another few minutes. I'll get it. Or if you tell her, whisper."

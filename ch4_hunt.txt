@@ -49,60 +49,9 @@ TODO: You start the hunt!
     *page_break
     *goto work_on_a_clue
   *selectable_if (sticker_used_5 = false) #Work on the fifth target.
-    *goto work_on_target_5
-
-*comment ########################################
-*comment # Target 5                 #
-*comment ########################################
-*label discuss_building_5
-TODO: DISCUSS
-*goto work_on_a_clue
-
-*label pick_building_5
-TODO: SEARCH
-*goto work_on_a_clue
-
-
-*temp time_remaining 9
-
-*label next_destination
-
-*gosub decrement_time
-
-[b]You have ${time_remaining} hours left.[/b]
-
-Where to next?
-*choice
-  *disable_reuse #Go to the Miller Center
-    *goto miller_center
-  *disable_reuse #Go to the Smith Center
-    *goto smith_center
-  *disable_reuse #Go to the Baker Center
-    *goto baker_center
-  *disable_reuse #Go to the Admin Building
-    *goto admin_building
-  *disable_reuse #Go to Lab A
-    *goto lab_a
-  *disable_reuse #Go to Lab B
-    *goto lab_b
-  *disable_reuse #Go to Lab D
-    *goto lab_d
-  *disable_reuse #Go to the Caesar Center
-    *goto caesar_center
-  *disable_reuse #Go to the Cato Center
-    *goto cato_center
-  *disable_reuse #Go to the Cicero Center
-    *goto cicero_center
-  *disable_reuse #Go to the Imperator Nero Cladius Divi Claudius filius Caesar Augustus Germanicus Center
-    *goto nero_center
-  *disable_reuse #Go to Monty Hall
-    *goto monty_hall
-  *disable_reuse #Go to Hall of the Americas
-    *goto hall_of_the_americas
-  *disable_reuse #Go to Basket Hall
-    *goto basket_hall
-  *disable_reuse #Go to Hall the Apostle
-    *goto hall_the_apostle
+    *gosub_scene target_5 work_on_target_5
+    *page_break
+    *goto work_on_a_clue
 
 *label decrement_time
 *comment TODO P0: time can expire!

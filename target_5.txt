@@ -1,0 +1,254 @@
+*comment ########################################
+*comment # WORK ON TARGET 5                     #
+*comment ########################################
+*label work_on_target_5
+*gosub sub_discuss_building_5
+*gosub sub_locker_cicero
+*return
+
+*comment ########################################
+*comment # DISCUSSING THE BUILDING              #
+*comment ########################################
+*label sub_discuss_building_5
+*temp target_center ""
+*temp times_proposed_wrong 0
+"This one might be trouble," you say, looking at the sheet. "It's in one of the centers named after famous Romans, and the only other clues are two numbers, 106 and 43."
+
+Carlos and Mouse unfurl their maps, and Mouse immediately starts typing something into her phone. Carlos raises his eyebrow. "Okay," he says, "so it's the ones in the southwestern part of the campus, right?"
+
+"Right," you say, "but not the gym, since it's a center."
+
+Mouse looks up. "I have it," she says.
+*if puzzle_share_immediately
+  "It's the Cicero Center."
+
+…how, though. This is farcical beyond all human belief, that you would get this so fast, from a list of buildings and two numbers. You peek over at Carlos, who catches your eye and shrugs.
+
+*label building_choice
+*choice
+  *if (puzzle_share_immediately) #"Mouse, how did you get the Cicero Center?"
+    "I googled the names and 106 and 43," says Mouse. It's a little hard to hear her. "Cicero lived from 106 BC to 43 BC."
+    
+    "Well," says Carlos, "I'm willing to go with that."
+    
+    "I agree," you say. "Let's go to the Cicero Center."
+    *return
+  *disable_reuse *selectable_if (puzzle_share_immediately = false) #"I think it's the Caesar Center."
+    *set target_center "Caesar"
+    *goto propose_wrong
+  *disable_reuse *selectable_if (puzzle_share_immediately = false) #"I think it's the Cato Center."
+    *set target_center "Cato"
+    *goto propose_wrong
+  *if (puzzle_share_immediately) #"All right, let's check the Cicero center.
+    "Sounds good," says Carlos, "Cicero Center it is."
+    *return
+  *if (puzzle_share_immediately = false) #"I think it's the Cicero Center."
+    "You're faster than me too," says Carlos, chuckling. "Well, sure, I don't have any better ideas."
+    
+    You turn to Mouse. "Mouse?" you ask. She nods. So…are you agreeing or merely assenting, Mouse?
+    *if puzzle_discuss_final_answer
+      You raise your eyebrows at her, but she doesn't seem to sense your question. You put on a smile. "Which building did you get?" you ask.
+      
+      "The Cicero Center," she says, dodging your eyes uncomfortably. Sorry, Mouse, I didn't mean to make you uneasy. You look down at the map.
+      
+      "All right," you say, "then we're off to the Cicero Center."
+      *return
+    *else
+      Well, we did agree not to discuss it, so we may as well be off. "All right," you say, "Cicero Center it is."
+      *return
+  *disable_reuse *selectable_if (puzzle_share_immediately = false) #"I think it's the Nero Center."
+    *set target_center "Nero"
+    *goto propose_wrong
+
+*label propose_wrong
+*set times_proposed_wrong + 1
+*if times_proposed_wrong = 1
+  *goto propose_wrong_first_time
+*elseif times_proposed_wrong = 2
+  *goto propose_wrong_second_time
+*elseif times_proposed_wrong = 3
+  *goto propose_wrong_third_time
+
+*comment ########## Propose Wrong First Time ##########
+*label propose_wrong_first_time
+*if puzzle_discuss_final_answer
+  "I haven't any idea, at least not now," says Carlos. "We may as well try the ${target_center} Center."
+  
+  You look over at Mouse. "Mouse, what building do you think is right?"
+  
+  She pauses. "Cicero Center," she whispers.
+  
+  Huh. You put on a smile. "How did you decide on the Cicero Center?"
+  
+  "He lives from 106 BC to 43 BC," she replies. "I Googled it."
+  *choice
+    #"All right, I'm convinced. Let's go to Cicero Center."
+      *return
+    #"That's pretty compelling, but I still think it's ${target_center} Center, and we can always try Cicero Center after."
+      *goto search_wrong_first_time
+*else
+  *goto search_wrong_first_time
+
+*label search_wrong_first_time
+*set hours_remaining - 0.5
+Carlos shrugs. "Sure,"  he says, "why not." Mouse stays silent.
+
+You lead the group to the ${target_center} Center, a crumbling edifice that's only one story tall, which means that it can't possibly be the right building. "Hold on," you say, "this one's one story, right? So we can eliminate all the other ones that are one story." You quickly step back onto the crumbling path and follow it towards the dorms until you can see all of the buildings in the western area.
+
+All the rest of the buildings are two stories. Well, it was a good idea.
+*goto building_choice
+
+*comment ########## Propose Wrong Second Time ##########
+*label propose_wrong_second_time
+*if puzzle_discuss_final_answer
+  "You sure?" asks Carlos. "Mouse's suggestion seems pretty good to me."
+  
+  *choice
+    #"All right, we can check out the Cicero Center first."
+      *return
+    #"I wouldn't suggest it if I weren't sure."
+      *goto search_wrong_second_time
+*else
+  *goto search_wrong_second_time
+
+*label search_wrong_second_time
+*set hours_remaining - 0.5
+The ${target_center} is three stories tall and, as expected, looks like the walls would collapse at so much as a slight breeze. Luckily the inside is much better maintained. You find a set of stairs to take you up to the second floor, then hunt around for a Pine Room and Aspen Room, to no avail.
+
+Well, there's only two options left now.
+*goto building_choice
+
+*comment ########## Propose Wrong Third Time ##########
+*label propose_wrong_third_time
+*if puzzle_discuss_final_answer
+  "Morgan," says Carlos, "let's do the Cicero Center this time. Okay?"
+  
+  You look over at Mouse. "All right," you agree.
+  
+  *return
+*else
+  "The ${target_center}, eh?" asks Carlos. "Once more into the breach."
+  
+  "Have a little faith in me, Carlos!"
+  
+  "I'm not saying I'd do any better," he says, "but I am saying Mouse would do better."
+  
+  "She probably would," you agree, "but we all decided to let me make my mistakes."
+  
+  It's just unfortunate that the ${target_center} is another one of them, seeing as all its second floor rooms are named after football players like Barry Bonds.
+  *goto building_choice
+
+*comment ########################################
+*comment # LOCKER CICERO COMBINATION            #
+*comment ########################################
+*label sub_locker_cicero
+*temp hints_string ""
+*page_break
+The Cicero Center is two stories exactly. Its walls are replete with unidentifiable dark stains that, even from a pretty long distance, look uncomfortably sticky. It's profoundly unnerving. Thankfully, the inside is clean and even a little cosy, which is a weird thing to say about a school building.
+
+You go up to the second floor and pass by a Birch Room, an Oak Room, and a Sandalwood Room before you find the Aspen Room. You locate locker 19, and sure enough, there's a 3-number combination lock.
+
+"This one's a bunch of math problems," you say, "so I can't read it out." You peek into the Aspen Room, which has a whiteboard on one wall in front of an array of desks.
+
+*fake_choice
+  #Grelmin: "Hey, they've got a whiteboard, with pens! Saves me having to track down some paper."
+    You lead the others into the Aspen Room and drop the clue sheet on the desk before grabbing a white erase pen out of a holder.
+  #Considerate: "You don't think they'd mind if we used this, do you? We'll clean it off after."
+    Carlos nods. "I think we'll be fine, just so long as we clean up."
+    
+    "Good," you say, entering the room and dropping the clue sheet on a desk near the front. You grab a white erase pen out of the holder.
+  #Nonplussed: "All right, let's use this room for a bit."
+    You go into the Aspen Room, followed by Carlos. "They won't mind?" he asks.
+    
+    "We'll clean up," you assert, dropping the clue sheet on a desk near the front. You grab a white erase marker out of the holder.
+"All right," you say, testing it, "good line. You want one?" You grab another couple and offer them to Carlos, who shakes his head, and Mouse, who holds up her phone instead. "Suit yourself."
+
+"I don't need it," says Carlos. "I already solved them."
+
+"Shit, you did that all in your head, Carlos? That's impressive."
+
+"Well," he says, "we covered all this in class, and I did all my homework. So, yeah, I did."
+
+You look over the problems.
+
+*gosub problems_snippet
+
+*choice
+  *if ((puzzle_share_immediately) or (puzzle_discuss_final_answer)) #"Well, saves me the trouble. What did you get, Carlos?"
+    "958," he says.
+    
+    You look over at Mouse. She's bent over the paper, typing away on her phone. "All right," you say, capping the marker and wiping away your test line, "let's give it a try."
+    *goto enter_958
+  #"All right, I think I got it."
+    "Okay," asks Carlos, "what did you get?"
+
+    *goto think_i_got_it
+  *if ((puzzle_share_immediately = false) and (puzzle_discuss_final_answer = false)) #"I give up. Carlos, Mouse can you help me with this one?"
+    "Sure," says Carlos. "I got 958."
+    
+    "Mouse?" you ask.
+    
+    She stops staring out the window and pulls her phone out of her pocket. "958," she confirms.
+    
+    "All right," you say, wiping the board clean, "958 it is then."
+    *goto enter_958
+
+*label think_i_got_it
+*temp answer 0
+*input_number answer 0 999
+*if answer = 958
+  "Yeah," he says, "that matches me."
+  
+  You turn to Mouse, who's sat herself down in a chair, staring out of a window. "Mouse, did you get 958?" you ask.
+  
+  She looks over at you and nods.
+  
+  Right! 958 it is then.
+  *goto enter_958
+*else
+  "No," he says, "that's not it."
+  
+  Drat. You look at the problem sheet again.
+  
+  *gosub problems_snippet
+  *goto answer_choice
+
+*label answer_choice
+*choice
+  #"All right, I've got it this time."
+    "Okay, what've you got?" asks Carlos.
+
+    *goto think_i_got_it
+  #"I yield. What's the answer, Carlos?"
+    "958," he says.
+    
+    *gosub confirm_with_mouse_snippet
+    
+    *goto enter_958
+
+*label confirm_with_mouse_snippet
+You turn to Mouse, who's sat herself down in a chair, staring out of a window. "Mouse, did you get 958?" you ask.
+  
+She looks over at you and nods.
+
+Right! 958 it is then.
+*return
+
+*label problems_snippet
+• Locker 19 has a three-digit combination lock on it. The password is the last digit of the three following math problems, in order.
+*line_break
+1) A truck and a sedan leave from their origin at the same time, heading on the same road. The sedan travels at exactly 64 miles per hour. The truck travels at exactly 58 miles per hour. After 1:30, how many miles apart are they?
+*comment 96 - 87 = 9
+*line_break
+2) If the shadow cast by a tree is 4 meters away from the tree, and the height of the tree is 3 meters, what is the distance from the tip of the shadow to the tip of the tree, in meters?
+*comment sqrt(4*4 + 3*3) = sqrt(25) = 5
+*line_break
+3) Alex takes out a loan from Mary for $2500 at a 8% flat interest rate, then pays back $1442. How much more does he owe Mary?
+*comment x = 2500 + (2500 * .08) - 1442 = 1258
+*return
+
+*label enter_958
+*set sticker_used_5 true
+*set sticker_placed_correctly_5 true
+TODO P0 WRITE THIS
+*return

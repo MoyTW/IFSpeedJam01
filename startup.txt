@@ -1,6 +1,8 @@
 *title IFSJNo1
 *author MoyTW
 
+*comment P0 replace all Morgan's "okay" with "all right"
+
 *comment ch1_arrival
 *comment ch2_student_center
 *comment ch3_dorms

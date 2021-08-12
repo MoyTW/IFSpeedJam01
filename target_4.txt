@@ -3,15 +3,17 @@
 *comment ########################################
 *label work_on_target_4
 *gosub sub_discuss_building_4
-*gosub sub_searching_hall_the_apostle
+*gosub sub_lobby_lab_d
 *return
 
 *comment ########################################
 *comment # DISCUSSING THE BUILDING              #
 *comment ########################################
 *label sub_discuss_building_4
-*temp target_hall ""
+*temp at_lab_complex false
+*temp target_lab ""
 *temp times_proposed_wrong 0
+*temp discussed_already false
 
 "This one's one of the three labs," you say. You check your map. "The labs are labeled A, B, and C, and the clue is just three names. Adams, Douglas, Bowie, David, and Darwin, Charles."
 
@@ -21,354 +23,256 @@
 
 "He's a British comedy writer. He wrote The Hitchiker's Guide to the Galaxy, the Dirk Gently series, and also wrote some Doctor Who."
 
-TODO P0 this
 *fake_choice
-  #"Gremlin: Carlos, is Dirk Gently some sort of old-timey English euphemism?"
-    He opens his mouth, then closes it, then opens it, then closes it. "Uh." He frowns. "I don't…I don't think so, but don't quote me on that."
+  #Gremlin: "Is Dirk Gently some sort of old-timey English euphemism for fucking?"
+    Carlos opens his mouth, then closes it, then opens it, then closes it. "Uhm." He frowns. "I don't…I don't think so, but don't quote me on that." He stares off into the distance. "I haven't actually read them, so if there's some sort of wordplay there I wouldn't know it."
+    
+    "There is [i]no way[/i] that it's not some sort of joke," you say. "I mean, listen." You put on your best English Gentleman voice, which is very definitely not good in any way shape or form, and say to Carlos, "I'll dirk [i]you[/i] gently."
+    
+    Mouse collapses in laughter and Carlos sighs. "Wow, ok, that, uh, that, uh. Let's get back to the hunt now, shall we?"
+    
+    "Sure," you say. "I just want you to remember that you were the one who said the words 'Dirk Gently' first."
+    
+    He sighs. "Douglas Adams, not me."
+  #Considerate: "Thanks for explaining. Have you read his work?"
+    "I've read The Hitchiker's Guide to the Galaxy series," he says, "which is really good."
+    
+    "Yeah, I've heard of it. It's pretty popular, I think."
+    
+    "Yeah, it's very funny. The earlier ones are funny funny, but the later ones get kind of depressing funny."
+    
+    You nod along. "How do you think that relates to Darwin and Bowie?"
+    
+    He shrugs. "Let me think on that," he says.
+  #Nonplussed: "So, basically, he's a British comedy author, paired with a singer and actor and the scientist who discovered evolution."
+    Carlos nods. "Yeah," he says, "that seems right. I'm not sure how they relate to the lab buildings, but that seems right."
 
 Mouse leans over to you. "Can I see the sheet?" she whispers. You hand it to her, she looks at it for a few moments, then gives it back to you.
 
-You put on an encouraging smile. "Do you have a guess?" you ask. She nods. How do you do it, Mouse? Tell me your secrets! Educate me, wise but silent master! "I'm not sure though," she says.
+You put on an encouraging smile. "Do you have a guess?" you ask. She nods. How do you do it, Mouse? Tell me your secrets! Educate me, wise but silent master! "I'm not sure though," she adds.
 
 You stare at the sheet in silence as Carlos pulls out his phone. Is that…tapping you hear? It's quiet, but that's definitely some sort of tapping. You glance over to see Mouse's foot bouncing up and down, her eyes distant.
 
-*comment ############## TODO P0 REST
+You look back at the clue.
 
+• The target is in one of the three labs.
+*line_break
+• Adams, Douglas
+*line_break
+• Bowie, David
+*line_break
+• Darwin, Charles
+
+*label lab_choice
 *choice
-  #Gremlin: "Isn't Breaking Bad really old? Do you only watch old shows and movies, Carlos, or have you watched anything made in the last ten years?"
-    "Ah," says Carlos, "actually, Breaking Bad ended in 2013. Clearly you don't watch enough TV!"
-    
-    "Really? You memorize the year dates for the old shows you watch?"
-    
-    "You can't hold my amazing memory against me. And you keep calling it old. Morgan, Morgan, 8 years isn't that old. My grandfather is still going at strong 97! It only seems old because you're so young."
-    
-    You can see Mouse struggling to suppress a grin. "Gah," you say, "they're right, Boomer really is a state of mind."
-    
-    Mouse breaks out in a fit of laughter as Carlos places a hand on his heart. "I am wise beyond my years," he intones.
-    
-    "Okay but seriously," you say, "I don't think it's the guy from Breaking Bad."
-    
-    "Yeah," he says, "you're probably right."
-    
-    After her giggles subside,
-    *goto mouse_unfolds_her_map
-  #Considerate: "I haven't. I don't watch many of the older shows, but I hear that they're regarded highly."
-    "They're very good," he says. Then he pauses. "That's probably not what they're going for in this scavenger hunt."
-    
-    You shrug. "Either way's possible, but I've never seen it. Does it seem like it'd be relevant to any of the dorms?"
-    
-    "No," he says, "not at all."
-    
-    *goto mouse_unfolds_her_map
-  #Nonplussed: "No. Still, I don't think they would make a pop-culture reference to a show that's out of our age range."
-    "You're probably right." He unfolds his map and scans the dorm names. "You're definitely right," he says.
-    
-    *goto mouse_unfolds_her_map
-*label mouse_unfolds_her_map
-Mouse unfolds her map, nods, and starts typing into her phone. Well, she's clearly got ideas. On the other hand, Carlos looks pretty stumped. You stare at your own map. Monty Hall, Basket Hall, Hall of the Americas, Hall the Apostle…who named these dorms? These can't be real names. Well, Monty Hall and Basket Hall could be, but the others?
+  *disable_reuse #"Let's try Lab A."
+    *set target_lab "Lab A"
+    *goto propose_wrong
+  *disable_reuse #"Let's try Lab B."
+    *set target_lab "Lab B"
+    *goto propose_wrong
+  #"Let's try Lab D."
+    *goto go_to_lab_d
+  *hide_reuse *selectable_if ((puzzle_share_immediately) or (puzzle_discuss_final_answer)) #"What do you guys think?"
+    Carlos sighs.
+    *gosub carlos_mouse_explanation_d_snippet
 
-*if puzzle_share_immediately
-  "Hall the Apostle," declares Mouse.
-  
-  "Wait," you say, "are you talking about Paul the Apostle?"
-  
-  "He was also called Saul," she clarifies. "I looked it up."
-  
-  You look over at Carlos. He shrugs. "I don't even know who Paul the Apostle is. My parents weren't religious."
-  
-  Really, Carlos? Even if you're not religious, how can you not at least have heard to Paul the Apostle? That seems impossible! Surely some people you know are religious, right? Though he is from San Francisco. Maybe that's just how it is there.
-  
-  You quickly search Saul The Apostle on your phone and, yes, Mouse is right. "Nice job," you say, grinning, "I think that's it."
-  *goto destination_choice
-*else
-  "I know," declares Mouse.
-  
-  Too fast! How does she do it?
-  
-  "I'm drawing a blank," says Carlos, shaking his head. "I think I might have watched too much TV to get this one. Can't think of any Sauls other than Goodman."
-  
-  You frown. "I thought it was Odenkirk?"
-  
-  "No, Odenkirk's the actor, the name of the character is Saul Goodman."
-  
-  You shrug. Yeah, that isn't it. Okay, so, what is?
-  *goto destination_choice
+    *goto lab_choice
 
-*label destination_choice
-*choice
-  *disable_reuse *selectable_if (puzzle_share_immediately = false) #"Let's check out Monty Hall."
-    *set target_hall "Monty Hall"
-    *goto propose_wrong_hall
-  *disable_reuse *selectable_if (puzzle_share_immediately = false) #"Let's check out Basket Hall."
-    *set target_hall "Basket Hall"
-    *goto propose_wrong_hall
-  *disable_reuse *selectable_if (puzzle_share_immediately = false) #"Let's check out the Hall of the Americas."
-    *set target_hall "Hall of the Americas"
-    *goto propose_wrong_hall
-  #"@{puzzle_share_immediately Okay, let's | Let's } check out the Hall of the Apostle."
-    *return
-
-*label propose_wrong_hall
+*label propose_wrong
 *set times_proposed_wrong + 1
 *if times_proposed_wrong = 1
   *goto propose_wrong_first_time
 *elseif times_proposed_wrong = 2
   *goto propose_wrong_second_time
-*elseif times_proposed_wrong = 3
-  *goto propose_wrong_third_time
-*else
-  *bug "Somehow times_proposed_wrong was ${times_proposed_wrong}!"
-  *goto destination_choice
 
 *comment ########## Propose Wrong First Time ##########
+
 *label propose_wrong_first_time
-Carlos shrugs. "I'm stumped, so ${target_hall} is as good as any," he says.
-*if puzzle_discuss_final_answer
+*if discussed_already
+  "Sure," says Carlos, "I was leaning towards D but I wasn't very confident in it." You look at Mouse, and she nods.
 
-  "It's Hall the Apostle," says Mouse, almost too quiet to hear.
-  
-  You look over at her and put on an encouraging smile. "Sorry, I didn't catch that. What did you get, Mouse?"
-  
-  "It's Hall the Apostle. Since Paul was also called Saul."
-  
-  You blink. "Really?" you say. "Was that what you were checking on your phone?"
-  
-  She nods.
+  "All right," you say, "let's do ${target_lab}."
+
+  *gosub first_lab_wrong_snippet
+  *goto lab_choice
+*elseif puzzle_discuss_final_answer
+  "You sure?" asks Carlos.
+
+  "What are you thinking?" you ask.
+
+  *gosub carlos_mouse_explanation_d_snippet
   *choice
-    #"That's better than what I had. Let's go to Hall the Apostle."
-      *return
-    #"Let's check out the ${target_hall} first, and we can come back to Paul the Apostle later. I mean, Hall the Apostle."
-      Mouse nods in acceptance.
-      *goto search_wrong_hall_first_time
-*else
-  Mouse shrugs, and offers no opinion.
-  *goto search_wrong_hall_first_time
+    #"All right, that seems plausible. Let's do Lab D."
+      *goto go_to_lab_d
+    #"I still think it's Lab A."
+      "Okay," says Carlos, "let's take a look."
 
-*label search_wrong_hall_first_time
-The three of you go to ${target_hall},
-*if (target_hall = "Monty Hall")
-  which remains as beat up as ever.
-  *goto search_wrong_hall_first_time_continue
+      *gosub first_lab_wrong_snippet
+      *goto lab_choice
 *else
-  which is every bit as beat up as your own dorm.
-  
-  You enter through the main doors, and it looks almost identical to your own, the only difference being that the colors are all more slightly red.
-  *goto search_wrong_hall_first_time_continue
-*label search_wrong_hall_first_time_continue
+  *gosub first_lab_wrong_snippet
+  *goto lab_choice
+
+*label first_lab_wrong_snippet
 *set hours_remaining - 0.5
+*gosub enter_first_lab_snippet
 
-You trek up to room 310, but there aren't any paintings here. Instead, they've decorated the walls by hanging intricately patterned Tajik rugs. Wait, what? Holy shit! They look like Grandma's! They're beautiful! Who decides on the decorations? Is there somebody from Central Asia working here?
+The lobby has a bunch of display cases with various chemistry-related things, like beakers and models of molecules. None of this looks related to leaves, but of course, it wouldn't be obvious, would it?
 
-"Nah," says Carlos in disappointment, "this isn't it."
+"It's not this one," says Mouse.
 
-But look at the rugs, Carlos! No, he's not looking at the rugs. Mouse doesn't seem particularly interested, either. Well, you can't blame them. You'll have to come back up here later, but for now, time to go. "Okay," you say, "wasn't this one."
-*goto destination_choice
+"What?" asks Carlos. "How can you tell?"
+
+"No unlocked cabinets," she says. You check the clue sheet. Oh, she's right, it can't be this one. Okay, where next, then?
+*return
 
 *comment ########## Propose Wrong Second Time ##########
 *label propose_wrong_second_time
-*if puzzle_discuss_final_answer
-  "You sure, Morgan?" asks Carlos. "I mean, you did say we'd check out Hall the Apostle next."
-  
-  You pause. Well, no, you said that you'd check it out later, but he has a point. You grin at Mouse. "All right," you say, "Hall the Apostle it is!"
-  *return
-*else
-  "I'm throwing in the towel on this one," Carlos says. Mouse shakes her head. You're not sure if it's at Carlos or yourself.
-  
-  Either way, you did ask that they let you try by yourself, so ${target_hall} it is!
-  *goto search_wrong_hall_second_time
-*label search_wrong_hall_second_time
 *set hours_remaining - 0.5
+Carlos grins. "It's fifty-fifty!"
 
-Why are all these buildings' exteriors so badly maintained, anyways? No use worry about it now, but at some point you've got to go ask somebody, maybe a teacher or something. Or are they professors now?
+"It's only fifty-fifty if I'm picking randomly," you reply.
 
-Look, that's not important. What's important is the fact that ${target_hall} also doesn't have any paintings on the third floor, instead sporting movie posters for Marvel movies. "Who picks the decor in these halls?" you ask, staring at a poster of The Batman.
-
-"It's the RAs I think," says Carlos.
-
-Well, that explains a lot. "Wrong twice," you say. "It's a coinflip now."
-*goto destination_choice
-
-*comment ########## Propose Wrong Third Time ##########
-*label propose_wrong_third_time
-"So," asks Carlos, "${target_hall}? Are you guessing, or do you have an actual idea?"
+"Are you?"
 
 *fake_choice
-  #"Carlos, come on. I never have an idea. I just do things, and most of the time it works."
-    He laughs. "Well, at least you're honest."
+  #"No, I'm sure I have it."
+    "That's a dangerous thing to say," he says. "I'm sure you were sure last time too, weren't you?"
     
-    "One of my many virtues," you say. "I'm also super humble." You glance over at Mouse, and see her smiling slightly. "Anyways, let's get on with it."
-  #"I do have an idea, but I thought I had an idea for the rest of them, too."
-    He laughs. "Yeah, that's fair enough."
-  #"I'm guessing."
-    He laughs. "Well, at least you're honest."
-*goto search_wrong_hall_third_time
-*label search_wrong_hall_third_time
-*set hours_remaining - 0.5
+    "I'm sure this time," you say, and grin.
+  #"No, but I'm not sure at all."
+    "Fair enough," he says.
+  #"Yes."
+    "So," he says, "it's fifty-fifty."
 
-To your disappointment, ${target_hall} is not the correct hall. The RA has chosen strings of lights, and there's not a picture to be seen. That's three for three wrong.
+Unfortunately, it turns out that ${target_lab} is not the right lab. The displays are pretty impressive, with models of rockets and engines and some fancy telescopes, but there are no unlocked cabinets to be seen.
 
-You're beginning to regret your stance on hints, but there's nothing for it now! At this point, you can't help but be right!
-*goto destination_choice
+Well, at least now you know which building it is.    
+*goto lab_choice
+
+*comment ########## Shared Labels ##########
+
+*label enter_first_lab_snippet
+*set at_lab_complex true
+You take a leisurely walk over to the labs, a collection of three one-story buildings with windows all around the sides. They would look very modern and sharp except for the fact that the windows are uniformly grimy and dirty. The grounds nearby are overgrown, and the concrete paths cracking. It's like a scene from a post-apocalyptic movie.
+      
+You enter ${target_lab} through the main doors, which are themselves window doors, and find yourself in a sunny, well-lighted lobby. Somehow the windows look clean from the inside and dirty from the outside. That's weird, isn't it? It's really weird. But then, everything about the exteriors of the buildings here is weird.
+*return
+
+*label carlos_mouse_explanation_d_snippet
+"Well," he says, "between the three of them, only Charles Darwin is a scientist, but he wasn't a lab scientist. Or at least that's not what he's famous for. So maybe that's a weak association. But just looking at the names, if you count the first letters, you have one A, one B, one C, and three Ds, which also points to Darwin, but then what's up with the hanging C? There's no Lab C. But I can't really find anything else."
+
+You look over to Mouse. "What do you think, Mouse?"
+
+"Lab D," she says. "For Darwin. Same reasons. But I'm not sure either."
+*return
+
+*label go_to_lab_d
+"Lab D it is," assents Carlos.
+
+*if (at_lab_complex = false)
+  *gosub enter_first_lab_snippet
+*return
 
 *comment ########################################
-*comment # HALL THE APOSTLE                     #
+*comment # LOBBY LAB D                          #
 *comment ########################################
-*label sub_searching_hall_the_apostle
-*temp proposed_painting ""
-*page_break
-The three of you tramp over to Hall the Apostle. It, like all the other dorms, is crumbling and overgrown, and like all the other dorms its floor plan is identical to Monty Hall's. You take the elevator up to the third floor and walk over to room 310. Sure enough, the hallway is decorated in various paintings.
+*label sub_lobby_lab_d
+*temp target_display_case ""
+The lobby of Lab D is pretty small, with a long bench along the window wall and a series of display cases opposite. All the display cases have cabinets under them, so it's not quite as easy as that. You sigh and start examining their contents.
 
-"Right," you say, "the clue says it's behind 'the painting most related to Saul's dramatic escape.'" You glance down the hallway. There are five paintings, or rather, prints of paintings, all on the wall opposite the windows. You take a slow walk down the corridor.
+The first display case is a long ant farm, swarming with industrious little dark brown ants. The sign on the display says that they're a colony of atta cephalotes, which live by farming fungus. Really? Ants have agriculture? That's pretty cool.
 
-The first one is some sort of Native American pyramid with stepped walls, all overgrown with vines, surrounded by a verdant jungle. Honestly, it's kind of like how the dorms look from the outside.
+The second display case has a stuffed fox, whose face is forever locked in an expression of comical surprise. There's a little sticky note on the side. "Dear students," it says, "Please stop putting hats on the Minnie. Thank you." Whoever wrote this note is a terrible killjoy!
 
-The second is a vaguely Renaissance-ish painting of an idealized farmhand or maid or something similar, carrying a gigantic wicker basket of laundry. She's not wearing any shoes, she's incredibly clean, and in general it all just looks like it was painted during that phase when all those rich Europeans were going gaga over rural life. Come on, old rich painting-commissioning Europeans. That's now how somebody who actually works would look. At least give the poor girl some shoes!
+The third display case has in it a collection of beautiful butterflies on little pins, with orange and purple and blue wings. Some of them even have several colors.
 
-Anyways, the third one is of a modern city! Actually, most of it is of a very long red suspension bridge, but the city in the background has some skyscrapers in it. The day is clear, and the bridge is full of very detailed cars, but it's pretty unremarkable otherwise. For what it's worth, the water's very pretty.
+The fourth display case is a large fish tank with a bunch of different kinds of fish. They're very pretty, you'll give them that, but identifying fish is not really your thing, and they don't have a plaque like they do in aquariums.
 
-The fourth is a very dignified man in a study in late 1800s formalwear, bent over a fancy desk. On it is a sheet of paper, and in his hand is a quill. He has a top hat next to him, but he's not Abraham Lincoln. Not to say that only Abraham Lincoln wore a top hat, of course. If this is supposed to be a famous person, you have no idea who it is.
-
-The last is a old-timey paddle ship on a river. What are they called? Steam boats? There are well-dressed ladies and gentlemen on the deck, and the riversides are awash in green.
-
-"Well," says Carlos, looking over the hangings, "none of these seem particularly dramatic or escape-y to me."
-
-Mouse puts down her phone. Has she been searching something again? "I know," she says.
-
-Well, at this point, it'd be more shocking if Mouse didn't figure it out.
 *if puzzle_share_immediately
-  *goto immediate_discussion
-*else
-  *goto delayed_or_no_discussion
-
-*comment ########## Immediate Discussion ##########
-*label immediate_discussion
-You look over to Mouse and raise an eyebrow.
+  Mouse speaks. "It's the ants." She pauses. "They're atta cephalotes."
   
-"It's the laundry basket."
-
-Laundry basket? Paul, laundry basket, Paul, escape, Paul…come on, did all that Bible Study just fall right out of your head, Morgan? What dramatic escapes did Paul have? Nope. Drawing a blank. Apparently it did all fall out of your head. Too bad the hint wasn't about the Song of Solomon, you'd have gotten that one.
-
-Think back, Morgan! Remember those days of Bible Study, where, well, it was nice, you got to see friends, but the teaching methods were kind of dull. Something more engaging would probably have been better. The content was interesting, but the presentation…not.
-*choice
-  #"All right, let's put it behind the laundry basket then."
-    *goto put_sticker_behind_farmhand
-  #"All right, I give. How so?"
-    She consults her phone. "He escaped from Damascus by being lowered in a basket."
-
-    Shit, yes, of course, how did you forget that, other then the fact that it's hardly ever come up and you can barely remember it in the first place? Were you just meant to Google everything for this one? Well it worked for Mouse.
-
-    *goto put_sticker_behind_farmhand
-  #"I think it's something else."
-    *goto i_think_its_something_else
-
-*label i_think_its_something_else
-Mouse looks at you with curious eyes. "Which one?"
-*choice
-  #"The first one, the overgrown pyramid."
-    *set proposed_painting "the overgrown pyramid"
-    *goto mouse_what_does_okay_mean
-  #"The third one, the red bridge to the city."
-    *set proposed_painting "the Golden Gate bridge"
-    *gosub the_golden_gate_bridge_snippet
-    
-    "Well, fair enough," he says, turning to Mouse. "You think that's the one?"
-
-    *goto mouse_what_does_okay_mean
-  #"The fourth one, the man writing a letter."
-    *set proposed_painting "the man writing a letter"
-    *goto mouse_what_does_okay_mean
-  #"The fifth one, the paddle ship on a river."
-    *set proposed_painting "the paddle ship on a river"
-    *goto mouse_what_does_okay_mean
-
-*label mouse_what_does_okay_mean
-Mouse looks at the painting of ${proposed_painting}, then back at you, then back at the farmhand. "Okay," she says.
-
-Mouse, does that mean okay, I see it, or does that mean, okay, I disagree, but I'm too shy and conflict averse to actually contradict you? Speak up, Mouse! Explain your intentionally ambiguous statements! 
-
-It's definitely the second one, though, and as much as you'd like her to speak up hounding her would only hurt. You put on a bright smile. "Okay," you say.
-*choice
-  #Put the sticker behind the farmhand painting.
-    *goto put_sticker_behind_farmhand
-  #Put the sticker behind the painting of ${proposed_painting}.
-    *goto put_sticker_behind_proposed_painting
-
-*comment ########## Delayed Or No Discussion ##########
-*comment TODO P0: Ask Mouse what she had afterwards
-*label delayed_or_no_discussion
-*choice
-  #"I think it's the first one, the overgrown pyramid."
-    *set proposed_painting "the overgrown pyramid"
-    *goto finally_discuss_or_put_if_no_discussion
-  #"I think it's the second one, the girl with a laundry basket."
-    Mouse nods. "I think so too," she says.
-
-    "Really?" asks Carlos. "If you both agree, it's definitely right. Let's get this one finished then."
-
-    *goto put_sticker_behind_farmhand
-  #"I think it's the third one, the red bridge into a city."
-    *set proposed_painting "the Golden Gate Bridge"
-    *gosub the_golden_gate_bridge_snippet
-    "All that aside," you say, "I think it's that one."
-
-    *goto put_sticker_behind_proposed_painting
-  #"I think it's the fourth one, the man writing a letter."
-    *set proposed_painting "the man writing a letter"
-    *goto finally_discuss_or_put_if_no_discussion
-  #"I think it's the fifth one, the paddle ship on a river."
-    *set proposed_painting "the paddle ship on a river"
-    *goto finally_discuss_or_put_if_no_discussion
-
-*label finally_discuss_or_put_if_no_discussion
-*if puzzle_discuss_final_answer
-  Mouse shakes her head, then points to the painting of the girl with the wicker basket. "That one," she says.
-
-  You blink. "Can you explain to us why?" you ask her.
-
-  She consults her phone. "Paul escaped from Damascus by being lowered in a basket."
-
-  Well, apparently all those Bible Study sessions all just fell right out of your head. You do a quick search on your phone for "paul damascus basket" and yep, there are a million and one pictures of Paul being lowered over all wall in a basket.
-
+  Yes, it says that on the display. So what exactly does that explain, Mouse? You could stand to be a little more wordy. I won't bite, I promise.
   *choice
-    #Put the sticker behind the painting of the girl with the wicker basket.
-      *goto put_sticker_behind_farmland
-    #Put the sticker behind the painting of ${proposed_painting}
-      *goto put_sticker_behind_proposed_painting
+    #"All right, ants it is."
+      *goto put_sticker_on_ants
+    #"I believe you, but can you explain a little more, Mouse?"
+      "Atta cephalotes are leaf-cutter ants," she says.
+      
+      Did you look that up while I was watching the fish, Mouse, or do you just…know that? I mean, it's not bad to know that. You might be huge into ants. That's fine! It's just, you got that one real fast.
+      
+      "All right," you say, "that seems pretty strong." You look over at Carlos.
+      
+      "Yeah," he says, checking his phone, "I think that's our answer. Says here on Wikipedia. 'Atta cephalotes is a species of leafcutter ant in the tribe Attini.'"
+
+      *goto put_sticker_on_ants
+    #"No, I think it's one of the other displays."
+      Mouse pauses. "Okay," she says.
+      
+      No, Mouse, it's not okay! Okay is not the word you should be using right now! It should be something like, No, Morgan, I think it's ants because of whatever reasons I think it's the ants, but don't just agree because I said it! Clarify, or object, or, you know, something! If you don't stand up for yourself, Mouse, who will?
+      
+      Of course, you don't say any of that. Instead you try to put on a smooth face and say, "Mouse, why do you think it's the ants?"
+      
+      "Atta cephalotes are leaf-cutter ants," she says. She holds her phone out to you and you take it in hand. It's on the Wikipedia page for atta cephalotes and, yep, right there in the first sentence - 'Atta cephalotes is a species of leafcutter ant in the tribe Attini.'
+          
+      "I see," you say, and put on a grin. "Thanks for explaining, Mouse." You hand her phone back to her. "Okay, I'm convinced! Ants it is." Hopefully next time she'll feel more comfortable with speaking up.
+      
+      *goto put_sticker_on_ants
 *else
-  Carlos shrugs. "Good enough as any, he says." Mouse shrugs too, saying nothing.
+  *choice
+    #"I think it's the ant farm."
+      *if puzzle_discuss_final_answer
+        "Pretty fast, Morgan," Carlos says. "I'm not sure yet."
+        
+        You look over to Mouse. "It's the ants," she says.
+        
+        "If Mouse thinks it's the ants," says Carlos, "it must be the ants."
+        
+        You grin.
+        *goto put_sticker_on_ants
+      *else
+        "Pretty fast, Morgan," Carlos says. "I'm not sure yet, but don't wait for me." Mouse shrugs when you look over at her.
+        
+        *goto put_sticker_on_ants
+    #"I think it's the stuffed fox."
+      *set target_display_case "stuffed fox"
+      *goto not_immediate_wrong_case
+    #"I think it's the butterflies."
+      *set target_display_case "butterflies"
+      *goto not_immediate_wrong_case
+    #"I think it's the fish tank."
+      *set target_display_case "fish tank"
+      *goto not_immediate_wrong_case
 
-  "All right," you say.
+*label not_immediate_wrong_case
+*if puzzle_discuss_final_answer
+  "Pretty fast, Morgan," Carlos says. "I'm not sure yet."
 
-  *goto put_sticker_behind_proposed_painting
+  You look over to Mouse. "It's the ants," she says.
 
-*comment ########## Shared Labels And Endings ##########
+  "If Mouse thinks it's the ants," says Carlos, "it must be the ants." He paused. "How are the ants related to leaves, though?"
+  
+  "They're leaf-cutter ants," she says. "Atta cephalotes."
+  
+  You quickly Google "atta cephalotes" and yep, right there in the first sentence in the Wikipedia page. "Atta cephalotes is a species of leafcutter ant in the tribe Attini." Yeah, that's hard to argue with.
+  
+  "Ants it is," you say.
+  *goto put_sticker_on_ants
+*else
+  *set sticker_used_4 true
+  *set sticker_placed_correctly_4 false
+  "Pretty fast, Morgan," Carlos says. "I'm not sure yet, but don't wait for me." Mouse shrugs when you look over at her.
+  
+  You open the cabinet underneath the ${target_display_case} to reveal cleaning supplies. You press a sticker against the back of the door and then close it.
+  
+  TODO P0 pain
+  
+  "All right," you say, "the lab's done with, number four down."
+  *return
 
-*label the_golden_gate_bridge_snippet
-"Wait," says Carlos. "Do you mean the painting of the Golden Gate Bridge?"
-    
-"If that's what it is," you reply, "yes."
-
-"Huh. I thought the Golden Gate Bridge was nationally famous."
-
-You shrugs. What can you say to that? Sorry, Carlos, I'm just not a bridge type of girl? Sorry, Carlos, your local landmarks aren't nationally famous? Sorry, Carlos, I haven't traveled much? You settle for, "Sorry, I wasn't familiar enough to recognize it, but I have heard of it." Which is true!
-*return
-
-*label put_sticker_behind_farmhand
-*set sticker_used_3 true
-*set sticker_placed_correctly_3 true
-"Carlos," you say, gesturing to the painting of the girl with the laundry basket, "can you hold that?"
-
-"Sure thing," he says, taking it off the wall. You peel off a sticker and smooth it onto the wall behind the painting.
-
-TODO P0 put reaction here
-
-Carlos hangs the painting again and straightens it. "Okay, let's get out of here," he says. "What's next?"
-*return
-
-*label put_sticker_behind_proposed_painting
-*set sticker_used_3 true
-*set sticker_placed_correctly_3 false
-"Carlos," you say, gesturing to the painting of ${proposed_painting}, "can you hold that?"
-
-"Sure thing," he says, taking it off the wall. You peel off a sticker and smooth it onto the wall behind the painting, and Carlos replaces it, straightening it with care. "Okay, let's get out of here," you say.
+*label put_sticker_on_ants
+*set sticker_used_4 true
+*set sticker_placed_correctly_4 true
+TODO P0: Write this
 *return
