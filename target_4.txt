@@ -3,8 +3,7 @@
 *comment ########################################
 *label work_on_target_4
 *gosub sub_discuss_building_4
-*gosub sub_lobby_lab_d
-*return
+*goto lobby_lab_d
 
 *comment ########################################
 *comment # DISCUSSING THE BUILDING              #
@@ -178,7 +177,7 @@ You look over to Mouse. "What do you think, Mouse?"
 *comment ########################################
 *comment # LOBBY LAB D                          #
 *comment ########################################
-*label sub_lobby_lab_d
+*label lobby_lab_d
 *temp target_display_case ""
 The lobby of Lab D is pretty small, with a long bench along the window wall and a series of display cases opposite. All the display cases have cabinets under them, so it's not quite as easy as that. You sigh and start examining their contents.
 
@@ -205,7 +204,8 @@ The fourth display case is a large fish tank with a bunch of different kinds of 
       "All right," you say, "that seems pretty strong." You look over at Carlos.
       
       "Yeah," he says, checking his phone, "I think that's our answer. Says here on Wikipedia. 'Atta cephalotes is a species of leafcutter ant in the tribe Attini.'"
-
+      
+      "All right, I'm convinced," you say.
       *goto put_sticker_on_ants
     #"No, I think it's one of the other displays."
       Mouse pauses. "Okay," she says.
@@ -217,7 +217,6 @@ The fourth display case is a large fish tank with a bunch of different kinds of 
       "Atta cephalotes are leaf-cutter ants," she says. She holds her phone out to you and you take it in hand. It's on the Wikipedia page for atta cephalotes and, yep, right there in the first sentence - 'Atta cephalotes is a species of leafcutter ant in the tribe Attini.'
           
       "I see," you say, and put on a grin. "Thanks for explaining, Mouse." You hand her phone back to her. "Okay, I'm convinced! Ants it is." Hopefully next time she'll feel more comfortable with speaking up.
-      
       *goto put_sticker_on_ants
 *else
   *choice
@@ -266,13 +265,12 @@ The fourth display case is a large fish tank with a bunch of different kinds of 
   
   You open the cabinet underneath the ${target_display_case} to reveal cleaning supplies. You press a sticker against the back of the door and then close it.
   
-  TODO P0 pain
-  
   "All right," you say, "the lab's done with, number four down."
-  *return
+  *goto_scene ch4_hunt work_on_a_clue
 
 *label put_sticker_on_ants
 *set sticker_used_4 true
 *set sticker_placed_correctly_4 true
-TODO P0: Write this
-*return
+You open the cabinet underneath the ant farm to reveal some cleaning supplies. You press a sticker against the back of the door before closing it.
+
+*goto_scene ch4_hunt correctly_placed_sticker

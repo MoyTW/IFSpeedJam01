@@ -43,7 +43,7 @@
   • [b]Campus Map:[/b] A color map of the campus, with buildings nicely labeled.
 *if inventory_has_student_id
   *line_break
-  • [b]Student ID:[/b] A blue/gold plastic card with your picture on it which serves as a combination key/credit card for the university.
+  • [b]Student ID:[/b] A blue/gold plastic card with your picture and student number on it. It serves as a combination key/credit card for the university.
 *return
 
 *comment ########################################

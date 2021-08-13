@@ -16,44 +16,201 @@ TODO: You talk about how you want to do the hunt.
 
 TODO: this
 *fake_choice
-  #"If you have an idea, say it right then and there. I'm not particularly bothered about puzzle spoilers."
+  #"I want to try and solve them all on my own. Don't tell me anything until I've placed the sticker, even if you think I'm making a mistake." [i][ If you choose this, Mouse and Carlos will not help you. ][/i]
+  #"I want to give them a try, so don't spoil me if you think you know, but we should all discuss before I actually place a sticker." [i][ If you choose this, Mouse and Carlos will inform you if you guessed wrong. ][/i]
+    *set puzzle_discuss_final_answer true
+  #"If you have an idea, say it right then and there. I'm not particularly bothered about puzzle spoilers." [i][ If you choose this, Mouse and Carlos will tell you the solutions to each hint. ][/i]
     *set puzzle_share_immediately true
     *set puzzle_discuss_final_answer true
-  #"I want to give them a try, so don't spoil me if you think you know, but we should all discuss before I actually place a sticker."
-    *set puzzle_discuss_final_answer true
-  #"I want to try and solve them all on my own. Don't tell me anything until I've placed the sticker, even if you think I'm making a mistake."
 
 TODO: You start the hunt!
 
 *page_break
+
+*comment ########################################
+*comment # WORK ON A CLUE                       #
+*comment ########################################
 *label work_on_a_clue
+*page_break
+
+TODO P0: if you've used all the stickers but got some wrong, you get the bad end
+
 *gosub_scene clue_sheet clues_only
 *choice
+  *selectable_if (sticker_used_1 = false) #Work on the first target.
+    *goto_scene target_1 work_on_target_1
+  *selectable_if (sticker_used_2 = false) #Work on the second target.
+    *goto_scene target_2 work_on_target_2
+  *selectable_if (sticker_used_3 = false) #Work on the third target.
+    *goto_scene target_3 work_on_target_3
+  *selectable_if (sticker_used_4 = false) #Work on the fourth target.
+    *goto_scene target_4 work_on_target_4
+  *selectable_if (sticker_used_5 = false) #Work on the fifth target.
+    *goto_scene target_5 work_on_target_5
   #Actually, I want to change how we're handling the discussions.
     TODO: text & code for changing discussion handling
-    *goto work_on_a_clue
-  *selectable_if (sticker_used_1 = false) #Work on the first target.
-    *gosub_scene target_1 work_on_target_1
-    *page_break
-    *goto work_on_a_clue
-  *selectable_if (sticker_used_2 = false) #Work on the second target.
-    *gosub_scene target_2 work_on_target_2
-    *page_break
-    *goto work_on_a_clue
-  *selectable_if (sticker_used_3 = false) #Work on the third target.
-    *gosub_scene target_3 work_on_target_3
-    *page_break
-    *goto work_on_a_clue
-  *selectable_if (sticker_used_4 = false) #Work on the fourth target.
-    *gosub_scene target_4 work_on_target_4
-    *page_break
-    *goto work_on_a_clue
-  *selectable_if (sticker_used_5 = false) #Work on the fifth target.
-    *gosub_scene target_5 work_on_target_5
-    *page_break
     *goto work_on_a_clue
 
 *label decrement_time
 *comment TODO P0: time can expire!
 *set time_remaining - 1
 *return
+
+*comment ########################################
+*comment # CORRECTLY PLACED STICKER             #
+*comment ########################################
+*label correctly_placed_sticker
+*temp num_stickers_placed_correctly 0
+*if sticker_placed_correctly_1
+  *set num_stickers_placed_correctly + 1
+*if sticker_placed_correctly_2
+  *set num_stickers_placed_correctly + 1
+*if sticker_placed_correctly_3
+  *set num_stickers_placed_correctly + 1
+*if sticker_placed_correctly_4
+  *set num_stickers_placed_correctly + 1
+*if sticker_placed_correctly_5
+  *set num_stickers_placed_correctly + 1
+
+*if num_stickers_placed_correctly = 1
+  "Now that that's sorted," says Carlos, "which one are we doing next, ${player_name}?"
+  
+  "Sorry," you say, "what did you say?"
+  
+  "I said, which one are we doing next?"
+  
+  "No, no," you say, "what did you say after that?"
+  
+  "Uh." Carlos blinks. "Morgan."
+  
+  You stare at him. "Yes?"
+  
+  "I said Morgan. After I asked you which one we're doing next. Sorry, uh, is this a bit? Like, who's on first?"
+  
+  "It's not," you say, "I'm just hearing things." Who's on what? You shake your head. Probably an old movie or something. Asking about that would just make it seem even more like a bit. "All right, as for the next one, give me a second to pick."
+  *goto work_on_a_clue
+*elseif num_stickers_placed_correctly = 2
+  All right, now that that's sorted, you - whoa, you're dizzy, when did that happen? You try to reach out to the wall to steady yourself, but your arm isn't in the right place, and you sort of collapse into the wall, which is good, because if you'd missed completely then you'd be on the floor. You lean on the wall for a few seconds, and reality reasserts itself.
+  
+  "Morgan," asks Mouse, "are you okay?"
+  
+  You push yourself off the wall. That was weird. You shift your head around a bit, and everything feels normal. "Yeah," you say. "I'm fine." Well, fine now, at least. You force a smile. "Must not have gotten enough sleep. All right, back to the hunt."
+  *goto work_on_a_clue
+*elseif num_stickers_placed_correctly = 3
+  
+  You're sweating. How did you not nice that you were sweating? And you're breathing hard, too, and you can feel your heart thumping, and now your eyes sting. When did this happen? It's not super uncomfortable, you've definitely had worse after working out, but the worst you've done today is some leisurely walking.
+  
+  You reach up to brush the sweat off your forehead, but it's dry, and you suddenly feel a sense of release. Is this some sort of panic attack or something? Did you fall sick and not notice it? Neither Carlos nor Mouse seem to have noticed it.
+  
+  You're…okay, right? Yes. You're fine. "All right," you say, your voice coming out surprisingly chipper, "that one's down, let's move on."
+  *goto work_on_a_clue
+*elseif num_stickers_placed_correctly = 4
+  *goto correct_sticker_number_4
+*elseif num_stickers_placed_correctly = 5
+  *goto_scene ch5_madness the_spell_is_complete
+*else
+  *bug When going to correctly_placed_sticker, number of placed stickers was ${num_stickers_placed_correct}, but it should have been between 1-5 (inclusive).
+
+*comment ########## Correct Sticker Number 4 ##########
+*label correct_sticker_number_4
+Your right eye itches. You blink. The itch goes away, but now there's some sort of pressure. It's very uncomfortable, actually, kind of like when you don't get enough sleep and you're trying to wake up and your eye refuses to open, except now it's growing, and it feels like your eye's being squeezed, and now the back of your head feels like it's being squeezed, and it keeps squeezing, and your eye is compacting, you can feel your skull creaking, and you drop down to the floor, and you're screaming, and
+  
+it's gone
+
+and now there's a tingling in your spine, and oh no, it's spreading, and it reaches down through your arms and legs, and the tingling starts to intensify and your nerves are burning and screaming and you're screaming too
+
+and then you slump over, the world turns turns sideways
+
+and you're back, standing where you were. Carlos is waving his hand in front of your face. "Hey, are you okay?" he asks.
+
+You're fine. You're fine. You can breathe. It's fine. Somehow you're standing up. You calm your ragged breaths. You're fine, your body's fine, whatever that was has passed and you're fine now.
+
+*label after_body_horror
+*choice
+  *hide_reuse #"What just happened?"
+    Carlos frowns. "Well, you got real quiet, and didn't respond when I asked where you were thinking of next." He thinks on his next words carefully. "It looked kind of like you were having a nightmare, but standing up, and with your eyes open. Are you sure you're okay?"
+    *goto after_body_horror
+  #"I'm fine. Sorry, I just got distracted."
+    *gosub mouse_asks_if_youre_sure
+    *choice
+      #"I'm sure. Thanks for asking, Mouse. I appreciate it."
+        Mouse nods, and Carlos raises his eyebrow. "Well," he says, "if you're sure. You don't want to go sit down or anything?"
+
+        "No," you say, "let's just go get this last target."
+        *goto work_on_a_clue
+      #"Mostly. Thanks for asking, Mouse. I think I'll sit down for a bit, then we can finish up this hunt."
+        *gosub sit_on_bench_then_leave_snippet
+        *goto work_on_a_clue
+      #"No. Thanks for asking, Mouse. Do they have a nurse's office here? It might be a good idea to pay it a visit."
+        *goto do_they_have_a_nurses_office
+  #"Sorry, I think I'm kind of having a panic attack.  I'm going to go find somewhere to sit down for a minute."
+    *gosub sit_on_bench_then_leave_snippet
+
+    *gosub mouse_asks_if_youre_sure_snippet
+    *choice
+      #"I'm sure. Thanks for asking, Mouse. I appreciate it."
+        She nods. "Okay," she says.
+        
+        "Let's get moving," says Carlos. "We're almost done, one more to go."
+        *goto work_on_a_clue
+      #"No, actually, I'm not sure. Do they have a nurse's office here on campus?"
+        *goto do_they_have_a_nurses_office
+  #"No. I'm not. I think I'm having some sort of panic attack. Do they have a nurse's office here?"
+    *goto do_they_have_a_nurses_office
+
+*label mouse_ask_if_youre_sure_snippet
+Mouse walks up to you. She doesn't quite meet your eyes, but you can tell she's making an effort. "Morgan," she says, "are you sure?"
+
+This is touching, Mouse, I'm not even joking. I appreciate that you're trying so hard, but I'm not about to die or anything. This kind of stuff has never happened before, but it wasn't that bad, right? I mean, I didn't fall over or anything. It's just a little nerves, right?
+
+Right?
+*return
+
+*label sit_on_bench_then_leave_snippet
+You go outside and find a bench near the door. It's clean at least, though it looks ancient and worn. You sit for a bit.
+
+"Want a drink?" asks Carlos, pulling some sort of drink pouch out of his trenchcoat.
+
+"Sure," you say, taking it and peeling off the straw. "How do you use this?" you ask.
+
+"Punch the straw through that little circle on top."
+
+"Thanks," you say. You push in the straw and slurp up the drink. It's sweet and tangy. Neither Mouse nor Carlos speaks as you sip at the drink, but you can feel the concern in their eyes. When you've finished, you look around, then spot a trash can. You ball up the pouch and toss it in. "All right," you say, standing up. "Let's get going."
+*return
+
+*label do_they_have_a_nurses_office
+"Hold on," says Carlos, pulling out his welcome packet, "I'm sure there's something in here about that." He flips through the packet, scanning the pages.
+      
+Mouse looks up from her phone and speaks. "It's in the Admin Building."
+
+You check your breathing. You're fine, now. It's fine, right? It's just, it's not bad. Some anxiety is to be expected, right, it's your first day at college, that's a big step for everyone, right? It's not bad enough to go to the medical office. Right? There's nothing wrong with you, you don't need to go see the doctor, you didn't even fall down or anything.
+*choice
+  #"Sorry for making you guys worry, but I feel fine now. I appreciate the concern, but I think I can go check it out later, on my own, so let's keep going for now. All right?"
+    Carlos and Mouse look at each other. Guys, you don't need to worry so much. I'm fine. I'm serious. "Well," says Carlos, "if you say so. Where to next?"
+    *goto work_on_a_clue
+  #"Sorry for bailing, guys, but I think I'm going to go to the nurse's office to talk to somebody. These panic attack things are new for me, I've never had anything like them before."
+    "What," says Carlos, "you were worried about bailing?"
+    
+    "Yes, of course. Among other things."
+    
+    He chuckles. "Uh, I think your priorities are out of order, Morgan. You should definitely go to the nurse's office." You look over to Mouse, and she nods emphatically. "Look," he says, "would you be happy if somebody you just met put off going to see somebody about their panic attacks just to be polite to you?"
+    
+    You sigh. "Yeah," you say, "you're right."
+    *goto bad_end
+
+*label bad_end
+*page_break
+The next four years were very strange.
+
+You graduated on time. You made friends, went to parties, studied reasonably hard, and at the end, you walked out and took your diploma with all the rest of your classmates. But the whole time, it felt slightly unreal.
+
+The campus, for example. Why had it seemed so run down on the outside? Hallucinations, or something similar. What you saw was not what anybody else saw. Where you saw weeds and wild shrubs, others saw well-maintained gardens. Where you saw crumbling brickwork, they saw beautiful facades. It only happened outdoors, and only around the campus, a strange kind of madness.
+
+The weather, too, was often different. Sunny days were grim, and dark ones cheerful. You dressed against the weather often enough to get a minor reputation for it. The rain was the strangest thing. It'd rain with no clouds in the sky. You took a picture, once, and the picture showed stormy clouds even while you felt the warmth of the sun on your cheeks. It was novel, if nothing else.
+
+You seem to have succeeded in hiding it from almost everybody you met, covering your hallucinations in excuses of eccentricity and quirkiness. Carlos may have had his suspicions, but you only ever confided in Mouse. Without her, you think you might have gone mad. You're still not sure you weren't.
+
+You count yourself lucky, though. It only happened on the campus. When you went home, everything was as it should be. When you drove into town, or visited Carlos in San Francisco, or stayed with Mouse over the summer, everything was normal. And so, you graduated, and left college behind, and with it your strange but harmless madness.
+
+Sometimes, you wonder. What would it look like if you went back? But it's far off, and there's nothing more there for you, so you never wonder long.
+*finish

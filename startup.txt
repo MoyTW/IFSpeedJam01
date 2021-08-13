@@ -7,9 +7,9 @@
 *comment ch2_student_center
 *comment ch3_dorms
 *scene_list
-  ch4_hunt
+  ch5_madness
 
-*create player_name ""
+*create player_name "DEFAULTNAME"
 
 *create inventory_has_backpack false
 *create inventory_has_book false

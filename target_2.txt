@@ -3,8 +3,7 @@
 *comment ########################################
 *label work_on_target_2
 *gosub sub_discuss_building_2
-*gosub sub_searching_smith_center
-*return
+*goto searching_smith_center
 
 *comment ########################################
 *comment # DISCUSSING THE BUILDING              #
@@ -94,7 +93,7 @@ You're down another half-hour, but at least now you know which building it is!
 *comment ########################################
 *comment # SEARCHING SMITH CENTER               #
 *comment ########################################
-*label sub_searching_smith_center
+*label searching_smith_center
 The Smith Center is much like the others, a crumbling concrete edifice studded with grimy windows, but it's significantly taller at four stories. The three of you pass through the main entrance to find yourself in a large, well-lit lobby. Half of the lobby which seems sectioned off into a dining area, and the other half has benches between giant plant pots.
 
 "Ah," says Carlo, pointing towards the dining area, "there's the kitchen." Sure enough, there's a door with a window in it with a sign above it, proclaiming it the kitchen. The three of you pile in.
@@ -166,10 +165,9 @@ Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over,
         #"Yeah, that matches what I got, too."
           *set sticker_used_2 true
           *set sticker_placed_correctly_2 true
-          You peel off a sticker, lift up the coffee announcement, and slap it onto the board. "Okay, target number two, done and dusted! Let's go."
+          You peel off a sticker, lift up the coffee announcement, and slap it onto the board.
           
-          TODO: write in nausea
-          *return
+          *goto_scene ch4_hunt correctly_placed_sticker
         #"I got something else."
           *goto where_place_sticker_discussion
   *disable_reuse #"Can you give me a hint, Mouse?"
@@ -186,8 +184,9 @@ Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over,
     
     *gosub i_can_wait_snippet
     
-    "All right," you say "on the notice board, behind the coffee policy announcement. Got it." The announcement is easy to find, and you sticker the board behind it in short order. "Okay, number two dusted. I'll miss this kitchen, but let's get moving."
-    *return
+    "All right," you say "on the notice board, behind the coffee policy announcement. Got it." The announcement is easy to find, and you sticker the board behind it in short order.
+    
+    *goto_scene ch4_hunt correctly_placed_sticker
 
 *label where_place_sticker_no_discussion
 "I'll just stick the sticker on now and we can talk about it after then."
@@ -197,42 +196,51 @@ Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over,
 Where do you put the sticker?
 
 *temp sticker_placement
-*fake_choice
+*choice
   #On the left side of the leftmost microwave.
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 false
     *set sticker_placement "the left side of the leftmost microwave"
     You peel off a sticker and walk over to the leftmost microwave, slapping it on the left side. "Okay," you say, "what did you guys get?"
+    
+    *goto after_place_sticker_no_discussion
   #Behind the towels on the towel rack.
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 false
     *set sticker_placement "behind the towels on the towel rack"
     You peel off a sticker in your right hand, walk over to the towel rack, and hold the towels out of the way with your left while you sticker the wall behind them. "Okay," you say, letting them fall back into place, "what did you guys get?"
+    
+    *goto after_place_sticker_no_discussion
   #Behind the coffee policy announcement.
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 true
-    You go up to the announcement board, sticker in hand, and hold up the coffee announcement, pressing it into the board behind it. "Okay," you say, dropping it back down, "what did you guys get?"
+    You go up to the announcement board, sticker in hand, and hold up the coffee announcement. Just as you're about to press it, Carlos cries out. "Got it!"
     
-    TODO: write in nausea
+    "Okay," you say, turning towards him, "what'd you get?"
+    
+    "On the board, behind the coffee policy."
+    
+    "That matches mine," you say, pressing the sticker into place and letting the announcement fall.
+    
+    *goto_scene ch4_hunt correctly_placed_sticker
   #On top of the fume hood.
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 false
     *set sticker_placement "on top of the fume hood"
     You look around, and see a short kitchen ladder propped up against the wall. You set it up and climb up to the fume hood, where you sticker the top. "Okay," you say, replacing the ladder, "what did you guys get?"
+    
+    *goto after_place_sticker_no_discussion
 
+*label after_place_sticker_no_discussion
 "Almost done," says Carlos.
 
 *gosub i_can_wait_snippet
 
-*if (sticker_placed_correctly_2 = false)
-  "Well," you say, "shit, I guess I missed that one. I got ${sticker_placement}."
-  
-  *gosub mouse_is_trying_snippet
-  "Okay," you say, grinning, "let's move on."
-  *return
-*else
-  Nice! Got it! "Okay," you say, "that was what I got too. Let's move on."
-  *return
+"Well," you say, "shit, I guess I missed that one. I got ${sticker_placement}."
+
+*gosub mouse_is_trying_snippet
+"Okay," you say, grinning, "let's move on."
+*return
 
 *label where_place_sticker_discussion
 Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" he asks. "What'd you get?"
@@ -247,7 +255,7 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
         "Well, okay," says Carlo. You glance over at Mouse, who nods. Thanks, Mouse!
 
         You peel a sticker off and slap it on the microwave. "Okay," you say, "let's get moving, that's number two sorted."
-        *return
+        *goto_scene ch4_hunt work_on_a_clue
       #"All right, I trust you guys. We'll put it behind the coffee flier."
         *goto i_trust_you_guys_snippet
   #"Behind the towels on the towel rack."
@@ -259,7 +267,7 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
         "Your choice," he says as you hold the towels out of the way. You glance over at Mouse, who nods. Thanks, Mouse!
 
         You sticker the wall behind the towel rack, then put the sheet back into your pack. "Okay," you say, "that's clue set number two done."
-        *return
+        *goto_scene ch4_hunt work_on_a_clue
       #"All right, I trust you guys. We'll put it behind the coffee flier."
         *goto i_trust_you_guys_snippet
   #"On top of the fume hood."
@@ -273,7 +281,7 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
         "No problem," he says, taking the sticker sheet. He takes a sticker and just straight-up slaps it on the top of the fume hood. Gah! He's so tall! How is it even possible to be so tall?
         
         "All right," he says, returning the sticker sheet, "where to next?"
-        *return
+        *goto_scene ch4_hunt work_on_a_clue
       #"All right, I trust you guys. We'll put it behind the coffee flier."
         *goto i_trust_you_guys_snippet
   #"Well, I actually didn't finish, I gave up, but I didn't get anything related to coffee."
@@ -281,8 +289,9 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
     *set sticker_placed_correctly_2 true
     "Ah," says Carlos, "that's fair. You want to just slap it on the board and move on then?"
     
-    "Sure," you say, scanning the board for the announcement he mentioned. Ah, there we go. "CONCERNING THE USAGE OF THE COFFEE MACHINE." You hold the sheet up and sticker the board behind it. "All right," you say, releasing the sheet, "that's number two done."
-    *return
+    "Sure," you say, scanning the board for the announcement he mentioned. Ah, there we go. "CONCERNING THE USAGE OF THE COFFEE MACHINE." You hold the sheet up and sticker the board behind it.
+    
+    *goto_scene ch4_hunt correctly_placed_sticker
 
 *label i_trust_you_guys_snippet
 *set sticker_used_2 true
@@ -293,8 +302,8 @@ Carlos chuckles. "Is it really a matter of trust?"
 
 "Well, all right," says Carlos. "Morgan, you got it yet?"
 
-"Yeah," you say, releasing the flier, "on the board, behind the coffee announcement, as you said. That's number two done."
-*return
+"Yeah," you say, holding the flier, "on the board, behind the coffee announcement, as you said." You press the sticker into place.
+*goto_scene ch4_hunt correctly_placed_sticker
 
 *label mouse_is_trying_snippet
 Carlos frowns. "Wait. How?"

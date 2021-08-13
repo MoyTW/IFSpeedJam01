@@ -3,8 +3,7 @@
 *comment ########################################
 *label work_on_target_3
 *gosub sub_discuss_building_3
-*gosub sub_searching_hall_the_apostle
-*return
+*goto searching_hall_the_apostle
 
 *comment ########################################
 *comment # DISCUSSING THE BUILDING              #
@@ -23,11 +22,11 @@ You read the clue out loud. "Which dorm has the strongest association with Saul?
 
 *choice
   #Gremlin: "Isn't Breaking Bad really old? Do you only watch old shows and movies, Carlos, or have you watched anything made in the last ten years?"
-    "Ah," says Carlos, "actually, Breaking Bad ended in 2013. Clearly you don't watch enough TV!"
+    "Ah," says Carlos, "actually, Breaking Bad ended in 2013. You should always double-check your barbs before you throw them."
     
     "Really? You memorize the year dates for the old shows you watch?"
     
-    "You can't hold my amazing memory against me. And you keep calling it old. Morgan, Morgan, 8 years isn't that old. My grandfather is still going at strong 97! It only seems old because you're so young."
+    "You can't hold my amazing memory against me. And you keep calling it old. Morgan, 8 years isn't that old. My grandfather is still going at strong 97. It only seems old because you're so young."
     
     You can see Mouse struggling to suppress a grin. "Gah," you say, "they're right, Boomer really is a state of mind."
     
@@ -200,7 +199,7 @@ You're beginning to regret your stance on hints, but there's nothing for it now!
 *comment ########################################
 *comment # HALL THE APOSTLE                     #
 *comment ########################################
-*label sub_searching_hall_the_apostle
+*label searching_hall_the_apostle
 *temp proposed_painting ""
 *page_break
 The three of you tramp over to Hall the Apostle. It, like all the other dorms, is crumbling and overgrown, and like all the other dorms its floor plan is identical to Monty Hall's. You take the elevator up to the third floor and walk over to room 310. Sure enough, the hallway is decorated in various paintings.
@@ -345,12 +344,9 @@ You shrugs. What can you say to that? Sorry, Carlos, I'm just not a bridge type 
 *set sticker_placed_correctly_3 true
 "Carlos," you say, gesturing to the painting of the girl with the laundry basket, "can you hold that?"
 
-"Sure thing," he says, taking it off the wall. You peel off a sticker and smooth it onto the wall behind the painting.
+"Sure thing," he says, holding it up. You peel off a sticker and smooth it onto the wall behind the painting.
 
-TODO P0 put reaction here
-
-Carlos hangs the painting again and straightens it. "Okay, let's get out of here," he says. "What's next?"
-*return
+*goto_scene ch4_hunt correctly_placed_sticker
 
 *label put_sticker_behind_proposed_painting
 *set sticker_used_3 true
@@ -358,4 +354,4 @@ Carlos hangs the painting again and straightens it. "Okay, let's get out of here
 "Carlos," you say, gesturing to the painting of ${proposed_painting}, "can you hold that?"
 
 "Sure thing," he says, taking it off the wall. You peel off a sticker and smooth it onto the wall behind the painting, and Carlos replaces it, straightening it with care. "Okay, let's get out of here," you say.
-*return
+*goto_scene ch4_hunt work_on_a_clue

@@ -126,14 +126,18 @@ Mouse blinks. "I know it," she says.
     *gosub target_1_place_sticker_painting "Gettysburg"
     *return
 
+*label target_1_room_description
+The lobby feels a little like a doctor's office waiting room, with neat white walls and a plethora of waiting chairs, about a quarter of which are filled with parents and, more rarely, students. In the center is a large glass coffee table with magazines scattered all about, and a high desk with a receptionist currently attending to an anxious pair of middle-aged men. Around the walls they've put little tables with flower pots, and on the walls are various paintings of idealized midwestern farmers. Near the door is hung a gigantic wall calendar with school events marked out in neat sharpie.
+*return
+
+*comment ########## Endings ##########
+
 *label target_1_place_sticker_calendar
 *set sticker_used_1 true
 *set sticker_placed_correctly_1 true
 You go over to the calendar and flip it to September, peeling off a sticker and placing it on the square for the 19th.
 
-TODO: Write the reaction!
-
-*return
+*goto_scene ch4_hunt correctly_placed_sticker
 
 *label target_1_place_sticker_painting
 *set sticker_used_1 true
@@ -142,8 +146,4 @@ TODO: Write the reaction!
 You go over to the painting of ${subject} and peel off a sticker, placing it neatly on the side of the plaque so it won't cover up the title or year.
 
 Okay, now on to the next one.
-*return
-
-*label target_1_room_description
-The lobby feels a little like a doctor's office waiting room, with neat white walls and a plethora of waiting chairs, about a quarter of which are filled with parents and, more rarely, students. In the center is a large glass coffee table with magazines scattered all about, and a high desk with a receptionist currently attending to an anxious pair of middle-aged men. Around the walls they've put little tables with flower pots, and on the walls are various paintings of idealized midwestern farmers. Near the door is hung a gigantic wall calendar with school events marked out in neat sharpie.
-*return
+*goto_scene ch4_hunt work_on_clue

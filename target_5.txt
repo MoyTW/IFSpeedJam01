@@ -3,7 +3,7 @@
 *comment ########################################
 *label work_on_target_5
 *gosub sub_discuss_building_5
-*gosub sub_locker_cicero
+*goto locker_cicero
 *return
 
 *comment ########################################
@@ -141,7 +141,7 @@ Well, there's only two options left now.
 *comment ########################################
 *comment # LOCKER CICERO COMBINATION            #
 *comment ########################################
-*label sub_locker_cicero
+*label locker_cicero
 *temp hints_string ""
 *page_break
 The Cicero Center is two stories exactly. Its walls are replete with unidentifiable dark stains that, even from a pretty long distance, look uncomfortably sticky. It's profoundly unnerving. Thankfully, the inside is clean and even a little cosy, which is a weird thing to say about a school building.
@@ -151,7 +151,7 @@ You go up to the second floor and pass by a Birch Room, an Oak Room, and a Sanda
 "This one's a bunch of math problems," you say, "so I can't read it out." You peek into the Aspen Room, which has a whiteboard on one wall in front of an array of desks.
 
 *fake_choice
-  #Grelmin: "Hey, they've got a whiteboard, with pens! Saves me having to track down some paper."
+  #Gremlin: "Hey, they've got a whiteboard, with pens! Saves me having to track down some paper."
     You lead the others into the Aspen Room and drop the clue sheet on the desk before grabbing a white erase pen out of a holder.
   #Considerate: "You don't think they'd mind if we used this, do you? We'll clean it off after."
     Carlos nods. "I think we'll be fine, just so long as we clean up."
@@ -250,5 +250,7 @@ Right! 958 it is then.
 *label enter_958
 *set sticker_used_5 true
 *set sticker_placed_correctly_5 true
-TODO P0 WRITE THIS
-*return
+
+You enter 958 on the locker and it opens to reveal nothing at all. Well, it's not like you expected anything particularly interesting. You peel off a sticker, slap it on the back, and close it right back up.
+
+*goto_scene ch4_hunt correctly_placed_sticker

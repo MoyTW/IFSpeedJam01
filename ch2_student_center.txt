@@ -113,7 +113,7 @@ Somebody taps you on the shoulder. You turn around
 
 "It looks like they're flying through it," he says, "because we're basically at the end already." As he finishes talking, the student in front of him leaves the table, tailed by their parents, and Tall Guy leans over to address the staff. He's done in mere seconds, and you step up.
 
-It turns out all the table was for was to point you to the next table, based on your dorm and floor. You suppress the urge to ask what the hell was going on and just follow Tall Guy to one of the dining tables, where they sit you down and check all your paperwork. Mercifully, this is brief, and at the end of the process the staff give you a welcome packet, as well as your student ID card. They instruct you that you can swipe into buildings and make purchases in the student center using it, and that if you lose it you'll have to pay a $5 fine to get it replaced.
+It turns out all the table was for was to point you to the next table, based on your dorm and floor. You suppress the urge to ask what the hell was going on and just follow Tall Guy to one of the dining tables, where they sit you down and check all your paperwork. Mercifully, this is brief, and at the end of the process the staff give you a welcome packet, as well as your student ID card bearing your picture and student number. They instruct you that you can swipe into buildings and make purchases in the student center using it, and that if you lose it you'll have to pay a $5 fine to get it replaced.
 
 *set inventory_has_paperwork false
 *set inventory_has_student_id true
