@@ -56,11 +56,13 @@ Carlo nods. "Yeah," he says, "this one's easy."
   *goto search_wrong_center_first_time
 
 *label search_wrong_center_first_time
-*set hours_remaining - 0.5
+*gosub_scene ch4_hunt func_advance_half_hour
 *set searched_wrong_center true
 The three of you walk over to the ${target_center}, a two-story rectangular building of crumbling concrete. You swipe yourselves in and set to searching for the kitchen, but it soon becomes apparent that there isn't one. There's a break roof with a refrigerator and a coffee machine, but there's not even a microwave or hot plate.
 
 Unless they clue sheet has an extremely generous definition of kitchen, you're in the wrong building. You check your phone. You've lost about half an hour.
+
+*gosub_scene ch4_hunt func_print_time_readout
 *goto destination_choice
 
 *comment ########## Propose Wrong Second Time ##########
@@ -79,11 +81,13 @@ Unless they clue sheet has an extremely generous definition of kitchen, you're i
   *goto search_wrong_center_second_time
 
 *label search_wrong_center_second_time
-*set hours_remaining - 0.5
+*gosub_scene ch4_hunt func_advance_half_hour
 *set searched_wrong_center true
 The ${target_center} did not have a kitchen.
 
 You're down another half-hour, but at least now you know which building it is!
+
+*gosub_scene ch4_hunt func_print_time_readout
 *goto destination_choice
 
 *comment ########## Propose Smith Center ##########
@@ -167,7 +171,7 @@ Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over,
           *set sticker_placed_correctly_2 true
           You peel off a sticker, lift up the coffee announcement, and slap it onto the board.
           
-          *goto_scene ch4_hunt correctly_placed_sticker
+          *goto end_target_2_correctly
         #"I got something else."
           *goto where_place_sticker_discussion
   *disable_reuse #"Can you give me a hint, Mouse?"
@@ -186,7 +190,7 @@ Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over,
     
     "All right," you say "on the notice board, behind the coffee policy announcement. Got it." The announcement is easy to find, and you sticker the board behind it in short order.
     
-    *goto_scene ch4_hunt correctly_placed_sticker
+    *goto end_target_2_correctly
 
 *label where_place_sticker_no_discussion
 "I'll just stick the sticker on now and we can talk about it after then."
@@ -222,7 +226,7 @@ Where do you put the sticker?
     
     "That matches mine," you say, pressing the sticker into place and letting the announcement fall.
     
-    *goto_scene ch4_hunt correctly_placed_sticker
+    *goto end_target_2_correctly
   #On top of the fume hood.
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 false
@@ -240,7 +244,7 @@ Where do you put the sticker?
 
 *gosub mouse_is_trying_snippet
 "Okay," you say, grinning, "let's move on."
-*return
+*goto end_target_2_incorrectly
 
 *label where_place_sticker_discussion
 Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" he asks. "What'd you get?"
@@ -255,7 +259,7 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
         "Well, okay," says Carlo. You glance over at Mouse, who nods. Thanks, Mouse!
 
         You peel a sticker off and slap it on the microwave. "Okay," you say, "let's get moving, that's number two sorted."
-        *goto_scene ch4_hunt work_on_a_clue
+        *goto end_target_2_incorrectly
       #"All right, I trust you guys. We'll put it behind the coffee flier."
         *goto i_trust_you_guys_snippet
   #"Behind the towels on the towel rack."
@@ -267,7 +271,7 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
         "Your choice," he says as you hold the towels out of the way. You glance over at Mouse, who nods. Thanks, Mouse!
 
         You sticker the wall behind the towel rack, then put the sheet back into your pack. "Okay," you say, "that's clue set number two done."
-        *goto_scene ch4_hunt work_on_a_clue
+        *goto end_target_2_incorrectly
       #"All right, I trust you guys. We'll put it behind the coffee flier."
         *goto i_trust_you_guys_snippet
   #"On top of the fume hood."
@@ -281,7 +285,7 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
         "No problem," he says, taking the sticker sheet. He takes a sticker and just straight-up slaps it on the top of the fume hood. Gah! He's so tall! How is it even possible to be so tall?
         
         "All right," he says, returning the sticker sheet, "where to next?"
-        *goto_scene ch4_hunt work_on_a_clue
+        *goto end_target_2_incorrectly
       #"All right, I trust you guys. We'll put it behind the coffee flier."
         *goto i_trust_you_guys_snippet
   #"Well, I actually didn't finish, I gave up, but I didn't get anything related to coffee."
@@ -291,7 +295,7 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
     
     "Sure," you say, scanning the board for the announcement he mentioned. Ah, there we go. "CONCERNING THE USAGE OF THE COFFEE MACHINE." You hold the sheet up and sticker the board behind it.
     
-    *goto_scene ch4_hunt correctly_placed_sticker
+    *goto end_target_2_correctly
 
 *label i_trust_you_guys_snippet
 *set sticker_used_2 true
@@ -303,7 +307,7 @@ Carlos chuckles. "Is it really a matter of trust?"
 "Well, all right," says Carlos. "Morgan, you got it yet?"
 
 "Yeah," you say, holding the flier, "on the board, behind the coffee announcement, as you said." You press the sticker into place.
-*goto_scene ch4_hunt correctly_placed_sticker
+*goto end_target_2_correctly
 
 *label mouse_is_trying_snippet
 Carlos frowns. "Wait. How?"
@@ -322,3 +326,11 @@ Are you…are you trying to save me embarrassment, Mouse? Aww! That's so sweet! 
 
 You look over to Mouse. "Yeah." She pauses. "It's ROT13," she explains, then stays silent.
 *return
+
+*label end_target_2_incorrectly
+*gosub_scene ch4_hunt func_advance_hour
+*goto_scene ch4_hunt work_on_a_clue
+
+*label end_target_2_correctly
+*gosub_scene ch4_hunt func_advance_hour
+*goto_scene ch4_hunt correctly_placed_sticker

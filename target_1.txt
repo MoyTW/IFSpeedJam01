@@ -35,35 +35,6 @@ Mouse blinks. "I know it," she says.
 
 *label discuss_target_1
 *choice
-  #Take stock of the room again.
-    *gosub target_1_room_description
-    *goto discuss_target_1
-  *selectable_if (target_1_items_checked > 0) #Mentally review everything you've checked.
-    • Today is August 15, 2021.
-
-    *if target_1_checked_calendar
-      [b]Calendar:[/b]
-      *line_break
-      • September 19th is International Talk Like a Pirate Day, and marked as such on the calendar.
-    
-    *if target_1_checked_paintings
-      [b]paintings:[/b]
-      *line_break
-      • There's a painting of a tractor and wheat.
-      *line_break
-      • There's a painting of some lakes.
-      *line_break
-      • There's a painting of the Mayflower.
-      *line_break
-      • There's a painting of Gettysburg.
-      *line_break
-      • All the paintings date to 2018.
-    
-    *if target_1_checked_magazines
-      [b]Magazines:[/b]
-      *line_break
-      • As far as you can tell, there's nothing suspicious about the magazines.
-    *goto discuss_target_1
   *disable_reuse #"I want to check the calendar. Maybe there's a further hint on the September 19, 2021 square."
     *set target_1_items_checked + 1
     *set target_1_checked_calendar true
@@ -107,6 +78,35 @@ Mouse blinks. "I know it," she says.
     *else
       Carlo and Mouse both look at you expectantly. "Okay," says Carlo, "what've you got?"
       *goto target_1_place_sticker
+  #Take stock of the room again.
+    *gosub target_1_room_description
+    *goto discuss_target_1
+  *selectable_if (target_1_items_checked > 0) #Mentally review everything you've checked.
+    • Today is August 15, 2021.
+
+    *if target_1_checked_calendar
+      [b]Calendar:[/b]
+      *line_break
+      • September 19th is International Talk Like a Pirate Day, and marked as such on the calendar.
+    
+    *if target_1_checked_paintings
+      [b]paintings:[/b]
+      *line_break
+      • There's a painting of a tractor and wheat.
+      *line_break
+      • There's a painting of some lakes.
+      *line_break
+      • There's a painting of the Mayflower.
+      *line_break
+      • There's a painting of Gettysburg.
+      *line_break
+      • All the paintings date to 2018.
+    
+    *if target_1_checked_magazines
+      [b]Magazines:[/b]
+      *line_break
+      • As far as you can tell, there's nothing suspicious about the magazines.
+    *goto discuss_target_1
 
 *label target_1_place_sticker
 *choice
@@ -137,6 +137,7 @@ The lobby feels a little like a doctor's office waiting room, with neat white wa
 *set sticker_placed_correctly_1 true
 You go over to the calendar and flip it to September, peeling off a sticker and placing it on the square for the 19th.
 
+*gosub_scene ch4_hunt func_advance_hour
 *goto_scene ch4_hunt correctly_placed_sticker
 
 *label target_1_place_sticker_painting
@@ -146,4 +147,5 @@ You go over to the calendar and flip it to September, peeling off a sticker and 
 You go over to the painting of ${subject} and peel off a sticker, placing it neatly on the side of the plaque so it won't cover up the title or year.
 
 Okay, now on to the next one.
-*goto_scene ch4_hunt work_on_clue
+*gosub_scene ch4_hunt func_advance_hour
+*goto_scene ch4_hunt work_on_a_clue

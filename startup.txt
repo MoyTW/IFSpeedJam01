@@ -7,7 +7,7 @@
 *comment ch2_student_center
 *comment ch3_dorms
 *scene_list
-  ch5_madness
+  ch4_hunt
 
 *create player_name "DEFAULTNAME"
 
@@ -20,6 +20,12 @@
 *create inventory_has_student_id false
 
 *create hours_remaining 9
+
+*create current_time 0
+*comment 1000 or 1100
+*create start_time 1000
+*create lunch_time 1230
+*create diner_time 1830
 
 *create puzzle_share_immediately false
 *create puzzle_discuss_final_answer false

@@ -179,16 +179,19 @@ The three of you finish up your dinner and walk back. The sun still hasn't set b
 You look at Mouse. She shurgs.
 
 *fake_choice
-    #"That sounds great. I'll see you then."
-        "Right. Cya guys tomorrow."
-    #"9:30's a little early for me. I tend to be an evening person. How's 10:30 sound?"
-        He nods. "10:30 works for me. Mouse?" He waits for her nod. "Okay, then, cya guys tomorrow, 10:30."
-    #"I'm more of a morning person. Would you mind 8:30? It'd also give us more time to do the scavenger hunt."
-        "Whoa now," he says, pitching back. "That's a little early for me."
+  #"That sounds great. I'll see you then."
+    *set start_time 1000
+    "Right. Cya guys tomorrow."
+  #"9:30's a little early for me. I tend to be an evening person. How's 10:30 sound?"
+    *set start_time 1100
+    He nods. "10:30 works for me. Mouse?" He waits for her nod. "Okay, then, cya guys tomorrow, 10:30."
+  #"I'm more of a morning person. Would you mind 8:30? It'd also give us more time to do the scavenger hunt."
+    *set start_time 1000
+    "Whoa now," he says, pitching back. "That's a little early for me."
 
-        You laugh. "No problem, we can do 9:30."
+    You laugh. "No problem, we can do 9:30."
 
-        "9:30 it is," he says, grinning. "Cya guys tomorrow."
+    "9:30 it is," he says, grinning. "Cya guys tomorrow."
 He stands up and the two of you trade fist bumps. When he turns to Mouse, she pauses, unsure of how to proceed, before hesitantly tapping her fist against his. "Hey Mouse," he says, "it was nice to meet you."
 
 "Yeah," she says. He nods and walks out the door. Mouse turns to you. "Thanks," she says. "For helping me out."

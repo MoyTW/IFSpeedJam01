@@ -1,6 +1,5 @@
 *comment ########## Correct Sticker Number 5 ##########
 *label the_spell_is_complete
-*temp mouse_calls_you_this
 *temp current_time "TODO P0 TIME"
 
 You brace yourself for nausea or dizziness or some other waking nightmare, but nothing at all happens. Maybe expecting it to happen has somehow solved it? Maybe it was all in your head?
@@ -36,7 +35,7 @@ Hmm. Where's Carlos? Well he's not your boyfriend or anything, it's completely r
 
 "Hey, Mouse," you say.
 
-Mouse jumps, her head snapping up, but her eyes still refusing to meet yours. She shoves her phone into her pocket. "Are you okay?" she asks.
+Mouse jumps, her head snapping up, but her eyes still refusing to meet yours. She shoves her phone into her pocket. "Are you okay?" she asks, her voice at a surprisingly normal volume. She must be worried.
 
 "I think so." It's hard to be sure, though.
 
@@ -44,7 +43,7 @@ Mouse jumps, her head snapping up, but her eyes still refusing to meet yours. Sh
   #"How long was I out?"
     Mouse checks her phone. "Almost fifty minutes," she says. "You came to when you were brought into the medical center, but you fell asleep after that and slept for about thirty-five minutes."
   #"Can you tell me what happened?"
-    "You collapsed." Her voice is approaching a normal volume this time. Surprising. "We called the campus hotline and they brought you here. You came to when you arrived, but feel asleep afterwards, so the doctor said to just let you sleep."
+    "You collapsed. We called the campus hotline and they brought you here. You came to when you arrived, but feel asleep afterwards, so the doctor said to just let you sleep."
   #"What did the doctor say?"
     "He said you to let you sleep."
     
@@ -54,11 +53,11 @@ Mouse jumps, her head snapping up, but her eyes still refusing to meet yours. Sh
 
 Well, you don't remember waking up, but it's possible. You look out the window again. So…all of that was just sleep deprivation? That can't be right, can it? You definitely don't have narcolepsy or anything like that. "Thanks for looking out for me, Mouse." You turn back to her. "I appreciate it."
 
-She makes an attempt at a smile, which is a little hard to watch. "Thank you," she says. "I'm going to go tell the doctor you're up."
+She makes an attempt at a smile, which is a little hard to watch. "Thank you," she says, again at a normal volume. Weird. "I'm going to go tell the doctor you're up."
 
 "Sure," you say as Mouse stands up. "I'll just sit here for a bit, then." You pull out your phone. No calls, but a couple of texts from friends back home. You can take a look later.
 
-"Hello!" You look up to see a man in vaguely medical clothes with a big nametag on. Joshua Grahm, Nurse Practitioner. He has a clipboard and a pen in hand. "How are you feeling, ${player_name}?"
+"Hello!" You look up to see a man in vaguely medical clothes with a big nametag on. Joshua Graham, Nurse Practitioner. He has a clipboard and a pen in hand. "How are you feeling, ${player_name}?"
 
 *fake_choice
   #Gremlin: "Wrong person. I don't know who that is, but that ain't me!"
@@ -92,18 +91,18 @@ He nods, crossing something out on his clipboard. "Now, Morgan, can you tell me 
   #Nonplussed: "I passed out, was brought here, and am now I answering a series of questions to evaluate my mental state."
     "That's all I need," he says. "Would you mind giving me your student ID card, so I can finish documenting this visit?"
 
-"All right," you say, fetching your card out of your wallet. You're kind of regretting not taking more care with your picture, it's not the most - what the fuck? How does your ID card possibly say ${player_name} on it?
+"All right," you say, fetching your card out of your wallet. You're kind of regretting not taking more care with your picture, it's not the most - what the fuck? Why does it say ${player_name} on it?
 
-What the fuck is this? Shit! It's a good thing your face is turned away from Joshua. It was Morgan Faye when you got it, you distinctly remember this, and you definitely had Morgan Faye on your paperwork. The card has the same picture. And it hasn't left your wallet. But it says you're ${player_name}. How? Fuck, what should you tell him? Yes, that's my picture, but it's not my name? Somehow the name on my student ID card, the card that has the same name as the name I registered, the card that I've had on me for the whole time these last two days, somehow the card got replaced by a perfect forgery except that the name is wrong by, what, fucking magic? If this is a prank, it's a dumb fucking prank. Who the fuck would even want to do that, anyways?
+What the fuck is this? It's a good thing your face is turned away from Joshua. It was Morgan Faye when you got it, you distinctly remember this, and you definitely had Morgan Faye on your paperwork. The card has the same picture. And it hasn't left your wallet. But it says you're ${player_name}. What should you tell him? Yes, that's my picture, but it's not my name? Somehow the name on my student ID card, the card that has the same name as the name I registered, the card that I've had on me for the whole time these last two days, somehow the card got replaced by a perfect forgery except that the name is wrong by, what, fucking magic? If this is a prank, it's a dumb fucking prank. Who the fuck would even want to do that, anyways?
 
-Look, you can figure this out later, get out of here first. You obviously can't tell him, he's just think you're concussed or something.
+Look, you can figure this out later, get out of here first. You obviously can't argue about it, he'll just think you're concussed or something.
 
 "Here," you say, putting on the calmest fact you can and holding out the card.
 
 "Hmm," he says, looking at the card, "that's definitely you, but the card does say ${player_name}."
 
 *fake_choice
-  *selectable_if (true = false) #Did I actually get concussed and I'm suffering from the thing where you hit your head and say something but you actually say a completely different word, except that it's only happening to my name?
+  *selectable_if (true = false) #Did I actually get concussed and I'm suffering from the thing where you say or hear something but you actually say or hear a completely different word, except that it's only happening to my name?
   *selectable_if (true = false) #This is the worst fucking day, between the weird dizziness and hallucinations and literally passing out and now this? If this does end up being a prank I will murder whoever did this.
   #"Sorry," you say, "my mother remarried and I wanted to get a name change. ${player_name} is correct, but I prefer to be called Morgan Faye."
 
@@ -131,7 +130,7 @@ You hustle into the clinic lounge, wrestling your pack onto your back. Mouse tra
     
     "I'd like to call you Morgan," she says.
 
-"Morgan. Morgan." You pause. "Hey, Mouse, how did I introduce myself to you?"
+"Hey, Mouse, how did I introduce myself to you?"
 
 She swallows. "${player_name}."
 
@@ -139,13 +138,13 @@ She swallows. "${player_name}."
 
 "Yes," she says. "They're different."
 
-"Shit," you say. "Shit! Mouse, I don't remember doing that. I remember telling you that my name was Morgan. I remember [i]being[/i] Morgan, and that my student ID card had Morgan on it, and…and other things."
+"Shit," you say. "Shit! Mouse, I don't remember doing that. I remember telling you that my name was Morgan. And that my student ID card had Morgan on it, and…and other things." What, you're going to tell her about how you passed out and that magically made the campus look neat? Yeah, that's not crazy person talk at all.
 
-It's cold. It's not dark, but it's cold. In fact, it's freezing. How did you not notice this before? Either it's gone from warm and sunny to dark and freezing in an hour, or it really always was dark and freezing, and the walls of the buildings always were pristine, and your name always was ${player_name}. Are you crazy?
+It's cold. It's not dark, but it's cold. In fact, it's freezing. How did you not notice this before? Either it's gone from warm and sunny to cloudy and freezing in an hour, or it really always was cloudy and freezing, and the walls of the buildings always were pristine, and your name always was ${player_name}. Are you crazy?
 
 "Morgan," says Mouse, "do you want to go get dinner?"
 
-You laugh. It's a good question. It's about that time. You don't want to get dinner, though. You think of going to the cafeteria, all well-lit and swarming with a hundred hungry students, standing in line to get a sandwich or something. You want to either fix this or go to sleep and wake up in a sane world. What are you doing, Morgan? Disgraceful. Gone from zero to a hundred in the space of five minutes. Have some fucking composure, Morgan. Control yourself! Sure, you've either gone crazy or been transported into another dimension or something. That's no call to fall apart like this.
+It's a good question. It's about that time. You don't want to get dinner, though. You think of going to the cafeteria, all well-lit and swarming with a hundred hungry students, standing in line to get a sandwich or something. You want to either fix this or go to sleep and wake up in a sane world. What are you doing, Morgan? Disgraceful. Gone from calm to panicked in the space of five minutes. Have some fucking composure, Morgan. Control yourself! Sure, you've either gone crazy or been transported into another dimension or something. That's no call to fall apart like this.
 
 "Hey," says Mouse, "Morgan, do you want to go to my room? I can get you dinner."
 
@@ -157,7 +156,7 @@ Mouse's computer is very loud.
 
 *temp choices_taken 0
 *label waiting_for_mouse
-*if choices_taken = 6
+*if choices_taken = 7
   *goto mouse_arrives
 *choice
   *disable_reuse #Check the name on your driver's license.
@@ -166,7 +165,7 @@ Mouse's computer is very loud.
     *goto waiting_for_mouse
   *disable_reuse #Call Carlos and ask him what he remembers.
     *set choices_taken + 1
-    You're about to hit call when you stop. No. You don't want him to think you're crazy.
+    You pull him up on the phone. No. You don't want him to think you're crazy.
     *goto waiting_for_mouse
   *disable_reuse #Call Alex.
     *set choices_taken + 1
@@ -176,20 +175,108 @@ Mouse's computer is very loud.
     *set choices_taken + 1
     Mom picks up. "Hey ${player_name}! How's college going?"
 
-    You say something, you're not sure what. You apologize and say something came up, you'll call later, and hang up.
+    You say something to her. Then you apologize and say something came up, you'll call later. You hang up.
     *goto waiting_for_mouse
   *disable_reuse #Check texts from your friends.
     *set choices_taken + 1
     You look through some old texts. All of your friends call you ${player_name}. You see no mentions of Morgan.
     *goto waiting_for_mouse
+  *disable_reuse #Check the emails from the college.
+    *set choices_taken + 1
+    The emails all address you as ${player_name}.
+    *goto waiting_for_mouse
   #Wait.
     *set choices_taken + 1
-    You sit, with only the buzzing of Mouse's computer for company.
+    You sit. Mouse's computer buzzes.
     *goto waiting_for_mouse
 
 *label mouse_arrives
 *page_break
 
+Well, that's it. Can't argue with all that. Everything, everybody says I'm ${player_name}.
 
+I guess I've gone crazy. No other explanation.
+
+*page_break
+
+The door opens. Mouse comes in. She puts the takeout boxes on the desk.
+
+"Are you okay, Morgan?"
+
+*fake_choice
+  #"Yes."
+  #"No."
+  #"I don't know."
+
+Mouse waits. Then she says, "Do you want to eat?"
+
+*fake_choice
+  #"Yes."
+  #"No."
+  #"I don't know."
+
+Mouse watches you. "You - you can sit here," she says. She pulls out the desk chair.
+
+Mouse waits. "Morgan," she says, "should I call a doctor?"
+
+*fake_choice
+  #"No!"
+
+She winces. You shouted? You shouted. "No," you continue, more quietly, "I'm fine. I don't want to see a doctor. I'm fine."
+
+She swallows. "Okay," she says. "Can you tell me what's going on?"
+
+"No offense," you say, "but I just met you, like, yesterday, Mouse. You barely know me."
+
+Mouse takes a long time to respond. "Then what do you have to lose?"
+
+"What?"
+
+"You barely know me, right? Why shouldn't you tell me?"
+
+Because some things are fucking private, Mouse? Just because everybody shits doesn't mean they want somebody staring at them in the bathroom? Because I'm going crazy and I'm apparently delusional and I have some fucking pride and I don't want you to see me exploding into a million pieces? Because even though I've just met you I still want to be your friend and I don't want you to think I'm fucking insane? Because if I tell you then I'm going to have to admit that everything in the world is insisting that I'm not who I think I am? Because if I admit this is happening, that every single fucking memory I have is false, then what else is false?
+
+Goddammit, now I'm just crying and mumble-shouting incoherently on the bed of some random girl who I just met a day ago. What the fuck is this, Morgan?
+
+*page_break
+
+You run out of energy eventually. You lie on Mouse's bed, not quite sleeping. You're not sure how long.
+
+"Hey Morgan?" She waits for you to look over at her before she continues. "Can you tell me what you want me to do?"
+
+Sorry. I'd tell you if I knew, Mouse. I'm sorry for causing such a scene, too, and for messing up your bed and getting it all covered in sweat and tears. Thank you for being so sweet, but I don't want to be too much trouble. I think it'd be best if I just went to my room and slept. You shouldn't trouble yourself with me. I'll figure this out, somehow.
+
+You sit up and look over at her. She's on edge. Of course she is. You - you didn't have to do any of this, Mouse. You could've just dropped me off at the nurse and asked them to call you when I got out, you didn't have to play mom to me, but I'm deeply grateful that you did. Oh. I'm smiling, now, aren't I? I hope it doesn't look too creepy, I'm sure I look like a mess. "Mouse," you say, "I'm sorry. Thank you for helping me. Right now, I'd like to go back to my room and sleep. If you'd still like to talk tomorrow, I'll tell you about it then. Is that okay?"
+
+"Yes," she says. "Morgan," she adds as you stand up, "thank you for trusting me."
+
+Mouse, we just met. It's no big deal. But, thanks.
+
+*page_break
+[b]Ending B: Life Goes On[/b]
+
+The two of you never did figure out what happened.
+
+It turns out that Mouse had seen the campus as clean and shiny the whole time. You surreptitiously corroborated that with some other students and discover that the crumbling campus had been a wholesale hallucination. You went back and talked to Alex about it, and he had no recollection of ever having a bad word to say about its physical appearance.
+
+You end up just putting it down to the fickleness of memory. What else could you do?
+
+As for your name…
+
+*fake_choice
+  #I learned to live with it.
+    You dream of yourself as Morgan, but you use ${player_name}. You thought about getting a name change, but it seemed like a lot of trouble, and you didn't mind your new name so much.
+    
+    Well, you say new, but by all evidence, it was the only name you'd ever had.
+  #I changed my name to Morgan Faye.
+    It was a lot of trouble, changing your name. Your family and friends were all quite confused, and you took to joking that took it in honor of Morgan le Fey, since you already had a reputation for being into medieval history. At first they thought you had gone a little 'off' but it all ended up sorting itself out. More annoying was getting the name registered with all the necessary organizations.
+
+And so, life went on. You graduated on time. You made friends, went to parties, studied reasonably hard, and at the end, you walked out and took your diploma with all the rest of your classmates.
+
+You never figured out what happened, but in the end, it didn't much matter.
+
+Maybe that's a lie. It's hard to tell with these things. You'll certainly never forget it. Also, you don't know if you would be nearly as close to Mouse if you hadn't had that experience. So there's at least one thing you can thank those strange couple of days for.
+
+In the end, though, life went on.
 
 *finish

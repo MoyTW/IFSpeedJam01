@@ -6,34 +6,118 @@
 *set inventory_has_campus_map true
 *set inventory_has_student_id true
 
-TODO: Time skip to breakfast, mid-conversation. You all look over the clues. You plan the time - you'll come back for lunch at 1pm, have dinner at 6pm, and finish at 8pm, which gives you a total of 8 hours.
+"So," you say, in between bites of your breakfast omelette, "it's
+*if (start_time = 1000)
+  *set current_time start_time
+  9:47 right now,
+  *goto discuss_time_continue
+*else
+  *set current_time start_time
+  10:47 right now,
+  *goto discuss_time_continue
+*label discuss_time_continue
+and it finishes at 8:00 this evening, but I'm not super set on winning it or anything." You raise an eyebrow at Carlos, who nods, and then look at Mouse, who also seems to assent. "So, how about we start at the top of the hour, eat lunch at around 12:30, and then come back for dinner at 6:30? That sound good?"
 
-TODO: If you took a late breakfast you lose an hour and only get 7 hours lol.
+"No problems here," says Carlos. He spoons some of his granola cereal stuff into his mouth.
 
-TODO: You talk about how you want to do the hunt.
+"Mouse?" you ask. She nods.
 
-"So, how do you want to do this, Morgan?"
+"All right then," you say, putting the hint sheet down on the table. "So, it looks like you first go to a building, then you find something inside of the building, and then you put a sticker where it says."
 
-TODO: this
-*fake_choice
-  #"I want to try and solve them all on my own. Don't tell me anything until I've placed the sticker, even if you think I'm making a mistake." [i][ If you choose this, Mouse and Carlos will not help you. ][/i]
-  #"I want to give them a try, so don't spoil me if you think you know, but we should all discuss before I actually place a sticker." [i][ If you choose this, Mouse and Carlos will inform you if you guessed wrong. ][/i]
-    *set puzzle_discuss_final_answer true
-  #"If you have an idea, say it right then and there. I'm not particularly bothered about puzzle spoilers." [i][ If you choose this, Mouse and Carlos will tell you the solutions to each hint. ][/i]
-    *set puzzle_share_immediately true
-    *set puzzle_discuss_final_answer true
+Carlos eyes the sheet. "Well," he says, "these don't seem too bad. How invested are you in solving these on your own, Morgan, or do you mind us just blurting out whatever comes into our heads?"
 
-TODO: You start the hunt!
+*gosub select_difficulty_snippet
 
-*page_break
+"That's fine by me," says Carlos. You check with Mouse, and she nods.
+
+"All right," you say, polishing off your plate, "as soon as you guys are ready."
+*goto work_on_a_clue
 
 *comment ########################################
 *comment # WORK ON A CLUE                       #
 *comment ########################################
 *label work_on_a_clue
-*page_break
+*temp num_stickers_used 0
+*gosub func_set_num_stickers_used
+*if (num_stickers_used < 5)
+  *goto select_next_target
+*else
+  *goto all_stickers_used
 
-TODO P0: if you've used all the stickers but got some wrong, you get the bad end
+*label func_advance_half_hour
+*if (current_time modulo 100) = 0
+  *set current_time + 30
+  *return
+*else
+  *set current_time + 70
+  *return
+
+*label func_advance_hour
+*set current_time + 100
+*return
+
+*comment Really? We can't assign return values? ChoiceScript why u do dis.
+*label func_set_num_stickers_used
+*set num_stickers_used 0
+*if sticker_used_1
+  *set num_stickers_used + 1
+*if sticker_used_2
+  *set num_stickers_used + 1
+*if sticker_used_3
+  *set num_stickers_used + 1
+*if sticker_used_4
+  *set num_stickers_used + 1
+*if sticker_used_5
+  *set num_stickers_used + 1
+*return
+
+*label func_print_time
+*temp hours round(current_time / 100)
+*temp minutes current_time modulo 100
+*if minutes = 0
+  *set minutes "00"
+*temp ampm "AM"
+*if current_time >= 1200
+  *set ampm "PM"
+${hours}:${minutes} ${ampm}
+*return
+
+*label func_print_time_readout
+[b][i][ The time is
+*gosub func_print_time
+][/i][/b]
+*return
+
+*label select_difficulty_snippet
+*fake_choice
+  #"I want to try and solve them all on my own. Don't tell me anything until I've placed the sticker, even if you think I'm making a mistake." [i][ If you choose this, Mouse and Carlos will not help you. ][/i]
+    *set puzzle_share_immediately false
+    *set puzzle_discuss_final_answer false
+  #"I want to give them a try, so don't spoil me if you think you know, but we should all discuss before I actually place a sticker." [i][ If you choose this, Mouse and Carlos will inform you if you guessed wrong. ][/i]
+    *set puzzle_share_immediately false
+    *set puzzle_discuss_final_answer true
+  #"If you have an idea, say it right then and there. I'm not particularly bothered about puzzle spoilers." [i][ If you choose this, Mouse and Carlos will tell you the solutions to each hint. ][/i]
+    *set puzzle_share_immediately true
+    *set puzzle_discuss_final_answer true
+*return
+
+*comment ########## Select Next Target ##########
+*label select_next_target
+*page_break
+*gosub func_print_time_readout
+
+[b][i][
+*if ((puzzle_share_immediately = true) and (puzzle_discuss_final_answer = true))
+  You've asked that Mouse and Carlos tell you the solutions to each hint.
+  *goto difficulty_desc_continue
+*elseif (puzzle_discuss_final_answer = true)
+  You've asked that Mouse and Carlos let you guess, but inform you if you guessed wrong.
+  *goto difficulty_desc_continue
+*else
+  You've asked that Mouse and Carlos not help you.
+  *goto difficulty_desc_continue
+*label difficulty_desc_continue
+][/b][/i]
 
 *gosub_scene clue_sheet clues_only
 *choice
@@ -47,9 +131,55 @@ TODO P0: if you've used all the stickers but got some wrong, you get the bad end
     *goto_scene target_4 work_on_target_4
   *selectable_if (sticker_used_5 = false) #Work on the fifth target.
     *goto_scene target_5 work_on_target_5
-  #Actually, I want to change how we're handling the discussions.
-    TODO: text & code for changing discussion handling
+  #"Actually, I want to change how we're handling the discussions."
+    "Sure," says Carlos. "What did you have in mind?"
+    *gosub select_difficulty_snippet
     *goto work_on_a_clue
+
+*comment ########## All Stickers Used ##########
+
+*label all_stickers_used
+"That was number five," says Carlos.
+
+"Oh," you say, "right." You check the time. "Well," you say, "you want to head back to the dorms? I want to get changed before dinner, if we have the time. We can get food a little later and still make the raffle at 8:30."
+
+"Sure," he says. Mouse nods. The three of you go back to the dorm, and then Mouse vanishes into her room. You go back to yours and change, and the three of you go to dinner.
+
+*page_break
+[b]Ending B: Blame Alex[/b]
+
+"It's a reference to Glengarry Glen Ross," says Carlos, pointing to the rules sheet. "The prize thing, I mean." He looks over at Mouse. "If you search Cadillac, steak knives, you're fired, you'll get the quote."
+
+"All right," you say, "but what does it have to do with sales?"
+
+"Well, the movie's about salespeople. The plot is that -"
+
+"Hold on," you say, "Alex, my brother, just texted me." You check the text. [i]Alex: Hey Morgan, did you place all the stickers?[/i] "He's asking about the stickers."
+
+"Oh?" asks Carlos. "Does he know the answers?"
+
+"Dunno, let me answer." [i]Morgan: Yeah, why?[/i]
+
+[i]Alex: Okay let me be honest Morgan the scavenger hunt was a lie. Well, specifically, me and my friends made it up, give you something to do. There's no prizes. You've just been stickering random things.[/i]
+
+You sigh. "Hey," you say, "guess what?" Mouse looks up from her pasta.
+
+Carlos frowns. "He found one of your stickers in the wrong place, and decided to text you about it?"
+
+"No. He's saying that there's no raffle, and that the whole thing was just something he and his friends made up and gave to me so I'd have something to do."
+
+"Okay I have to say, I didn't expect that." Carlos laughs. "Damm, Morgan! You have to admit, that's pretty funny!"
+
+You shake your head. "I'm not going to argue that it's not." You sigh. "You know, it was fun. So I'll let it pass, but I'm gonna make him clean those stickers up."
+
+"Only fair," says Carlos, grinning. "So, what, there's no raffle?"
+
+"I guess not," you say. "Anyways, what were you saying?"
+
+"So, the plot of the movie is that…"
+
+*page_break
+*goto bad_end_next_four_years
 
 *label decrement_time
 *comment TODO P0: time can expire!
@@ -196,10 +326,22 @@ You check your breathing. You're fine, now. It's fine, right? It's just, it's no
     He chuckles. "Uh, I think your priorities are out of order, Morgan. You should definitely go to the nurse's office." You look over to Mouse, and she nods emphatically. "Look," he says, "would you be happy if somebody you just met put off going to see somebody about their panic attacks just to be polite to you?"
     
     You sigh. "Yeah," you say, "you're right."
-    *goto bad_end
+    *goto bad_end_nurses_office
 
-*label bad_end
+*label bad_end_nurses_office
+[b]Ending A: A Passing Madness[/b]
+
+You drop the scavenger hunt to go to the nurse's office, a small complex in the back of the Admin Building. You describe your issues to the receptionist then sit down in the empty lobby to wait, telling Carlos and Mouse that they don't need to wait. Carlos goes off to do dinner, but Mouse decides to stay. You chat a little in the lobby, and it seems she's much more forthcoming when it's a one-on-one conversation. She even talks at a volume close to normal.
+
+Soon after you're seen by Joshua Graham, a nurse practitioner, who asks you a bunch of questions, has you move around a bit, and then tells you that you should rest and come back if you have any other issues. You're not sure how well you can measure somebody's health just through a quick survey, but it's reassuring to hear that there's nothing obviously wrong with you.
+
+It takes only about forty minutes total, short enough that you and Mouse have no issue getting dinner before it closes.
+
+You hang out for a couple more hours before returning to your room. These last couple of days have been pretty eventful, but they could have gone worse. You fall asleep with little trouble.
 *page_break
+*goto bad_end_next_four_years
+
+*label bad_end_next_four_years
 The next four years were very strange.
 
 You graduated on time. You made friends, went to parties, studied reasonably hard, and at the end, you walked out and took your diploma with all the rest of your classmates. But the whole time, it felt slightly unreal.
