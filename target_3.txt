@@ -132,6 +132,7 @@ Carlos shrugs. "I'm stumped, so ${target_hall} is as good as any," he says.
   *goto search_wrong_hall_first_time
 
 *label search_wrong_hall_first_time
+*gosub_scene ch4_hunt func_advance_half_hour
 The three of you go to ${target_hall},
 *if (target_hall = "Monty Hall")
   which remains as beat up as ever.
@@ -141,14 +142,16 @@ The three of you go to ${target_hall},
   
   You enter through the main doors, and it looks almost identical to your own, the only difference being that the colors are all more slightly red.
   *goto search_wrong_hall_first_time_continue
+
 *label search_wrong_hall_first_time_continue
-*set hours_remaining - 0.5
 
 You trek up to room 310, but there aren't any paintings here. Instead, they've decorated the walls by hanging intricately patterned Tajik rugs. Wait, what? Holy shit! They look like Grandma's! They're beautiful! Who decides on the decorations? Is there somebody from Central Asia working here?
 
 "Nah," says Carlos in disappointment, "this isn't it."
 
 But look at the rugs, Carlos! No, he's not looking at the rugs. Mouse doesn't seem particularly interested, either. Well, you can't blame them. You'll have to come back up here later, but for now, time to go. "Okay," you say, "wasn't this one."
+
+*gosub_scene ch4_hunt func_print_time_readout
 *goto destination_choice
 
 *comment ########## Propose Wrong Second Time ##########
@@ -163,8 +166,9 @@ But look at the rugs, Carlos! No, he's not looking at the rugs. Mouse doesn't se
   
   Either way, you did ask that they let you try by yourself, so ${target_hall} it is!
   *goto search_wrong_hall_second_time
+
 *label search_wrong_hall_second_time
-*set hours_remaining - 0.5
+*gosub_scene ch4_hunt func_advance_half_hour
 
 Why are all these buildings' exteriors so badly maintained, anyways? No use worry about it now, but at some point you've got to go ask somebody, maybe a teacher or something. Or are they professors now?
 
@@ -173,6 +177,8 @@ Look, that's not important. What's important is the fact that ${target_hall} als
 "It's the RAs I think," says Carlos.
 
 Well, that explains a lot. "Wrong twice," you say. "It's a coinflip now."
+
+*gosub_scene ch4_hunt func_print_time_readout
 *goto destination_choice
 
 *comment ########## Propose Wrong Third Time ##########
@@ -189,12 +195,15 @@ Well, that explains a lot. "Wrong twice," you say. "It's a coinflip now."
   #"I'm guessing."
     He laughs. "Well, at least you're honest."
 *goto search_wrong_hall_third_time
+
 *label search_wrong_hall_third_time
-*set hours_remaining - 0.5
+*gosub_scene ch4_hunt func_advance_half_hour
 
 To your disappointment, ${target_hall} is not the correct hall. The RA has chosen strings of lights, and there's not a picture to be seen. That's three for three wrong.
 
 You're beginning to regret your stance on hints, but there's nothing for it now! At this point, you can't help but be right!
+
+*gosub_scene ch4_hunt func_print_time_readout
 *goto destination_choice
 
 *comment ########################################
@@ -281,7 +290,6 @@ It's definitely the second one, though, and as much as you'd like her to speak u
     *goto put_sticker_behind_proposed_painting
 
 *comment ########## Delayed Or No Discussion ##########
-*comment TODO P0: Ask Mouse what she had afterwards
 *label delayed_or_no_discussion
 *choice
   #"I think it's the first one, the overgrown pyramid."
@@ -318,14 +326,21 @@ It's definitely the second one, though, and as much as you'd like her to speak u
 
   *choice
     #Put the sticker behind the painting of the girl with the wicker basket.
-      *goto put_sticker_behind_farmland
+      *goto put_sticker_behind_farmhand
     #Put the sticker behind the painting of ${proposed_painting}
       *goto put_sticker_behind_proposed_painting
 *else
   Carlos shrugs. "Good enough as any, he says." Mouse shrugs too, saying nothing.
 
-  "All right," you say.
+  "All right," you say. "The painting of ${proposed_painting} it is, but what did you get, Mouse?"
+  
+  "The farmhand," she says, "since Paul escaped Damascus in a basket."
 
+  Well, apparently all those Bible Study sessions all just fell right out of your head. "Good catch," you say.
+
+  Carlos laughs. "Hey, you can't change your answer now, Morgan."
+
+  "Don't worry, I'm not going to!" You grin.
   *goto put_sticker_behind_proposed_painting
 
 *comment ########## Shared Labels And Endings ##########
@@ -346,7 +361,7 @@ You shrugs. What can you say to that? Sorry, Carlos, I'm just not a bridge type 
 "Carlos," you say, gesturing to the painting of the girl with the laundry basket, "can you hold that?"
 
 "Sure thing," he says, holding it up. You peel off a sticker and smooth it onto the wall behind the painting.
-
+*gosub_scene ch4_hunt func_advance_hour
 *goto_scene ch4_hunt correctly_placed_sticker
 
 *label put_sticker_behind_proposed_painting
@@ -355,4 +370,5 @@ You shrugs. What can you say to that? Sorry, Carlos, I'm just not a bridge type 
 "Carlos," you say, gesturing to the painting of ${proposed_painting}, "can you hold that?"
 
 "Sure thing," he says, taking it off the wall. You peel off a sticker and smooth it onto the wall behind the painting, and Carlos replaces it, straightening it with care. "Okay, let's get out of here," you say.
+*gosub_scene ch4_hunt func_advance_hour
 *goto_scene ch4_hunt work_on_a_clue

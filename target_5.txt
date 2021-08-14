@@ -91,12 +91,14 @@ Mouse looks up. "I have it," she says.
   *goto search_wrong_first_time
 
 *label search_wrong_first_time
-*set hours_remaining - 0.5
+*gosub_scene ch4_hunt func_advance_half_hour
 Carlos shrugs. "Sure,"  he says, "why not." Mouse stays silent.
 
 You lead the group to the ${target_center} Center, a crumbling edifice that's only one story tall, which means that it can't possibly be the right building. "Hold on," you say, "this one's one story, right? So we can eliminate all the other ones that are one story." You quickly step back onto the crumbling path and follow it towards the dorms until you can see all of the buildings in the western area.
 
 All the rest of the buildings are two stories. Well, it was a good idea.
+
+*gosub_scene ch4_hunt func_print_time_readout
 *goto building_choice
 
 *comment ########## Propose Wrong Second Time ##########
@@ -113,10 +115,12 @@ All the rest of the buildings are two stories. Well, it was a good idea.
   *goto search_wrong_second_time
 
 *label search_wrong_second_time
-*set hours_remaining - 0.5
+*gosub_scene ch4_hunt func_advance_half_hour
 The ${target_center} is three stories tall and, as expected, looks like the walls would collapse at so much as a slight breeze. Luckily the inside is much better maintained. You find a set of stairs to take you up to the second floor, then hunt around for a Pine Room and Aspen Room, to no avail.
 
 Well, there's only two options left now.
+
+*gosub_scene ch4_hunt func_print_time_readout
 *goto building_choice
 
 *comment ########## Propose Wrong Third Time ##########
@@ -128,6 +132,7 @@ Well, there's only two options left now.
   
   *return
 *else
+  *gosub_scene ch4_hunt func_advance_half_hour
   "The ${target_center}, eh?" asks Carlos. "Once more into the breach."
   
   "Have a little faith in me, Carlos!"
@@ -137,6 +142,8 @@ Well, there's only two options left now.
   "She probably would," you agree, "but we all decided to let me make my mistakes."
   
   It's just unfortunate that the ${target_center} is another one of them, seeing as all its second floor rooms are named after football players like Barry Bonds.
+  
+  *gosub_scene ch4_hunt func_print_time_readout
   *goto building_choice
 
 *comment ########################################
@@ -251,7 +258,6 @@ Right! 958 it is then.
 *label enter_958
 *set sticker_used_5 true
 *set sticker_placed_correctly_5 true
-
 You enter 958 on the locker and it opens to reveal nothing at all. Well, it's not like you expected anything particularly interesting. You peel off a sticker, slap it on the back, and close it right back up.
-
+*gosub_scene ch4_hunt func_advance_hour
 *goto_scene ch4_hunt correctly_placed_sticker

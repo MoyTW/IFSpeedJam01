@@ -115,7 +115,7 @@ You look back at the clue.
   *goto lab_choice
 
 *label first_lab_wrong_snippet
-*set hours_remaining - 0.5
+*gosub_scene ch4_hunt func_advance_half_hour
 *gosub enter_first_lab_snippet
 
 The lobby has a bunch of display cases with various chemistry-related things, like beakers and models of molecules. None of this looks related to leaves, but of course, it wouldn't be obvious, would it?
@@ -125,11 +125,13 @@ The lobby has a bunch of display cases with various chemistry-related things, li
 "What?" asks Carlos. "How can you tell?"
 
 "No unlocked cabinets," she says. You check the clue sheet. Oh, she's right, it can't be this one. Okay, where next, then?
+
+*gosub_scene ch4_hunt func_print_time_readout
 *return
 
 *comment ########## Propose Wrong Second Time ##########
 *label propose_wrong_second_time
-*set hours_remaining - 0.5
+*gosub_scene ch4_hunt func_advance_half_hour
 Carlos grins. "It's fifty-fifty!"
 
 "It's only fifty-fifty if I'm picking randomly," you reply.
@@ -148,7 +150,9 @@ Carlos grins. "It's fifty-fifty!"
 
 Unfortunately, it turns out that ${target_lab} is not the right lab. The displays are pretty impressive, with models of rockets and engines and some fancy telescopes, but there are no unlocked cabinets to be seen.
 
-Well, at least now you know which building it is.    
+Well, at least now you know which building it is.
+
+*gosub_scene ch4_hunt func_print_time_readout
 *goto lab_choice
 
 *comment ########## Shared Labels ##########
@@ -267,11 +271,12 @@ The fourth display case is a large fish tank with a bunch of different kinds of 
   You open the cabinet underneath the ${target_display_case} to reveal cleaning supplies. You press a sticker against the back of the door and then close it.
   
   "All right," you say, "the lab's done with, number four down."
+  *gosub_scene ch4_hunt func_advance_hour
   *goto_scene ch4_hunt work_on_a_clue
 
 *label put_sticker_on_ants
 *set sticker_used_4 true
 *set sticker_placed_correctly_4 true
 You open the cabinet underneath the ant farm to reveal some cleaning supplies. You press a sticker against the back of the door before closing it.
-
+*gosub_scene ch4_hunt func_advance_hour
 *goto_scene ch4_hunt correctly_placed_sticker

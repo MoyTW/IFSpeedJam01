@@ -3,13 +3,15 @@
 
 *comment P0 replace all Morgan's "okay" with "all right"
 
-*comment ch1_arrival
-*comment ch2_student_center
-*comment ch3_dorms
 *scene_list
+  ch1_arrival
+  ch2_student_center
+  ch3_dorms
   ch4_hunt
 
-*create player_name "DEFAULTNAME"
+*create player_first_name "FIRSTNAME"
+*create player_last_name "LASTNAME"
+*create player_full_name "TEMP"
 
 *create inventory_has_backpack false
 *create inventory_has_book false
@@ -25,6 +27,7 @@
 *comment 1000 or 1100
 *create start_time 1000
 *create lunch_time 1230
+*create lunch_eaten false
 *create diner_time 1830
 
 *create puzzle_share_immediately false

@@ -1,5 +1,21 @@
-What's your name?
-*input_text player_name
+*label name_selection
+What's your first name?
+*input_text player_first_name
+*set player_first_name "$!{player_first_name}"
+
+What's your last name?
+*input_text player_last_name
+*set player_last_name "$!{player_last_name}"
+
+*set player_full_name "${player_first_name}"&" "
+*set player_full_name "${player_full_name}"&"${player_last_name}"
+So you're ${player_full_name}?
+*choice
+  #Yes.
+    *goto you're_wrong
+  #No.
+    Please answer the question seriously.
+    *goto name_selection
 
 *label you're_wrong
 Wrong!
@@ -18,13 +34,13 @@ You got that?
     Okay. Listen carefully, this time.
 
     *goto your_name_is_morgan
-  #My name is ${player_name}.
+  #My name is ${player_full_name}.
     *goto you're_wrong
 
 *label alex_spits
 Good. Let's go.
 *page_break
-Your half-brother leans out of the car window and spits. "Morgan," announces Alex, "this place is the worst goddamn university in the world. The most cursed place in all of America."
+Your half-brother leans out of the car window and spits. "Morgan," announces Alex, "this place is the worst goddamn university in the world. The most cursed university in all of America."
 
 *fake_choice
   #Gremlin: "Fucking manners, Alex! Didn't Sarah ever teach you not to spit out of a car?"
@@ -33,9 +49,9 @@ Your half-brother leans out of the car window and spits. "Morgan," announces Ale
     "Alex, what are you, five?"
 
     "Oh come on, I just wanted to show this place what I thought of it. You don't gotta jump down my threat about it." Alex sighs and rolls up the window.
-  #Considerate: "Please don't stick your head out the window while you're driving. Especially not with these roads."
-    "That's what the seatbelt is for. Besides, it's a shithole, Morgan. Spitting is more than it deserves." He chuckles and rolls up the window.
-  #Nonplussed: "America's a big place. Got a lot of curses flying around. This place doesn't even register."
+  #Considerate: "What makes you call it cursed, Alex?"
+    "Because it's a shithole, Morgan. Spitting is more than it deserves." He chuckles and rolls up the window.
+  #Nonplussed: "America's a big place. Has a lot of curses flying around. This place doesn't even register."
     "Shit, if there's anywhere more cursed, I ain't seen it." He snorts. "Then again I ain't seen much so who the hell knows?"
     
     "Uncle Eyore's house was at least twice as cursed as this place."

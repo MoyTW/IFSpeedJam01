@@ -1,20 +1,29 @@
 *comment ########## Correct Sticker Number 5 ##########
 *label the_spell_is_complete
-*temp current_time "TODO P0 TIME"
-
 You brace yourself for nausea or dizziness or some other waking nightmare, but nothing at all happens. Maybe expecting it to happen has somehow solved it? Maybe it was all in your head?
 
-Carlos checks his watch. "All right," he says, "it's ${current_time}."
+Carlos checks his watch. "All right," he says, "it's
+*gosub_scene ch4_hunt func_print_time false
+*if current_time <= 1800
+  so we have some time before we said we'd get dinner."
+  *goto spell_complete_continue
+*else
+  so how does dinner sound to you guys?"
+  *goto spell_complete_continue
+*label spell_complete_continue
+"That works out," you say. "I'd like to go back to the dorms to get changed first, so can we stop by there for a bit?"
 
-TODO P0 what do you want to do
+"Mouse?" he asks, looking over at her. She nods.
 
-"That was fun," says Carlos as you head to the exit. "I'm impressed with your problem-solving skills, Mouse."
+You put on a smile. "Thanks for coming," you say, looking between them.
+
+"Yeah, I enjoyed it. It was a lot of fun." Carlos starts heading towards the exit. "I'm impressed with your problem-solving skills, Mouse."
 
 "Yeah, Mouse," you say, "you did amazing!"
 
-"Thanks," she says, tiling your face away. Aww, Mouse! You don't need to be so shy. It's fine if you are, though, don't worry, you're fine either way.
+"Thanks," she says, tiling her face away. Aww, Mouse! You don't need to be so shy. It's fine if you are, though, don't worry, you're fine either way.
 
-"So," asks Carlos, holding the door open for the two of you, "what do you guys think they'll have for dinner?"
+"So," asks Carlos, holding the exit open for the two of you, "what do you guys think they'll have for dinner?"
 
 *fake_choice
   #Gremlin: "Pizza, pizza, pizza!"
@@ -23,11 +32,11 @@ TODO P0 what do you want to do
 
 Carlos laughs. "Yeah, that's -"
 
-Something grabs both of your hands in an iron grip and pulls you through the door, and you stumble forwards, and something smashes you on the head, [i]hard,[/i] and you're falling backwards and you can see your hand, stretched out in the sunlight, and the nails are flying off, and then the skin sloughs off in a scaly rain to reveal the muscles underneath, and then they too fall away to reveal the bone and it's happening to your arm now and it's moving up your shoulder and your finger bones are falling and your neck is sloughing its skin and soon it will reach your face and your mind revolts at the thought and switches off.
+Something invisible grabs both of your hands in an iron grip and pulls you through the door, and you stumble forwards, and something smashes you on the head, [i]hard,[/i] and you're falling backwards and you can see your hand, stretched out in the sunlight, and the nails are flying off, and then the skin sloughs off in a scaly rain to reveal the muscles underneath, and your muscles unravel, falling away, and behind them you can see bone and it's happening to your arm now and it's moving up your shoulder and your finger bones are falling and your neck is sloughing its skin and soon it will reach your face and your mind revolts at the thought and switches off.
 
 *page_break
 
-You're not sure how to describe how you feel right now. Refreshed? Comfortable? Good? That doesn't quite seem to cover it. It's like the time when Mom got hit by a car, and you spent the week alternating between weeping, not sleeping, and praying fervently, and then one day she walked back through the door and you ran over to her and cried for what felt like hours, and then you went to sleep for almost a whole day, and that feeling after waking up is what you're feeling now. If there's a word for that, you don't know it.
+You're not sure how to describe how you feel right now. Relieved? Comfortable? Good? That doesn't quite seem to cover it. It's like the time when Mom got hit by a car, and you spent the week alternating between weeping, not sleeping, and praying fervently, and then one day she walked back through the door and you ran over to her and cried for what felt like hours, and then you went to sleep for almost a whole day, and you woke up to her holding you and stroking your hair. That's what you're feeling now. If there's a word for that, you don't know it.
 
 You open your eyes. You're lying in what's pretty obviously the school's nursing area, or office, or whatever they call it. Oh, there's Mouse, playing on her phone. There's nobody else here. You sit up and look out the window. You've been out long enough for it to go from cloudless and sunny to heavily overcast, but not long enough for it to get dark.
 
@@ -46,9 +55,9 @@ Mouse jumps, her head snapping up, but her eyes still refusing to meet yours. Sh
     "You collapsed. We called the campus hotline and they brought you here. You came to when you arrived, but feel asleep afterwards, so the doctor said to just let you sleep."
   #"What did the doctor say?"
     "He said you to let you sleep."
-    
+
     "He what!?" you exclaim. That's negligence, isn't it?
-    
+
     "You came to when you arrived," she says. "You were asking your mom to let you sleep longer. Then you fell asleep. The doctor said to just wait, so we did."
 
 Well, you don't remember waking up, but it's possible. You look out the window again. So…all of that was just sleep deprivation? That can't be right, can it? You definitely don't have narcolepsy or anything like that. "Thanks for looking out for me, Mouse." You turn back to her. "I appreciate it."
@@ -57,14 +66,14 @@ She makes an attempt at a smile, which is a little hard to watch. "Thank you," s
 
 "Sure," you say as Mouse stands up. "I'll just sit here for a bit, then." You pull out your phone. No calls, but a couple of texts from friends back home. You can take a look later.
 
-"Hello!" You look up to see a man in vaguely medical clothes with a big nametag on. Joshua Graham, Nurse Practitioner. He has a clipboard and a pen in hand. "How are you feeling, ${player_name}?"
+"Hello!" You look up to see a man in vaguely medical clothes with a big nametag on. Joshua Graham, Nurse Practitioner. He has a clipboard and a pen in hand. "How are you feeling, ${player_first_name}?"
 
 *fake_choice
   #Gremlin: "Wrong person. I don't know who that is, but that ain't me!"
-    He pauses. "If ${player_name} is not your name, could you please give me your preferred name, then? First and last."
+    He pauses. "If ${player_first_name} is not your name, could you please give me your preferred name, then? First and last."
     
     "Morgan Faye," you say. "Sorry."
-  #Considerate: "I'm sorry, I think there's been some sort of mistake. My name's Morgan, not ${player_name}."
+  #Considerate: "I'm sorry, I think there's been some sort of mistake. My name's Morgan, not ${player_first_name}."
     "No problem," he says, "can you give me your full name?"
     
     "Morgan Faye," you say.
@@ -91,20 +100,20 @@ He nods, crossing something out on his clipboard. "Now, Morgan, can you tell me 
   #Nonplussed: "I passed out, was brought here, and am now I answering a series of questions to evaluate my mental state."
     "That's all I need," he says. "Would you mind giving me your student ID card, so I can finish documenting this visit?"
 
-"All right," you say, fetching your card out of your wallet. You're kind of regretting not taking more care with your picture, it's not the most - what the fuck? Why does it say ${player_name} on it?
+"All right," you say, fetching your card out of your wallet. You're kind of regretting not taking more care with your picture, it's not the most - what the fuck? Why does it say ${player_full_name} on it?
 
-What the fuck is this? It's a good thing your face is turned away from Joshua. It was Morgan Faye when you got it, you distinctly remember this, and you definitely had Morgan Faye on your paperwork. The card has the same picture. And it hasn't left your wallet. But it says you're ${player_name}. What should you tell him? Yes, that's my picture, but it's not my name? Somehow the name on my student ID card, the card that has the same name as the name I registered, the card that I've had on me for the whole time these last two days, somehow the card got replaced by a perfect forgery except that the name is wrong by, what, fucking magic? If this is a prank, it's a dumb fucking prank. Who the fuck would even want to do that, anyways?
+What the fuck is this? It's a good thing your face is turned away from Joshua. It was Morgan Faye when you got it, you distinctly remember this, and you definitely had Morgan Faye on your paperwork. The card has the same picture. And it hasn't left your wallet. But it says you're ${player_full_name}. What should you tell him? Yes, that's my picture, but it's not my name? Somehow the name on my student ID card, the card that has the same name as the name I registered, the card that I've had on me for the whole time these last two days, somehow the card got replaced by a perfect forgery except that the name is wrong by, what, fucking magic? If this is a prank, it's a dumb fucking prank. Who the fuck would even want to do that, anyways?
 
 Look, you can figure this out later, get out of here first. You obviously can't argue about it, he'll just think you're concussed or something.
 
 "Here," you say, putting on the calmest fact you can and holding out the card.
 
-"Hmm," he says, looking at the card, "that's definitely you, but the card does say ${player_name}."
+"Hmm," he says, looking at the card, "that's definitely you, but the card does say ${player_full_name}."
 
 *fake_choice
   *selectable_if (true = false) #Did I actually get concussed and I'm suffering from the thing where you say or hear something but you actually say or hear a completely different word, except that it's only happening to my name?
   *selectable_if (true = false) #This is the worst fucking day, between the weird dizziness and hallucinations and literally passing out and now this? If this does end up being a prank I will murder whoever did this.
-  #"Sorry," you say, "my mother remarried and I wanted to get a name change. ${player_name} is correct, but I prefer to be called Morgan Faye."
+  #"Sorry," you say, "my mother remarried and I wanted to get a name change. ${player_full_name} is correct, but I prefer to be called Morgan Faye."
 
 "No problem," he says, copying something down onto his sheet. "Names are tricky things. A lot of people prefer to be called something other than what's on their documents. Sorry for the trouble. You're good to go, Morgan." He hands you back your ID. "I'd recommend that you take it easy and do all the boring healthy things that we usually recommend. Drink enough liquids, get enough sleep. If the start of the year is stressing you out, we do have on-site counseling available, which you book online. If you prefer talking to somebody directly to make an appointment, you should feel free to drop in by the front desk."
 
@@ -132,15 +141,15 @@ You hustle into the clinic lounge, wrestling your pack onto your back. Mouse tra
 
 "Hey, Mouse, how did I introduce myself to you?"
 
-She swallows. "${player_name}."
+She swallows. "${player_first_name}."
 
-"Oh. This, this sounds weird, but when I say Morgan and ${player_name}, you hear different things, right?"
+"Oh. This, this sounds weird, but when I say Morgan and ${player_full_name}, you hear different things, right?"
 
 "Yes," she says. "They're different."
 
 "Shit," you say. "Shit! Mouse, I don't remember doing that. I remember telling you that my name was Morgan. And that my student ID card had Morgan on it, and…and other things." What, you're going to tell her about how you passed out and that magically made the campus look neat? Yeah, that's not crazy person talk at all.
 
-It's cold. It's not dark, but it's cold. In fact, it's freezing. How did you not notice this before? Either it's gone from warm and sunny to cloudy and freezing in an hour, or it really always was cloudy and freezing, and the walls of the buildings always were pristine, and your name always was ${player_name}. Are you crazy?
+It's cold. It's not dark, but it's cold. In fact, it's freezing. How did you not notice this before? Either it's gone from warm and sunny to cloudy and freezing in an hour, or it really always was cloudy and freezing, and the walls of the buildings always were pristine, and your name always was ${player_first_name}. Are you crazy?
 
 "Morgan," says Mouse, "do you want to go get dinner?"
 
@@ -161,7 +170,7 @@ Mouse's computer is very loud.
 *choice
   *disable_reuse #Check the name on your driver's license.
     *set choices_taken + 1
-    Your driver's license says ${player_name}.
+    Your driver's license says ${player_full_name}.
     *goto waiting_for_mouse
   *disable_reuse #Call Carlos and ask him what he remembers.
     *set choices_taken + 1
@@ -173,17 +182,17 @@ Mouse's computer is very loud.
     *goto waiting_for_mouse
   *disable_reuse #Call home.
     *set choices_taken + 1
-    Mom picks up. "Hey ${player_name}! How's college going?"
+    Mom picks up. "Hey ${player_first_name}! How's college going?"
 
     You say something to her. Then you apologize and say something came up, you'll call later. You hang up.
     *goto waiting_for_mouse
   *disable_reuse #Check texts from your friends.
     *set choices_taken + 1
-    You look through some old texts. All of your friends call you ${player_name}. You see no mentions of Morgan.
+    You look through some old texts. All of your friends call you ${player_first_name}. You see no mentions of Morgan.
     *goto waiting_for_mouse
   *disable_reuse #Check the emails from the college.
     *set choices_taken + 1
-    The emails all address you as ${player_name}.
+    The emails all address you as ${player_full_name}.
     *goto waiting_for_mouse
   #Wait.
     *set choices_taken + 1
@@ -193,7 +202,7 @@ Mouse's computer is very loud.
 *label mouse_arrives
 *page_break
 
-Well, that's it. Can't argue with all that. Everything, everybody says I'm ${player_name}.
+Well, that's it. Can't argue with all that. Everything, everybody says I'm ${player_full_name}.
 
 I guess I've gone crazy. No other explanation.
 
@@ -265,7 +274,7 @@ As for your name…
 
 *fake_choice
   #I learned to live with it.
-    You dream of yourself as Morgan, but you use ${player_name}. You thought about getting a name change, but it seemed like a lot of trouble, and you didn't mind your new name so much.
+    You dream of yourself as Morgan, but you use ${player_first_name}. You thought about getting a name change, but it seemed like a lot of trouble, and you didn't mind your new name so much.
     
     Well, you say new, but by all evidence, it was the only name you'd ever had.
   #I changed my name to Morgan Faye.

@@ -45,7 +45,7 @@ Wonderful.
 *label read_book_in_line
 You pull The Witch from your backpack and flip forward to where you've folded down the page corner. The chapter you left on was discussing the historiography of the "wild hunt" concept, and how the "wild hunt" concept was in fact invented by a single author, Jacob Grimm. You read about his bad assumptions, and how in his quest to "unearth" a unified, pre-Christian belief system he instead simply synthesized one out of various disparate scraps and stories that went on to be both very influential and very, very wrong.
 
-"Excuse me," someone behind you says, almost a whisper. You start, then turn around to see a girl, maybe a little taller as you, in a bright yellow raincoat, which is definitely…look, it's sunny outside. That's must be some sort of fashion statement. Or anti-fashion statement, because who does that? It looks like she's all wrapped up under there, too, like she's about to brave a storm. "Do you know what's going on with the line?" she asks.
+"Excuse me," someone behind you says, almost a whisper. You start, then turn around to see a girl, maybe a little taller as you, in a bright yellow raincoat, which is definitely…look, it's sunny outside. That must be some sort of fashion statement. Or anti-fashion statement, because who does that? It looks like she's all wrapped up under there, too, like she's about to brave a storm. "Do you know what's going on with the line?" she asks.
 
 *choice
   #Gremlin: "Sorry, that's my fault. I stole a ruby ring from a mummy and now I'm cursed to wait forever in line. You'd best run before it gets you too!"
