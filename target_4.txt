@@ -16,7 +16,7 @@
 
 "This one's one of the three labs," you say. You check your map. "The labs are labeled A, B, and C, and the clue is just three names. Adams, Douglas, Bowie, David, and Darwin, Charles."
 
-"Wait," says Carlos, "so the clues are Douglas Adams, David Bowie, and Charles Darwin?"
+"Wait," says Carlo, "so the clues are Douglas Adams, David Bowie, and Charles Darwin?"
 
 "Yeah, but they're written last name first on the sheet. I think this one's a logic puzzle, except that I don't know who Douglas Adams is."
 
@@ -24,11 +24,11 @@
 
 *fake_choice
   #Gremlin: "Is Dirk Gently some sort of old-timey English euphemism for fucking?"
-    Carlos opens his mouth, then closes it, then opens it, then closes it. "Uhm." He frowns. "I don't…I don't think so, but don't quote me on that." He stares off into the distance. "I haven't actually read them, so if there's some sort of wordplay there I wouldn't know it."
+    Carlo opens his mouth, then closes it, then opens it, then closes it. "Uhm." He frowns. "I don't…I don't think so, but don't quote me on that." He stares off into the distance. "I haven't actually read them, so if there's some sort of wordplay there I wouldn't know it."
     
-    "There is [i]no way[/i] that it's not some sort of joke," you say. "I mean, listen." You put on your best English Gentleman voice, which is very definitely not good in any way shape or form, and say to Carlos, "I'll dirk [i]you[/i] gently."
+    "There is [i]no way[/i] that it's not some sort of joke," you say. "I mean, listen." You put on your best English Gentleman voice, which is very definitely not good in any way shape or form, and say to Carlo, "I'll dirk [i]you[/i] gently."
     
-    Mouse collapses in laughter and Carlos sighs. "Wow, ok, that, uh, that, uh. Let's get back to the hunt now, shall we?"
+    Mouse collapses in laughter and Carlo sighs. "Wow, ok, that, uh, that, uh. Let's get back to the hunt now, shall we?"
     
     "Sure," you say. "I just want you to remember that you were the one who said the words 'Dirk Gently' first."
     
@@ -44,13 +44,13 @@
     
     He shrugs. "Let me think on that," he says.
   #Nonplussed: "So, basically, he's a British comedy author, paired with a singer and actor and the scientist who discovered evolution."
-    Carlos nods. "Yeah," he says, "that seems right. I'm not sure how they relate to the lab buildings, but that seems right."
+    Carlo nods. "Yeah," he says, "that seems right. I'm not sure how they relate to the lab buildings, but that seems right."
 
 Mouse leans over to you. "Can I see the sheet?" she whispers. You hand it to her, she looks at it for a few moments, then gives it back to you.
 
 You put on an encouraging smile. "Do you have a guess?" you ask. She nods. How do you do it, Mouse? Tell me your secrets! Educate me, wise but silent master! "I'm not sure though," she adds.
 
-You stare at the sheet in silence as Carlos pulls out his phone. Is that…tapping you hear? It's quiet, but that's definitely some sort of tapping. You glance over to see Mouse's foot bouncing up and down, her eyes distant.
+You stare at the sheet in silence as Carlo pulls out his phone. Is that…tapping you hear? It's quiet, but that's definitely some sort of tapping. You glance over to see Mouse's foot bouncing up and down, her eyes distant.
 
 You look back at the clue.
 
@@ -74,8 +74,8 @@ You look back at the clue.
   #"Let's try Lab D."
     *goto go_to_lab_d
   *hide_reuse *selectable_if ((puzzle_share_immediately) or (puzzle_discuss_final_answer)) #"What do you guys think?"
-    Carlos sighs.
-    *gosub carlos_mouse_explanation_d_snippet
+    Carlo sighs.
+    *gosub carlo_mouse_explanation_d_snippet
 
     *goto lab_choice
 
@@ -90,23 +90,23 @@ You look back at the clue.
 
 *label propose_wrong_first_time
 *if discussed_already
-  "Sure," says Carlos, "I was leaning towards D but I wasn't very confident in it." You look at Mouse, and she nods.
+  "Sure," says Carlo, "I was leaning towards D but I wasn't very confident in it." You look at Mouse, and she nods.
 
   "All right," you say, "let's do ${target_lab}."
 
   *gosub first_lab_wrong_snippet
   *goto lab_choice
 *elseif puzzle_discuss_final_answer
-  "You sure?" asks Carlos.
+  "You sure?" asks Carlo.
 
   "What are you thinking?" you ask.
 
-  *gosub carlos_mouse_explanation_d_snippet
+  *gosub carlo_mouse_explanation_d_snippet
   *choice
     #"All right, that seems plausible. Let's do Lab D."
       *goto go_to_lab_d
     #"I still think it's Lab A."
-      "Okay," says Carlos, "let's take a look."
+      "Okay," says Carlo, "let's take a look."
 
       *gosub first_lab_wrong_snippet
       *goto lab_choice
@@ -122,7 +122,7 @@ The lobby has a bunch of display cases with various chemistry-related things, li
 
 "It's not this one," says Mouse.
 
-"What?" asks Carlos. "How can you tell?"
+"What?" asks Carlo. "How can you tell?"
 
 "No unlocked cabinets," she says. You check the clue sheet. Oh, she's right, it can't be this one. Okay, where next, then?
 
@@ -132,7 +132,7 @@ The lobby has a bunch of display cases with various chemistry-related things, li
 *comment ########## Propose Wrong Second Time ##########
 *label propose_wrong_second_time
 *gosub_scene ch4_hunt func_advance_half_hour
-Carlos grins. "It's fifty-fifty!"
+Carlo grins. "It's fifty-fifty!"
 
 "It's only fifty-fifty if I'm picking randomly," you reply.
 
@@ -164,7 +164,7 @@ You take a leisurely walk over to the labs, a collection of three one-story buil
 You enter ${target_lab} through the main doors, which are themselves window doors, and find yourself in a sunny, well-lighted lobby. Somehow the windows look clean from the inside and dirty from the outside. That's weird, isn't it? It's really weird. But then, everything about the exteriors of the buildings here is weird.
 *return
 
-*label carlos_mouse_explanation_d_snippet
+*label carlo_mouse_explanation_d_snippet
 "Well," he says, "between the three of them, only Charles Darwin is a scientist, but he wasn't a lab scientist. Or at least that's not what he's famous for. So maybe that's a weak association. But just looking at the names, if you count the first letters, you have one A, one B, one C, and three Ds, which also points to Darwin, but then what's up with the hanging C? There's no Lab C. But I can't really find anything else."
 
 You look over to Mouse. "What do you think, Mouse?"
@@ -173,7 +173,7 @@ You look over to Mouse. "What do you think, Mouse?"
 *return
 
 *label go_to_lab_d
-"Lab D it is," assents Carlos.
+"Lab D it is," assents Carlo.
 
 *if (at_lab_complex = false)
   *gosub enter_first_lab_snippet
@@ -206,7 +206,7 @@ The fourth display case is a large fish tank with a bunch of different kinds of 
       
       Did you look that up while I was watching the fish, Mouse, or do you just…know that? I mean, it's not bad to know that. You might be huge into ants. That's fine! It's just, you got that one real fast.
       
-      "All right," you say, "that seems pretty strong." You look over at Carlos.
+      "All right," you say, "that seems pretty strong." You look over at Carlo.
       
       "Yeah," he says, checking his phone, "I think that's our answer. Says here on Wikipedia. 'Atta cephalotes is a species of leafcutter ant in the tribe Attini.'"
       
@@ -227,16 +227,16 @@ The fourth display case is a large fish tank with a bunch of different kinds of 
   *choice
     #"I think it's the ant farm."
       *if puzzle_discuss_final_answer
-        "Pretty fast, Morgan," Carlos says. "I'm not sure yet."
+        "Pretty fast, Morgan," Carlo says. "I'm not sure yet."
         
         You look over to Mouse. "It's the ants," she says.
         
-        "If Mouse thinks it's the ants," says Carlos, "it must be the ants."
+        "If Mouse thinks it's the ants," says Carlo, "it must be the ants."
         
         You grin.
         *goto put_sticker_on_ants
       *else
-        "Pretty fast, Morgan," Carlos says. "I'm not sure yet, but don't wait for me." Mouse shrugs when you look over at her.
+        "Pretty fast, Morgan," Carlo says. "I'm not sure yet, but don't wait for me." Mouse shrugs when you look over at her.
         
         *goto put_sticker_on_ants
     #"I think it's the stuffed fox."
@@ -251,11 +251,11 @@ The fourth display case is a large fish tank with a bunch of different kinds of 
 
 *label not_immediate_wrong_case
 *if puzzle_discuss_final_answer
-  "Pretty fast, Morgan," Carlos says. "I'm not sure yet."
+  "Pretty fast, Morgan," Carlo says. "I'm not sure yet."
 
   You look over to Mouse. "It's the ants," she says.
 
-  "If Mouse thinks it's the ants," says Carlos, "it must be the ants." He paused. "How are the ants related to leaves, though?"
+  "If Mouse thinks it's the ants," says Carlo, "it must be the ants." He paused. "How are the ants related to leaves, though?"
   
   "They're leaf-cutter ants," she says. "Atta cephalotes."
   
@@ -266,7 +266,7 @@ The fourth display case is a large fish tank with a bunch of different kinds of 
 *else
   *set sticker_used_4 true
   *set sticker_placed_correctly_4 false
-  "Pretty fast, Morgan," Carlos says. "I'm not sure yet, but don't wait for me." Mouse shrugs when you look over at her.
+  "Pretty fast, Morgan," Carlo says. "I'm not sure yet, but don't wait for me." Mouse shrugs when you look over at her.
   
   You open the cabinet underneath the ${target_display_case} to reveal cleaning supplies. You press a sticker against the back of the door and then close it.
   

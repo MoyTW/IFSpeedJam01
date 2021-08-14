@@ -121,7 +121,7 @@ Plenty is an understatement, actually. There's a huge amount of counter space, a
 
     You grin at her. "You'll have to show me when we're done, then."
 
-    "Yeah," laughs Carlos, "after we do the hunt."
+    "Yeah," laughs Carlo, "after we do the hunt."
 
     "Right. The hunt. Uh." You set the clue sheet on one of the counters. "Okay, so, this one's some kind of code."
   #Who cleans this? That's a lot of cleaning. Is there a dishwasher, or - oh, there's a dishwasher under the sink. Do they have the janitors clean it out or is that only for utensils and such?
@@ -135,7 +135,7 @@ Plenty is an understatement, actually. There's a huge amount of counter space, a
     
     "Right. The hunt. Uh." You close the cabinet you were inspecting and set the clue sheet on one of the counters. "But it's real cool that they let students use it."
     
-    Carlos gazes at you with a slight expression of amusement, and you sigh. "Fine," you say. "Clearly neither of you are very excited by this kitchen. Anyways, this one's some kind of code."
+    Carlo gazes at you with a slight expression of amusement, and you sigh. "Fine," you say. "Clearly neither of you are very excited by this kitchen. Anyways, this one's some kind of code."
   #This is super impressive, and I'll have to check it out later, but I should really get back to the scavenger hunt.
     Focus, Morgan! The kitchen will exist tomorrow! The world still turns! Today, you've a scavenger hunt to do.
     
@@ -147,7 +147,7 @@ You stare at the letters, contemplating how best to solve it.
 
 [b]Chg gur fgvpxre ba gur obneq oruvaq gur "QB ABG ERZBIR" naabhaprzrag pbapreavat gur pbssrr cbyvpl.[/b]
 
-Mouse pulls out her phone and fiddles with it. Carlos bends over and looks at it for a few seconds, then says "Hey, Morgan, do you have spare paper in your pack?"
+Mouse pulls out her phone and fiddles with it. Carlo bends over and looks at it for a few seconds, then says "Hey, Morgan, do you have spare paper in your pack?"
 
 "Sure," you say, pulling out your welcome packet. You find a page that's clean on one side and rip it out. "Give it back," you say, proferring a pencil alongside it.
 
@@ -160,7 +160,7 @@ Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over,
 *label solving_cipher
 *choice
   #"I got it!"
-    "Hold on," says Carlos, scribbling furiously, "give me another few minutes. I'll get it."
+    "Hold on," says Carlo, scribbling furiously, "give me another few minutes. I'll get it."
 
     *if ((puzzle_share_immediately = false) and (puzzle_discuss_final_answer = false))
       *goto where_place_sticker_no_discussion
@@ -185,7 +185,7 @@ Fast! Mouse, what the heck, in the amount of time it took Carlo to copy it over,
   #"All right, Mouse, what's the answer?"
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 true
-    "Hold on," says Carlos, scribbling furiously, "don't tell her Mouse, I want to try solving this. Give me another few minutes. I'll get it. Or if you tell her, whisper."
+    "Hold on," says Carlo, scribbling furiously, "don't tell her Mouse, I want to try solving this. Give me another few minutes. I'll get it. Or if you tell her, whisper."
     
     *gosub i_can_wait_snippet
     
@@ -219,7 +219,7 @@ Where do you put the sticker?
   #Behind the coffee policy announcement.
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 true
-    You go up to the announcement board, sticker in hand, and hold up the coffee announcement. Just as you're about to press it, Carlos cries out. "Got it!"
+    You go up to the announcement board, sticker in hand, and hold up the coffee announcement. Just as you're about to press it, Carlo cries out. "Got it!"
     
     "Okay," you say, turning towards him, "what'd you get?"
     
@@ -237,7 +237,7 @@ Where do you put the sticker?
     *goto after_place_sticker_no_discussion
 
 *label after_place_sticker_no_discussion
-"Almost done," says Carlos.
+"Almost done," says Carlo.
 
 *gosub i_can_wait_snippet
 
@@ -248,7 +248,7 @@ Where do you put the sticker?
 *goto end_target_2_incorrectly
 
 *label where_place_sticker_discussion
-Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" he asks. "What'd you get?"
+Mouse stares at you. Carlo has a thoughtful expression on his face. "Really?" he asks. "What'd you get?"
 
 *choice
   #"The left side of the leftmost microwave."
@@ -278,9 +278,9 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
   #"On top of the fume hood."
     *gosub mouse_is_trying_snippet
     
-    "Well," says Carlos, "I can get it up there, if you want me to."
+    "Well," says Carlo, "I can get it up there, if you want me to."
     *choice
-      #"Please do, Carlos."
+      #"Please do, Carlo."
         *set sticker_used_2 true
         *set sticker_placed_correctly_2 false
         "No problem," he says, taking the sticker sheet. He takes a sticker and just straight-up slaps it on the top of the fume hood. Gah! He's so tall! How is it even possible to be so tall?
@@ -292,7 +292,7 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
   #"Well, I actually didn't finish, I gave up, but I didn't get anything related to coffee."
     *set sticker_used_2 true
     *set sticker_placed_correctly_2 true
-    "Ah," says Carlos, "that's fair. You want to just slap it on the board and move on then?"
+    "Ah," says Carlo, "that's fair. You want to just slap it on the board and move on then?"
     
     "Sure," you say, scanning the board for the announcement he mentioned. Ah, there we go. "CONCERNING THE USAGE OF THE COFFEE MACHINE." You hold the sheet up and sticker the board behind it.
     
@@ -301,17 +301,17 @@ Mouse stares at you. Carlos has a thoughtful expression on his face. "Really?" h
 *label i_trust_you_guys_snippet
 *set sticker_used_2 true
 *set sticker_placed_correctly_2 true
-Carlos chuckles. "Is it really a matter of trust?"
+Carlo chuckles. "Is it really a matter of trust?"
 
 "Yes," says Mouse. The two of you throw glances at her. She dodges your eyes, and doesn't elaborate.
 
-"Well, all right," says Carlos. "Morgan, you got it yet?"
+"Well, all right," says Carlo. "Morgan, you got it yet?"
 
 "Yeah," you say, holding the flier, "on the board, behind the coffee announcement, as you said." You press the sticker into place.
 *goto end_target_2_correctly
 
 *label mouse_is_trying_snippet
-Carlos frowns. "Wait. How?"
+Carlo frowns. "Wait. How?"
   
 "Well," you say, but Mouse grabs your sleeve.
 

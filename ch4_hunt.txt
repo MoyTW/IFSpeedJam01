@@ -16,19 +16,19 @@
   10:47 right now,
   *goto discuss_time_continue
 *label discuss_time_continue
-and it finishes at 8:00 this evening, but I'm not super set on winning it or anything." You raise an eyebrow at Carlos, who nods, and then look at Mouse, who also seems to assent. "So, how about we start at the top of the hour, eat lunch at around 12:30, and then come back for dinner at 6:30? That sound good?"
+and it finishes at 8:00 this evening, but I'm not super set on winning it or anything." You raise an eyebrow at Carlo, who nods, and then look at Mouse, who also seems to assent. "So, how about we start at the top of the hour, eat lunch at around 12:30, and then come back for dinner at 6:30? That sound good?"
 
-"No problems here," says Carlos. He spoons some of his granola cereal stuff into his mouth.
+"No problems here," says Carlo. He spoons some of his granola cereal stuff into his mouth.
 
 "Mouse?" you ask. She nods.
 
 "All right then," you say, putting the hint sheet down on the table. "So, it looks like you first go to a building, then you find something inside of the building, and then you put a sticker where it says."
 
-Carlos eyes the sheet. "Well," he says, "these don't seem too bad. How invested are you in solving these on your own, Morgan, or do you mind us just blurting out whatever comes into our heads?"
+Carlo eyes the sheet. "Well," he says, "these don't seem too bad. How invested are you in solving these on your own, Morgan, or do you mind us just blurting out whatever comes into our heads?"
 
 *gosub select_difficulty_snippet
 
-"That's fine by me," says Carlos. You check with Mouse, and she nods.
+"That's fine by me," says Carlo. You check with Mouse, and she nods.
 
 "All right," you say, polishing off your plate, "as soon as you guys are ready."
 *goto work_on_a_clue
@@ -51,7 +51,7 @@ Carlos eyes the sheet. "Well," he says, "these don't seem too bad. How invested 
 *comment ########## Out of Time ##########
 *label out_of_time
 *page_break
-Carlos checks his watch. "Hey Morgan," he says, "what would you say to dinner?"
+Carlo checks his watch. "Hey Morgan," he says, "what would you say to dinner?"
 
 "What time is it?" you ask.
 
@@ -84,15 +84,15 @@ Can we stop at the dorms first, though? I want to change."
   *gosub func_advance_hour
   You check your phone. Oh, it's 12:30. "All right," you say, "you guys want to get lunch?"
   
-  Carlos grins. "Sounds great," he says. You look over at Mouse, who nods her assent.
+  Carlo grins. "Sounds great," he says. You look over at Mouse, who nods her assent.
   
   "All right," you say, "lunch it is!"
   
-  The three of you go to the student center, which is swarming with students for the lunch rush. It's hard to find a free table, so you have to settle for one end of one of the longer ones. You have a pretty leisurely lunch, chatting about your favorite books. Carlos doesn't seem to read a ton, and what he does read tends towards fantasy. Mouse only talks a little. You end up mostly sharing tidbits about the origins of Wicca.
+  The three of you go to the student center, which is swarming with students for the lunch rush. It's hard to find a free table, so you have to settle for one end of one of the longer ones. You have a pretty leisurely lunch, chatting about your favorite books. Carlo doesn't seem to read a ton, and what he does read tends towards fantasy. Mouse only talks a little. You end up mostly sharing tidbits about the origins of Wicca.
   *goto work_on_a_clue
 *elseif current_time >= 1400
   *gosub func_advance_half_hour
-  "Hey," says Carlos, "did we miss lunch?"
+  "Hey," says Carlo, "did we miss lunch?"
   
   You check your phone. It's 
   *gosub func_print_time false
@@ -108,11 +108,11 @@ Can we stop at the dorms first, though? I want to change."
   *gosub func_advance_hour
   You check your phone. Oh, you've blown right past 12:30. "All right," you say, "you guys want to get lunch?"
   
-  Carlos grins. "Sounds great," he says. You look over at Mouse, who nods her assent.
+  Carlo grins. "Sounds great," he says. You look over at Mouse, who nods her assent.
   
   "All right," you say, "lunch it is!"
   
-  The three of you go to the student center, where the first wave of students is beginning to subside. You claim a table and have a pretty leisurely lunch, chatting about your favorite books. Carlos doesn't seem to read a ton, and what he does read tends towards fantasy. Mouse only talks a little. You end up mostly sharing tidbits about the origins of Wicca.
+  The three of you go to the student center, where the first wave of students is beginning to subside. You claim a table and have a pretty leisurely lunch, chatting about your favorite books. Carlo doesn't seem to read a ton, and what he does read tends towards fantasy. Mouse only talks a little. You end up mostly sharing tidbits about the origins of Wicca.
   *goto work_on_a_clue
 
 *comment ########## Select Next Target ##########
@@ -122,13 +122,13 @@ Can we stop at the dorms first, though? I want to change."
 
 [b][i][
 *if ((puzzle_share_immediately = true) and (puzzle_discuss_final_answer = true))
-  You've asked that Mouse and Carlos tell you the solutions to each hint.
+  You've asked that Mouse and Carlo tell you the solutions to each hint.
   *goto difficulty_desc_continue
 *elseif (puzzle_discuss_final_answer = true)
-  You've asked that Mouse and Carlos let you guess, but inform you if you guessed wrong.
+  You've asked that Mouse and Carlo let you guess, but inform you if you guessed wrong.
   *goto difficulty_desc_continue
 *else
-  You've asked that Mouse and Carlos not help you.
+  You've asked that Mouse and Carlo not help you.
   *goto difficulty_desc_continue
 *label difficulty_desc_continue
 ][/b][/i]
@@ -146,19 +146,19 @@ Can we stop at the dorms first, though? I want to change."
   *selectable_if (sticker_used_5 = false) #Work on the fifth target.
     *goto_scene target_5 work_on_target_5
   #"Actually, I want to change how we're handling the discussions."
-    "Sure," says Carlos. "What did you have in mind?"
+    "Sure," says Carlo. "What did you have in mind?"
     *gosub select_difficulty_snippet
     *goto work_on_a_clue
 
 *label select_difficulty_snippet
 *fake_choice
-  #"I want to try and solve them all on my own. Don't tell me anything until I've placed the sticker, even if you think I'm making a mistake." [i][ If you choose this, Mouse and Carlos will not help you. ][/i]
+  #"I want to try and solve them all on my own. Don't tell me anything until I've placed the sticker, even if you think I'm making a mistake." [i][ If you choose this, Mouse and Carlo will not help you. ][/i]
     *set puzzle_share_immediately false
     *set puzzle_discuss_final_answer false
-  #"I want to give them a try, so don't spoil me if you think you know, but we should all discuss before I actually place a sticker." [i][ If you choose this, Mouse and Carlos will inform you if you guessed wrong. ][/i]
+  #"I want to give them a try, so don't spoil me if you think you know, but we should all discuss before I actually place a sticker." [i][ If you choose this, Mouse and Carlo will inform you if you guessed wrong. ][/i]
     *set puzzle_share_immediately false
     *set puzzle_discuss_final_answer true
-  #"If you have an idea, say it right then and there. I'm not particularly bothered about puzzle spoilers." [i][ If you choose this, Mouse and Carlos will tell you the solutions to each hint. ][/i]
+  #"If you have an idea, say it right then and there. I'm not particularly bothered about puzzle spoilers." [i][ If you choose this, Mouse and Carlo will tell you the solutions to each hint. ][/i]
     *set puzzle_share_immediately true
     *set puzzle_discuss_final_answer true
 *return
@@ -166,7 +166,7 @@ Can we stop at the dorms first, though? I want to change."
 *comment ########## All Stickers Used ##########
 
 *label all_stickers_used
-"That was number five," says Carlos.
+"That was number five," says Carlo.
 
 "Oh," you say, "right." You check the time. "Well," you say, "you want to head back to the dorms? I want to get changed before dinner, if we have the time. We can get food a little later and still make the raffle at 8:30."
 
@@ -192,7 +192,7 @@ Can we stop at the dorms first, though? I want to change."
   *set num_stickers_placed_correctly + 1
 
 *if num_stickers_placed_correctly = 1
-  "Now that that's sorted," says Carlos, "which one are we doing next, ${player_first_name}?"
+  "Now that that's sorted," says Carlo, "which one are we doing next, ${player_first_name}?"
   
   "Sorry," you say, "what did you say?"
   
@@ -200,7 +200,7 @@ Can we stop at the dorms first, though? I want to change."
   
   "No, no," you say, "what did you say after that?"
   
-  "Uh." Carlos blinks. "Morgan."
+  "Uh." Carlo blinks. "Morgan."
   
   You stare at him. "Yes?"
   
@@ -219,7 +219,7 @@ Can we stop at the dorms first, though? I want to change."
   
   You're sweating. How did you not nice that you were sweating? And you're breathing hard, too, and you can feel your heart thumping, and now your eyes sting. When did this happen? It's not super uncomfortable, you've definitely had worse after working out, but the worst you've done today is some leisurely walking.
   
-  You reach up to brush the sweat off your forehead, but it's dry, and you suddenly feel a sense of release. Is this some sort of panic attack or something? Did you fall sick and not notice it? Neither Carlos nor Mouse seem to have noticed it.
+  You reach up to brush the sweat off your forehead, but it's dry, and you suddenly feel a sense of release. Is this some sort of panic attack or something? Did you fall sick and not notice it? Neither Carlo nor Mouse seem to have noticed it.
   
   You're…okay, right? Yes. You're fine. "All right," you say, your voice coming out surprisingly chipper, "that one's down, let's move on."
   *goto work_on_a_clue
@@ -240,20 +240,20 @@ and now there's a tingling in your spine, and oh no, it's spreading, and it reac
 
 and then you slump over, the world turns turns sideways
 
-and you're back, standing where you were. Carlos is waving his hand in front of your face. "Hey, are you okay?" he asks.
+and you're back, standing where you were. Carlo is waving his hand in front of your face. "Hey, are you okay?" he asks.
 
 You're fine. You're fine. You can breathe. It's fine. Somehow you're standing up. You calm your ragged breaths. You're fine, your body's fine, whatever that was has passed and you're fine now.
 
 *label after_body_horror
 *choice
   *hide_reuse #"What just happened?"
-    Carlos frowns. "Well, you got real quiet, and didn't respond when I asked where you were thinking of next." He thinks on his next words carefully. "It looked kind of like you were having a nightmare, but standing up, and with your eyes open. Are you sure you're okay?"
+    Carlo frowns. "Well, you got real quiet, and didn't respond when I asked where you were thinking of next." He thinks on his next words carefully. "It looked kind of like you were having a nightmare, but standing up, and with your eyes open. Are you sure you're okay?"
     *goto after_body_horror
   #"I'm fine. Sorry, I just got distracted."
     *gosub mouse_asks_if_youre_sure_snippet
     *choice
       #"I'm sure. Thanks for asking, Mouse. I appreciate it."
-        Mouse nods, and Carlos raises his eyebrow. "Well," he says, "if you're sure. You don't want to go sit down or anything?"
+        Mouse nods, and Carlo raises his eyebrow. "Well," he says, "if you're sure. You don't want to go sit down or anything?"
 
         "No," you say, "let's just go get this last target."
         *goto work_on_a_clue
@@ -270,7 +270,7 @@ You're fine. You're fine. You can breathe. It's fine. Somehow you're standing up
       #"I'm sure. Thanks for asking, Mouse. I appreciate it."
         She nods. "Okay," she says.
         
-        "Let's get moving," says Carlos. "We're almost done, one more to go."
+        "Let's get moving," says Carlo. "We're almost done, one more to go."
         *goto work_on_a_clue
       #"No, actually, I'm not sure. Do they have a nurse's office here on campus?"
         *goto do_they_have_a_nurses_office
@@ -288,27 +288,27 @@ Right?
 *label sit_on_bench_then_leave_snippet
 You go outside and find a bench near the door. It's clean at least, though it looks ancient and worn. You sit for a bit.
 
-"Want a drink?" asks Carlos, pulling some sort of drink pouch out of his trenchcoat.
+"Want a drink?" asks Carlo, pulling some sort of drink pouch out of his trenchcoat.
 
 "Sure," you say, taking it and peeling off the straw. "How do you use this?" you ask.
 
 "Punch the straw through that little circle on top."
 
-"Thanks," you say. You push in the straw and slurp up the drink. It's sweet and tangy. Neither Mouse nor Carlos speaks as you sip at the drink, but you can feel the concern in their eyes. When you've finished, you look around, then spot a trash can. You ball up the pouch and toss it in. "All right," you say, standing up. "Let's get going."
+"Thanks," you say. You push in the straw and slurp up the drink. It's sweet and tangy. Neither Mouse nor Carlo speaks as you sip at the drink, but you can feel the concern in their eyes. When you've finished, you look around, then spot a trash can. You ball up the pouch and toss it in. "All right," you say, standing up. "Let's get going."
 *return
 
 *label do_they_have_a_nurses_office
-"Hold on," says Carlos, pulling out his welcome packet, "I'm sure there's something in here about that." He flips through the packet, scanning the pages.
+"Hold on," says Carlo, pulling out his welcome packet, "I'm sure there's something in here about that." He flips through the packet, scanning the pages.
       
 Mouse looks up from her phone and speaks. "It's in the Admin Building."
 
 You check your breathing. You're fine, now. It's fine, right? It's just, it's not bad. Some anxiety is to be expected, right, it's your first day at college, that's a big step for everyone, right? It's not bad enough to go to the medical office. Right? There's nothing wrong with you, you don't need to go see the doctor, you didn't even fall down or anything.
 *choice
   #"Sorry for making you guys worry, but I feel fine now. I appreciate the concern, but I think I can go check it out later, on my own, so let's keep going for now. All right?"
-    Carlos and Mouse look at each other. Guys, you don't need to worry so much. I'm fine. I'm serious. "Well," says Carlos, "if you say so. Where to next?"
+    Carlo and Mouse look at each other. Guys, you don't need to worry so much. I'm fine. I'm serious. "Well," says Carlo, "if you say so. Where to next?"
     *goto work_on_a_clue
   #"Sorry for bailing, guys, but I think I'm going to go to the nurse's office to talk to somebody. These panic attack things are new for me, I've never had anything like them before."
-    "What," says Carlos, "you were worried about bailing?"
+    "What," says Carlo, "you were worried about bailing?"
     
     "Yes, of course. Among other things."
     
@@ -324,7 +324,7 @@ You check your breathing. You're fine, now. It's fine, right? It's just, it's no
 *label ending_a_a_passing_madness
 [b]Ending A: A Passing Madness[/b]
 
-You drop the scavenger hunt to go to the nurse's office, a small complex in the back of the Admin Building. You describe your issues to the receptionist then sit down in the empty lobby to wait, telling Carlos and Mouse that they don't need to wait. Carlos goes off to do dinner, but Mouse decides to stay. You chat a little in the lobby, and it seems she's much more forthcoming when it's a one-on-one conversation. She even talks at a volume close to normal.
+You drop the scavenger hunt to go to the nurse's office, a small complex in the back of the Admin Building. You describe your issues to the receptionist then sit down in the empty lobby to wait, telling Carlo and Mouse that they don't need to wait. Carlo goes off to do dinner, but Mouse decides to stay. You chat a little in the lobby, and it seems she's much more forthcoming when it's a one-on-one conversation. She even talks at a volume close to normal.
 
 Soon after you're seen by Joshua Graham, a nurse practitioner, who asks you a bunch of questions, has you move around a bit, and then tells you that you should rest and come back if you have any other issues. You're not sure how well you can measure somebody's health just through a quick survey, but it's reassuring to hear that there's nothing obviously wrong with you.
 
@@ -337,7 +337,7 @@ You hang out for a couple more hours before returning to your room. These last c
 *label ending_b_blame_alex
 [b]Ending B: Blame Alex[/b]
 
-"It's a reference to Glengarry Glen Ross," says Carlos, pointing to the rules sheet. "The prize thing, I mean." He looks over at Mouse. "If you search Cadillac, steak knives, you're fired, you'll get the quote."
+"It's a reference to Glengarry Glen Ross," says Carlo, pointing to the rules sheet. "The prize thing, I mean." He looks over at Mouse. "If you search Cadillac, steak knives, you're fired, you'll get the quote."
 
 "All right," you say, "but what does it have to do with sales?"
 
@@ -345,7 +345,7 @@ You hang out for a couple more hours before returning to your room. These last c
 
 "Hold on," you say, "My brother just texted me." You check the text. [i]Alex: Hey Morgan, did you place all the stickers?[/i] "He's asking about the stickers."
 
-"Oh?" asks Carlos. "Does he know the answers?"
+"Oh?" asks Carlo. "Does he know the answers?"
 
 "Dunno, let me answer." [i]Morgan: Yeah, why?[/i]
 
@@ -353,15 +353,15 @@ You hang out for a couple more hours before returning to your room. These last c
 
 You sigh. "Hey," you say, "guess what?" Mouse looks up from her pasta.
 
-Carlos frowns. "He found one of your stickers in the wrong place, and decided to text you about it?"
+Carlo frowns. "He found one of your stickers in the wrong place, and decided to text you about it?"
 
 "No. He's saying that there's no raffle, and that the whole thing was just something he and his friends made up and gave to me so I'd have something to do."
 
-"Okay I have to say, I didn't expect that." Carlos laughs. "Damm, Morgan! You have to admit, that's pretty funny!"
+"Okay I have to say, I didn't expect that." Carlo laughs. "Damm, Morgan! You have to admit, that's pretty funny!"
 
 You shake your head. "I'm not going to argue that it's not." You sigh. "You know, it was fun. So I'll let it pass, but I'm gonna make him clean those stickers up."
 
-"Only fair," says Carlos, grinning. "So, what, there's no raffle?"
+"Only fair," says Carlo, grinning. "So, what, there's no raffle?"
 
 "I guess not," you say. "Anyways, what were you saying?"
 
@@ -378,9 +378,9 @@ The campus, for example. Why had it seemed so run down on the outside? Hallucina
 
 The weather, too, was often different. Sunny days were grim, and dark ones cheerful. You dressed against the weather often enough to get a minor reputation for it. The rain was the strangest thing. It'd rain with no clouds in the sky. You took a picture, once, and the picture showed stormy clouds even while you felt the warmth of the sun on your cheeks. It was novel, if nothing else.
 
-You seem to have succeeded in hiding it from almost everybody you met, covering your hallucinations in excuses of eccentricity and quirkiness. Carlos may have had his suspicions, but you only ever confided in Mouse. Without her, you think you might have gone mad. You're still not sure you weren't.
+You seem to have succeeded in hiding it from almost everybody you met, covering your hallucinations in excuses of eccentricity and quirkiness. Carlo may have had his suspicions, but you only ever confided in Mouse. Without her, you think you might have gone mad. You're still not sure you weren't.
 
-You count yourself lucky, though. It only happened on the campus. When you went home, everything was as it should be. When you drove into town, or visited Carlos in San Francisco, or stayed with Mouse over the summer, everything was normal. And so, you graduated, and left college behind, and with it your strange but harmless madness.
+You count yourself lucky, though. It only happened on the campus. When you went home, everything was as it should be. When you drove into town, or visited Carlo in San Francisco, or stayed with Mouse over the summer, everything was normal. And so, you graduated, and left college behind, and with it your strange but harmless madness.
 
 Sometimes, you wonder. What would it look like if you went back? But it's far off, and there's nothing more there for you, so you never wonder long.
 *finish

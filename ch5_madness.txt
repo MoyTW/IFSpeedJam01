@@ -2,7 +2,7 @@
 *label the_spell_is_complete
 You brace yourself for nausea or dizziness or some other waking nightmare, but nothing at all happens. Maybe expecting it to happen has somehow solved it? Maybe it was all in your head?
 
-Carlos checks his watch. "All right," he says, "it's
+Carlo checks his watch. "All right," he says, "it's
 *gosub_scene ch4_hunt func_print_time false
 *if current_time <= 1800
   so we have some time before we said we'd get dinner."
@@ -17,20 +17,20 @@ Carlos checks his watch. "All right," he says, "it's
 
 You put on a smile. "Thanks for coming," you say, looking between them.
 
-"Yeah, I enjoyed it. It was a lot of fun." Carlos starts heading towards the exit. "I'm impressed with your problem-solving skills, Mouse."
+"Yeah, I enjoyed it. It was a lot of fun." Carlo starts heading towards the exit. "I'm impressed with your problem-solving skills, Mouse."
 
 "Yeah, Mouse," you say, "you did amazing!"
 
 "Thanks," she says, tiling her face away. Aww, Mouse! You don't need to be so shy. It's fine if you are, though, don't worry, you're fine either way.
 
-"So," asks Carlos, holding the exit open for the two of you, "what do you guys think they'll have for dinner?"
+"So," asks Carlo, holding the exit open for the two of you, "what do you guys think they'll have for dinner?"
 
 *fake_choice
   #Gremlin: "Pizza, pizza, pizza!"
   #Considerate: "Hard to tell, I bet the menu will be similar to yesterday. One vegetarian option, one meat dish, a bread or pasta option, and maybe a couple of wild card options?"
   #Nonplussed: "I couldn't say, we've only been here for two days. Not long enough to be familiar with their menus."
 
-Carlos laughs. "Yeah, that's -"
+Carlo laughs. "Yeah, that's -"
 
 Something invisible grabs both of your hands in an iron grip and pulls you through the door, and you stumble forwards, and something smashes you on the head, [i]hard,[/i] and you're falling backwards and you can see your hand, stretched out in the sunlight, and the nails are flying off, and then the skin sloughs off in a scaly rain to reveal the muscles underneath, and your muscles unravel, falling away, and behind them you can see bone and it's happening to your arm now and it's moving up your shoulder and your finger bones are falling and your neck is sloughing its skin and soon it will reach your face and your mind revolts at the thought and switches off.
 
@@ -40,7 +40,7 @@ You're not sure how to describe how you feel right now. Relieved? Comfortable? G
 
 You open your eyes. You're lying in what's pretty obviously the school's nursing area, or office, or whatever they call it. Oh, there's Mouse, playing on her phone. There's nobody else here. You sit up and look out the window. You've been out long enough for it to go from cloudless and sunny to heavily overcast, but not long enough for it to get dark.
 
-Hmm. Where's Carlos? Well he's not your boyfriend or anything, it's completely reasonable for him to go do something else. It's not like he could help the doctors or anything.
+Hmm. Where's Carlo? Well he's not your boyfriend or anything, it's completely reasonable for him to go do something else. It's not like he could help the doctors or anything.
 
 "Hey, Mouse," you say.
 
@@ -172,7 +172,7 @@ Mouse's computer is very loud.
     *set choices_taken + 1
     Your driver's license says ${player_full_name}.
     *goto waiting_for_mouse
-  *disable_reuse #Call Carlos and ask him what he remembers.
+  *disable_reuse #Call Carlo and ask him what he remembers.
     *set choices_taken + 1
     You pull him up on the phone. No. You don't want him to think you're crazy.
     *goto waiting_for_mouse

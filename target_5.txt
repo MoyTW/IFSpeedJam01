@@ -14,7 +14,7 @@
 *temp times_proposed_wrong 0
 "This one might be trouble," you say, looking at the sheet. "It's in one of the centers named after famous Romans, and the only other clues are two numbers, 106 and 43."
 
-Carlos and Mouse unfurl their maps, and Mouse immediately starts typing something into her phone. Carlos raises his eyebrow. "Okay," he says, "so it's the ones in the southwestern part of the campus, right?"
+Carlo and Mouse unfurl their maps, and Mouse immediately starts typing something into her phone. Carlo raises his eyebrow. "Okay," he says, "so it's the ones in the southwestern part of the campus, right?"
 
 "Right," you say, "but not the gym, since it's a center."
 
@@ -22,7 +22,7 @@ Mouse looks up. "I have it," she says.
 *if puzzle_share_immediately
   "It's the Cicero Center."
 
-…how, though. This is farcical beyond all human belief, that you would get this so fast, from a list of buildings and two numbers. You peek over at Carlos, who catches your eye and shrugs.
+…how, though. This is farcical beyond all human belief, that you would get this so fast, from a list of buildings and two numbers. You peek over at Carlo, who catches your eye and shrugs.
 
 *label building_choice
 *image campusmap.png center campus map
@@ -30,7 +30,7 @@ Mouse looks up. "I have it," she says.
   *if (puzzle_share_immediately) #"Mouse, how did you get the Cicero Center?"
     "I googled the names and 106 and 43," says Mouse. It's a little hard to hear her. "Cicero lived from 106 BC to 43 BC."
     
-    "Well," says Carlos, "I'm willing to go with that."
+    "Well," says Carlo, "I'm willing to go with that."
     
     "I agree," you say. "Let's go to the Cicero Center."
     *return
@@ -41,10 +41,10 @@ Mouse looks up. "I have it," she says.
     *set target_center "Cato"
     *goto propose_wrong
   *if (puzzle_share_immediately) #"All right, let's check the Cicero center.
-    "Sounds good," says Carlos, "Cicero Center it is."
+    "Sounds good," says Carlo, "Cicero Center it is."
     *return
   *if (puzzle_share_immediately = false) #"I think it's the Cicero Center."
-    "You're faster than me too," says Carlos, chuckling. "Well, sure, I don't have any better ideas."
+    "You're faster than me too," says Carlo, chuckling. "Well, sure, I don't have any better ideas."
     
     You turn to Mouse. "Mouse?" you ask. She nods. So…are you agreeing or merely assenting, Mouse?
     *if puzzle_discuss_final_answer
@@ -73,7 +73,7 @@ Mouse looks up. "I have it," she says.
 *comment ########## Propose Wrong First Time ##########
 *label propose_wrong_first_time
 *if puzzle_discuss_final_answer
-  "I haven't any idea, at least not now," says Carlos. "We may as well try the ${target_center} Center."
+  "I haven't any idea, at least not now," says Carlo. "We may as well try the ${target_center} Center."
   
   You look over at Mouse. "Mouse, what building do you think is right?"
   
@@ -92,7 +92,7 @@ Mouse looks up. "I have it," she says.
 
 *label search_wrong_first_time
 *gosub_scene ch4_hunt func_advance_half_hour
-Carlos shrugs. "Sure,"  he says, "why not." Mouse stays silent.
+Carlo shrugs. "Sure,"  he says, "why not." Mouse stays silent.
 
 You lead the group to the ${target_center} Center, a crumbling edifice that's only one story tall, which means that it can't possibly be the right building. "Hold on," you say, "this one's one story, right? So we can eliminate all the other ones that are one story." You quickly step back onto the crumbling path and follow it towards the dorms until you can see all of the buildings in the western area.
 
@@ -104,7 +104,7 @@ All the rest of the buildings are two stories. Well, it was a good idea.
 *comment ########## Propose Wrong Second Time ##########
 *label propose_wrong_second_time
 *if puzzle_discuss_final_answer
-  "You sure?" asks Carlos. "Mouse's suggestion seems pretty good to me."
+  "You sure?" asks Carlo. "Mouse's suggestion seems pretty good to me."
   
   *choice
     #"All right, we can check out the Cicero Center first."
@@ -126,16 +126,16 @@ Well, there's only two options left now.
 *comment ########## Propose Wrong Third Time ##########
 *label propose_wrong_third_time
 *if puzzle_discuss_final_answer
-  "Morgan," says Carlos, "let's do the Cicero Center this time. Okay?"
+  "Morgan," says Carlo, "let's do the Cicero Center this time. Okay?"
   
   You look over at Mouse. "All right," you agree.
   
   *return
 *else
   *gosub_scene ch4_hunt func_advance_half_hour
-  "The ${target_center}, eh?" asks Carlos. "Once more into the breach."
+  "The ${target_center}, eh?" asks Carlo. "Once more into the breach."
   
-  "Have a little faith in me, Carlos!"
+  "Have a little faith in me, Carlo!"
   
   "I'm not saying I'd do any better," he says, "but I am saying Mouse would do better."
   
@@ -162,18 +162,18 @@ You go up to the second floor and pass by a Birch Room, an Oak Room, and a Sanda
   #Gremlin: "Hey, they've got a whiteboard, with pens! Saves me having to track down some paper."
     You lead the others into the Aspen Room and drop the clue sheet on the desk before grabbing a white erase pen out of a holder.
   #Considerate: "You don't think they'd mind if we used this, do you? We'll clean it off after."
-    Carlos nods. "I think we'll be fine, just so long as we clean up."
+    Carlo nods. "I think we'll be fine, just so long as we clean up."
     
     "Good," you say, entering the room and dropping the clue sheet on a desk near the front. You grab a white erase pen out of the holder.
   #Nonplussed: "All right, let's use this room for a bit."
-    You go into the Aspen Room, followed by Carlos. "They won't mind?" he asks.
+    You go into the Aspen Room, followed by Carlo. "They won't mind?" he asks.
     
     "We'll clean up," you assert, dropping the clue sheet on a desk near the front. You grab a white erase marker out of the holder.
-"All right," you say, testing it, "good line. You want one?" You grab another couple and offer them to Carlos, who shakes his head, and Mouse, who holds up her phone instead. "Suit yourself."
+"All right," you say, testing it, "good line. You want one?" You grab another couple and offer them to Carlo, who shakes his head, and Mouse, who holds up her phone instead. "Suit yourself."
 
-"I don't need it," says Carlos. "I already solved them."
+"I don't need it," says Carlo. "I already solved them."
 
-"Shit, you did that all in your head, Carlos? That's impressive."
+"Shit, you did that all in your head, Carlo? That's impressive."
 
 "Well," he says, "we covered all this in class, and I did all my homework. So, yeah, I did."
 
@@ -182,17 +182,17 @@ You look over the problems.
 *gosub problems_snippet
 
 *choice
-  *if ((puzzle_share_immediately) or (puzzle_discuss_final_answer)) #"Well, saves me the trouble. What did you get, Carlos?"
+  *if ((puzzle_share_immediately) or (puzzle_discuss_final_answer)) #"Well, saves me the trouble. What did you get, Carlo?"
     "958," he says.
     
     You look over at Mouse. She's bent over the paper, typing away on her phone. "All right," you say, capping the marker and wiping away your test line, "let's give it a try."
     *goto enter_958
   #"All right, I think I got it."
-    "Okay," asks Carlos, "what did you get?"
+    "Okay," asks Carlo, "what did you get?"
 
     *goto think_i_got_it
-  *if ((puzzle_share_immediately = false) and (puzzle_discuss_final_answer = false)) #"I give up. Carlos, Mouse can you help me with this one?"
-    "Sure," says Carlos. "I got 958."
+  *if ((puzzle_share_immediately = false) and (puzzle_discuss_final_answer = false)) #"I give up. Carlo, Mouse can you help me with this one?"
+    "Sure," says Carlo. "I got 958."
     
     "Mouse?" you ask.
     
@@ -224,10 +224,10 @@ You look over the problems.
 *label answer_choice
 *choice
   #"All right, I've got it this time."
-    "Okay, what've you got?" asks Carlos.
+    "Okay, what've you got?" asks Carlo.
 
     *goto think_i_got_it
-  #"I yield. What's the answer, Carlos?"
+  #"I yield. What's the answer, Carlo?"
     "958," he says.
     
     *gosub confirm_with_mouse_snippet
