@@ -13,7 +13,7 @@
     *gosub scavenger_hunt_clues
     *goto screen
   *if (inventory_has_campus_map = true) #View campus map
-    TODO: P1 Campus Map
+    TODO P0 EMBED MAP
     *goto screen
 
 *comment ########################################

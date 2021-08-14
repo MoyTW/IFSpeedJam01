@@ -81,6 +81,7 @@ Mouse unfolds her map, nods, and starts typing into her phone. Well, she's clear
   *goto destination_choice
 
 *label destination_choice
+TODO P0 EMBED MAP
 *choice
   *disable_reuse *selectable_if (puzzle_share_immediately = false) #"Let's check out Monty Hall."
     *set target_hall "Monty Hall"
