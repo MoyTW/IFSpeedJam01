@@ -1,4 +1,4 @@
-*title IFSJNo1
+*title Morgan, Carlo, and Mouse
 *author MoyTW
 
 *comment P0 replace all Morgan's "okay" with "all right"
