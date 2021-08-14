@@ -22,7 +22,7 @@ Mouse unfolds her map and gives it a cursory glance. @{puzzle_share_immediately 
 Carlo nods. "Yeah," he says, "this one's easy."
 
 *label destination_choice
-TODO P0 EMBED MAP
+*image campusmap.png center campus map
 *choice
   *disable_reuse *selectable_if (puzzle_share_immediately = false) #"Let's go to the the Miller Center."
     *set target_center "Miller Center"

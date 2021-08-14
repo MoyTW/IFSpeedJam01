@@ -25,7 +25,7 @@ Mouse looks up. "I have it," she says.
 …how, though. This is farcical beyond all human belief, that you would get this so fast, from a list of buildings and two numbers. You peek over at Carlos, who catches your eye and shrugs.
 
 *label building_choice
-TODO P0 EMBED MAP
+*image campusmap.png center campus map
 *choice
   *if (puzzle_share_immediately) #"Mouse, how did you get the Cicero Center?"
     "I googled the names and 106 and 43," says Mouse. It's a little hard to hear her. "Cicero lived from 106 BC to 43 BC."

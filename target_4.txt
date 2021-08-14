@@ -63,7 +63,7 @@ You look back at the clue.
 • Darwin, Charles
 
 *label lab_choice
-TODO P0 EMBED MAP
+*image campusmap.png center campus map
 *choice
   *disable_reuse #"Let's try Lab A."
     *set target_lab "Lab A"
