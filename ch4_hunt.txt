@@ -133,7 +133,7 @@ Can we stop at the dorms first, though? I want to change."
 *label difficulty_desc_continue
 ][/b][/i]
 
-*gosub_scene clue_sheet clues_only
+*gosub_scene clue_sheet clue_sheet
 *choice
   *selectable_if (sticker_used_1 = false) #Work on the first target.
     *goto_scene target_1 work_on_target_1

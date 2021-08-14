@@ -3,10 +3,6 @@
 
 [b]Note:[/b] Neither the Student Center nor gym are involved with the scavenger hunt! Especially don't go messing with any of the gym equipment!
 
-*gosub clues_sheet
-*return
-
-*label clues_only
 [b]Target 1[/b]
 
 Building clue: Free clue - it's in the Admin Building.

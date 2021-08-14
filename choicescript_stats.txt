@@ -22,7 +22,7 @@
 *label inventory
 [b]Inventory:[/b]
 *line_break
-• [b]Phone:[/b] Your phone, which you're prone to dropping. After your cracked the corner you encased it in a thick rubber protector.
+• [b]Phone:[/b] Your phone, which you're prone to dropping. After you cracked the corner you encased it in a thick rubber protector.
 *if inventory_has_backpack
   *line_break
   • [b]Backpack:[/b] Your trusty backpack. You've had it since high school.
@@ -54,7 +54,7 @@
     
 This fun exercise is an opportunity for incoming students to familiarize themselves with the various campus buildings and also win fabulous prizes! Here's how it will work.
 
-Enclosed in the scavenger hunt pack this rules and hints sheet, a campus map, and a pack of proof stickers with your student number on them. Use the hints sheet and the campus map to find the hinted locations, and then simply place a proof sticker at the location. At the end of the day, our judges will come around and count the proof stickers, and the students with the highest scores will be entered into a raffle!
+Enclosed in this scavenger hunt pack are a rules and hints sheet, a campus map, and a pack of proof stickers with your student number on them. Use the hints sheet and the campus map to find the hinted locations, and then simply place a proof sticker at the location. At the end of the day, our judges will come around and count the proof stickers, and the students with the highest scores will be entered into a raffle!
 
 The contest ends on August 15. Scoring will occur at 8:00pm and the raffle will take place in the student center at 8:30pm, so make sure to show up promptly!
 
