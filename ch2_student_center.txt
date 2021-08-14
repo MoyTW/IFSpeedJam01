@@ -43,9 +43,9 @@ Wonderful.
   #Get the book from my pack and read while I wait.
     *goto read_book_in_line
 *label read_book_in_line
-You pull The Witch from your backpack and flip forward to where you've folded down the page corner. The chapter you left on was discussing the historiography of the "wild hunt" concept, and how the "wild hunt" concept was in fact invented by a single author, Jacob Grimm. You read about his bad assumptions, and how in his quest to "unearth" a unified, pre-Christian belief system he instead simply synthesized one out of various disparate scraps and stories that went on to be both very influential and very, very wrong.
+You pull The Witch from your backpack and flip forward to where you've folded down the page corner. The chapter you left on was discussing the historiography of the "wild hunt" concept, and how the "wild hunt" concept was in fact invented by a single author, Jacob Grimm (yes, the fairy tales guy). You read about his bad assumptions, and how in his quest to "unearth" a unified, pre-Christian belief system he instead simply synthesized one out of various disparate scraps and stories that went on to be both very influential and very, very wrong.
 
-"Excuse me," someone behind you says, almost a whisper. You start, then turn around to see a girl, maybe a little taller as you, in a bright yellow raincoat, which is definitely…look, it's sunny outside. That must be some sort of fashion statement. Or anti-fashion statement, because who does that? It looks like she's all wrapped up under there, too, like she's about to brave a storm. "Do you know what's going on with the line?" she asks.
+"Excuse me," someone behind you says, almost a whisper. You start, then turn around to see a girl, maybe a little taller than you, in a bright yellow raincoat, which is definitely…look, it's sunny outside. That must be some sort of fashion statement. Or anti-fashion statement, because who does that? It looks like she's all wrapped up under there, too, like she's about to brave a storm. "Do you know what's going on with the line?" she asks.
 
 *choice
   #Gremlin: "Sorry, that's my fault. I stole a ruby ring from a mummy and now I'm cursed to wait forever in line. You'd best run before it gets you too!"
@@ -72,17 +72,17 @@ She takes your hand and shakes it with a surprisingly normal shake. "I'm Mouse,"
 
 You want to ask her if that's really her name, but you don't, obviously. Instead you nod. "Nice to meet you Mouse," you say. Did she come here with her parents? You cast a quick glance around and no, it seems she's alone. "So, what dorm were you assigned?"
 
-"I'm in Monty Hall."
+"Monty Hall."
 
 "What a coincidence," you say. "I'm in Monty Hall too, second floor."
 
-"Second floor? What room?"
+"Oh," she says. She waits for just long enough for it to become awkward. "What room?"
 
 "225. And you?"
 
-"227." Well that's a surprise, you're neighbors, huh? She smiles. "It's nice to meet you."
+"227." Well that's a surprise, you're neighbors, huh? She smiles.
 
-"Likewise," you say. "Guess we'll be seeing a lot of each other."
+"It's nice to meet you, Mouse. Guess we'll be seeing a lot of each other."
 
 Somebody taps you on the shoulder. You turn around
 *if (described_tall_guy = false)
@@ -111,7 +111,7 @@ Somebody taps you on the shoulder. You turn around
     Not that you'd be able to tell. Still that's ridiculously unlikely! Well. If he really is your roommate, may as well introduce yourself.
 "I'm Morgan," you say, "and as soon as we stop, I'll shake your hand."
 
-"It looks like they're flying through it," he says, "because we're basically at the end already." As he finishes talking, the student in front of him leaves the table, tailed by their parents, and Tall Guy leans over to address the staff. He's done in mere seconds, and you step up.
+"It looks like they're flying through it," he says, "see, we're at the end already." As he finishes talking, the student in front of him leaves the table, tailed by their parents, and Tall Guy leans over to address the staff. He's done in mere seconds, and you step up.
 
 It turns out all the table was for was to point you to the next table, based on your dorm and floor. You suppress the urge to ask what the hell was going on and just follow Tall Guy to one of the dining tables, where they sit you down and check all your paperwork. Mercifully, this is brief, and at the end of the process the staff give you a welcome packet, as well as your student ID card bearing your picture and student number. They instruct you that you can swipe into buildings and make purchases in the student center using it, and that if you lose it you'll have to pay a $5 fine to get it replaced.
 
@@ -151,7 +151,7 @@ You pause. He talks like a newscaster, basically with a General American accent,
   #Gremlin: "I can't tell if you're local or not, but I bet your parents were either well-off or highly educated. Is that right?"
     "Shit," he says, "my dad was a professor and my mom a journalist, so you got that right. Weren't well-off, but highly educated, yeah. How can you tell that from an accent?"
     
-    "It's not just the accent." you say, "You seemed pretty practiced with the paperwork, too, from what I saw. So I guessed."
+    "It's not just the accent," you say, "You seemed pretty practiced with the paperwork, too, from what I saw. So I guessed."
     
     "Well, you guessed good. I'm from San Francisco."
   #Considerate: "I don't think it matters whether you, or anybody else, is local. That said, you talk like a newscaster, so I would guess no."

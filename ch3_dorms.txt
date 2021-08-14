@@ -1,4 +1,4 @@
-The contrast between the clean and cheerful brightness of the student center and the crumbling, weed-ridden sidewalks seems impossibly stark. At least it's nice out. You sigh as you circle around the student center.
+The contrast between the clean and cheerful brightness of the student center and the crumbling, weed-ridden sidewalks seems impossibly stark. At least it's nice out. You sigh as you depart the student center.
 
 "So," you say, "where'd you all park?"
 
@@ -75,7 +75,7 @@ The three of you wander down the second-floor hallway until you reach your rooms
         *goto moving_stuff
 *label room_description
 *params owner owner_slides
-${owner} room is small, enough to comfortably fit a two beds and two desks, but while it looks like it was designed for two people all the dorms are singles. There's a window to let in light on the opposite wall, though it's frosted. On the right side of the room is a bed, pushed up against the wall, with a desk next to it. On the other side is a sliding door with a dresser next to it. ${owner_slides} it open to reveal a pretty wide closet, with ample space for hanging clothes. It's not huge, but not having to share will go a long way, and everything's really clean.
+${owner} room is small, enough to comfortably fit a two beds and two desks, but while it looks like it was designed for two people all the dorms are singles. There's a window to let in light on the opposite wall, though it's frosted. On the right side of the room is a bed, pushed up against the wall, with a desk next to it. On the other side is a dresser with a sliding door next to it. ${owner_slides} it open to reveal a pretty wide closet, with ample space for hanging clothes. It's not huge, but not having to share will go a long way, and everything's really clean.
 
 Well, you know, it's clean [i]now[/i]. You've no illusions about what the majority of these rooms will look halfway through the year.
 
@@ -106,6 +106,7 @@ Morgan, you shouldn't speculate on her family circumstances. You're helping her 
     #The two monitors.
         *gosub use_dolly "monitors"
         *goto carlo_stuff
+*comment TODO: plurals lol
 *label use_dolly
 *params itemname
 "I'll get the ${itemname}," you say. Then you stare at it, wondering how exactly you're going to get it moved. Oh, right, they left dollies back at the elevator. You go grab one and position it right under the back, and then muscle the ${itemname} onto the dolly before wheeling it into the building and onto the elevators.
@@ -172,7 +173,7 @@ Yes! Mouse! Opting in to social activity unprompted! I'm so proud of you! "Of co
 
 Carlo laughs. "I don't have anything better to do, so sure."
 
-The three of you finish up your dinner and walk back. The sun still hasn't set by the time you arrive. You all convene in your room, where you show the others your scavenger hunt package. You all spend a few minutes looking over the rules and clues.
+The three of you finish up your dinner and walk back. The sun still hasn't set by the time you arrive. You all convene in your room, where you show the others your scavenger hunt package. The three of you spend a few minutes looking over the rules and clues.
 
 "Yeah," says Carlo, "this looks fun. I'm in, but tomorrow. I'm a little tired from all that moving, so I'm gonna go back to my room. How's breakfast at 9:30 sound? Meet at the Student Center, same table?"
 
